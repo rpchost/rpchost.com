@@ -1,0 +1,10 @@
+﻿
+Partial Class Fees
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim rate As New Rate
+        txtMonthlyProfit.Text ="Be your own bank"
+
+    End Sub
+End Class

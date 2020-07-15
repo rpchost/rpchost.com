@@ -1,0 +1,23 @@
+﻿Imports System.Data
+Imports System.Data.OleDb
+
+
+Namespace rpchost
+
+    Partial Class IndicatorUsers2
+        Inherits System.Web.UI.Page
+
+        Protected Sub btnSend_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSend.Click
+            Dim opExec As New rpchost.cs_Operation
+            Dim sqlParam As String
+
+            sqlParam = "update [Indicator] set Mess = '" & Request("txtMess") & "' "
+            opExec.ExecuteSql(sqlParam)
+
+
+            Response.Redirect("IndicatorUsers.aspx")
+
+        End Sub
+    End Class
+
+End Namespace

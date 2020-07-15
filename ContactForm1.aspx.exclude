@@ -1,0 +1,165 @@
+<%@ Page Language="vb" AutoEventWireup="false" Inherits="rpchost.ContactForm" CodeFile="ContactForm1.aspx.vb" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>ContactForm</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="StyleSheet.css">
+	</HEAD>
+	<body>
+		<form id="Form1" method="post" runat="server">
+			<asp:datagrid id="DataGrid1" PageSize = 1000 style="Z-INDEX: 101; LEFT: 8px; POSITION: absolute; TOP: 88px" runat="server"
+				AutoGenerateColumns="False" Font-Size="X-Small" Font-Names="Verdana" ShowFooter="True" CellPadding="4"
+				BorderWidth="1px" BorderStyle="None" BorderColor="#CC9966" AllowPaging="True" Width="968px" 
+				BackColor="White" Height="174px">
+				<FooterStyle ForeColor="#330099" BackColor="#FFFFCC"></FooterStyle>
+				<SelectedItemStyle Font-Bold="True" ForeColor="#663399" BackColor="#FFCC66"></SelectedItemStyle>
+				<ItemStyle ForeColor="#330099" BackColor="White"></ItemStyle>
+				<HeaderStyle Font-Bold="True" ForeColor="#FFFFCC" BackColor="#990000"></HeaderStyle>
+				<Columns>
+					<asp:BoundColumn Visible="False" DataField="ID" ReadOnly="True" HeaderText="ID">
+						<HeaderStyle Width="250px"></HeaderStyle>
+					</asp:BoundColumn>
+					
+					
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="ss" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.ID") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox34" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox44" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.ID") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					
+					
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label2" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.FirstName") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox3" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox4" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.FirstName") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label1" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.LastName") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox1" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox2" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.LastName") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label3" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Email") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox5" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox6" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Email") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label4" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Phone") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox7" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox8" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Phone") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label5" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Country") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox9" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox10" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Country") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label6" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.City") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox11" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox12" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.City") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemTemplate>
+							<asp:Label id="Label7" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Comment") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<FooterTemplate>
+							<asp:TextBox id="Textbox13" runat="server" Width="200px" Visible="False"></asp:TextBox>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:TextBox id="Textbox14" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Comment") %>'>
+							</asp:TextBox>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<HeaderStyle HorizontalAlign="Center" Width="50px" VerticalAlign="Middle"></HeaderStyle>
+						<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+						<ItemTemplate>
+							<asp:ImageButton id="LinkButton1" runat="server" CausesValidation="false" CommandName="Edit" ImageUrl="picture\icon_edit.jpg"></asp:ImageButton>
+						</ItemTemplate>
+						<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+						<FooterTemplate>
+							<asp:ImageButton id="LinkButton4" runat="server" CausesValidation="false" CommandName="Insert" ImageUrl="picture\icon_new.gif"></asp:ImageButton>
+						</FooterTemplate>
+						<EditItemTemplate>
+							<asp:ImageButton id="LinkButton3" runat="server" CommandName="Update" ImageUrl="\Images\icon_save.gif"></asp:ImageButton>&nbsp;
+							<asp:ImageButton id="LinkButton2" runat="server" CausesValidation="false" CommandName="Cancel" ImageUrl="picture\icon_cancel.gif"></asp:ImageButton>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn>
+						<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+						<ItemTemplate>
+							<asp:ImageButton id="LinkButton5" runat="server" CausesValidation="false" CommandName="Delete" ImageUrl="picture\icon_delete.gif"></asp:ImageButton>
+						</ItemTemplate>
+					</asp:TemplateColumn>
+				</Columns>
+				<PagerStyle VerticalAlign="Middle" HorizontalAlign="Center" ForeColor="#330099" Position="TopAndBottom"
+					BackColor="#FFFFCC" Mode="NumericPages"></PagerStyle>
+			</asp:datagrid>
+			<asp:Label id="Label8" style="Z-INDEX: 102; LEFT: 0px; POSITION: absolute; TOP: 0px" runat="server"
+				Width="968px" CssClass="BlueText" BackColor="#ffcc66">Contact Form</asp:Label>
+			<asp:Button id="btnMain" style="Z-INDEX: 103; LEFT: 8px; POSITION: absolute; TOP: 40px" runat="server"
+				Width="112px" Text="Main" CssClass="INPUTBUTTON"></asp:Button>
+		</form>
+	</body>
+</HTML>

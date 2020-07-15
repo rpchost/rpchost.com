@@ -1,0 +1,1655 @@
+﻿Imports System.Data.OleDb
+Imports System.Data
+Imports rpchost
+Imports System.Drawing
+
+
+Partial Class FXCM
+    Inherits System.Web.UI.Page
+
+    Dim isLogged As Boolean
+
+    Dim core As FXCore.CoreAut
+    Shared desk As FXCore.TradeDeskAut
+    Shared DeskBack As FXCore.TradeDeskAut
+
+    Dim oAccountsTable As FXCore.TableAut
+    Dim oOffersTable As FXCore.TableAut
+    Dim oTradesTable As FXCore.TableAut
+    Dim oClosedTradesTable As FXCore.TableAut
+
+    Dim account As String
+    Dim instrument As String
+    Dim rate As Double
+    Dim min_amount As Double
+    Dim trade As Object
+    Dim di As Object
+
+    Dim str1, str2, str3 As String
+
+
+    Const tblOffers As String = "Offers"
+    Const tblAccounts As String = "Accounts"
+    Const tblTrades As String = "trades"
+
+    Dim miniaccount As Object ' Variable which declares an account mini
+    Dim mult As Double ' Lot multiplier for trades
+    Shared multLot As Double
+    Dim maxtrade As Object ' maxtrade for server
+    Dim minTrail As Object ' minimum trailing stop for server
+    Dim maxTrail As Object ' maximum trailing stop for server
+    Dim iSubID As Integer ' This is for events but is not cur rently used
+
+    Dim strSignal As String
+    Shared i As Integer
+
+    Shared LoginCompleted As Boolean
+
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Call GetAccount()
+
+    End Sub
+
+
+
+
+    Public Function Marquee() As String
+
+        Dim strMarquee As String = ""
+
+        Dim opExec As New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select * from News")
+        Try
+
+            If reader.HasRows = True Then
+
+                While reader.Read()
+                    strMarquee = strMarquee & " - " & reader("Description")
+                End While
+
+            End If
+
+            Return strMarquee
+
+        Catch ex As Exception
+
+        Finally
+
+            reader.Close()
+        End Try
+
+    End Function
+
+
+
+
+
+
+    Private Function GetAccount() As String
+
+        GetAccount = ""
+
+        If (txtRpcUserID.Text = "" And txtRpcPwd.Text = "") Then
+
+
+            Dim opExec As New cs_Operation
+            opExec = New cs_Operation
+            Dim reader As OleDbDataReader = opExec.rdGetReader("select * from AccountInfo")
+            Try
+                If reader.HasRows = True Then
+
+                    reader.Read()
+                    txtPassword.Attributes.Add("value", reader("Pwd"))
+                    txtUserName.Text = reader("UserID")
+                    txtPassword.Text = reader("Pwd")
+                    cmbConnection.Text = reader("Connection")
+                    txtRpcUserID.Text = reader("RpcUserID")
+                    txtRpcPwd.Attributes.Add("value", reader("RpcPwd"))
+                    GetAccount = reader("UserID")
+
+                End If
+
+
+
+            Catch ex As Exception
+                Response.Write(ex.Message)
+            Finally
+                opExec.closeConnection()
+                'reader.Close()
+            End Try
+
+
+        End If
+
+
+    End Function
+
+    Protected Sub cmdLogin_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdLogin.Click
+
+
+
+        cmdLogin.Enabled = False
+        cmdLogin.UpdateAfterCallBack = True
+        cmdLogin.DataBind()
+
+        If Login((Me.txtUserName.Text), (Me.txtPassword.Text), "http://www.fxcorporate.com", (Me.cmbConnection.Text), desk) = False Then
+            Exit Sub
+        Else
+            isLogged = True
+            Timer1.Enabled = True
+
+            lblClosedPos.Visible = True
+            lblOpenPos.Visible = True
+
+
+
+        End If
+
+
+        'Disable and enable boxes after login
+
+        Me.txtUserName.Enabled = False
+        Me.txtPassword.Enabled = False
+        Me.txtRpcUserID.Enabled = False
+        Me.txtRpcPwd.Enabled = False
+        Me.cmbConnection.Enabled = False
+
+        Me.cmdLogOut.Enabled = True
+        Me.cmbAccount.Enabled = True
+        Me.cmbAmountK.Enabled = True
+
+
+        'Try
+
+
+        '    maxtrade = desk.GetSystemProperty("MAX_QUANTITY")
+        '    minTrail = desk.GetSystemProperty("TRAILING_STOP_MIN")
+        '    maxTrail = desk.GetSystemProperty("TRAILING_STOP_MAX")
+
+
+        'Catch ex As Exception
+
+        'End Try
+
+        LoginCompleted = True
+
+
+
+
+    End Sub
+
+    Protected Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+
+        'Dim EUR As System.Threading.Thread = New Threading.Thread(AddressOf EURUSD)
+        'Dim GBP As System.Threading.Thread = New Threading.Thread(AddressOf GBPUSD)
+
+        'EUR.Start()
+        'EUR.Join()
+
+
+        'GBP.Start()
+        'GBP.Join()
+        If (DeskBack.IsLoggedIn And LoginCompleted = True) Then
+
+
+            EURUSD()
+            GBPUSD()
+
+
+
+            updateData()
+
+
+        End If
+
+
+    End Sub
+
+
+    Sub updateData()
+
+        txtOpenedPips.Text = getOpenedPips()
+        txtOpenedPips.UpdateAfterCallBack = True
+        txtOpenedPips.DataBind()
+
+        txtClosedPips.Text = getClosedPips()
+        txtClosedPips.UpdateAfterCallBack = True
+        txtClosedPips.DataBind()
+
+
+        oAccountsTable = DeskBack.FindMainTable(tblAccounts)
+
+
+
+        For Each oRow In oAccountsTable.Rows
+            'If oRow.AccountName = Me.cmbAccount.Text Then
+            Me.cmbAccount.Items.Add(oRow.AccountName)
+            oEquity.Text = Format(System.Math.Round(oRow.Equity, 2), "$#,##0.00").ToString()
+            oBalance.Text = Format(System.Math.Round(oRow.Balance, 2), "$#,##0.00")
+            oUsableMr.Text = Format(System.Math.Round(oRow.UsableMargin, 2), "$#,##0.00")
+            Exit For
+            'End If
+        Next oRow
+
+
+
+        oEquity.UpdateAfterCallBack = True
+        oEquity.DataBind()
+
+
+        oBalance.UpdateAfterCallBack = True
+        oBalance.DataBind()
+
+
+        oUsableMr.UpdateAfterCallBack = True
+        oUsableMr.DataBind()
+
+        cmbAccount.UpdateAfterCallBack = True
+        cmbAccount.DataBind()
+
+        cmdLogin.Enabled = False
+        cmdLogin.UpdateAfterCallBack = True
+        cmdLogin.DataBind()
+
+        lblMess.Text = Marquee()
+        lblMess.ForeColor = Color.Green
+        lblMess.UpdateAfterCallBack = True
+        lblMess.DataBind()
+
+
+        Synchronize()
+
+    End Sub
+
+
+
+    Sub EURUSD()
+
+
+        Dim opExec As New cs_Operation
+
+        Dim strNow As String
+        strNow = CStr(Now)
+        Dim isTradeExistSell, isTradeExistBuy As Boolean
+
+
+        strSignal = Text2String("C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\Signals.txt")
+
+        Dim strDirection, strSymbol, strRate, strSL As Object
+        Dim strTarget As String
+        Dim arr() As String
+
+        If strSignal <> "" Then
+            arr = Split(strSignal, "-")
+        Else
+            Exit Sub
+        End If
+
+        Dim str_Renamed As String
+        str_Renamed = Text2String("C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\BuySell.txt")
+
+
+        If (str_Renamed.Trim = "Buy") Then
+            EURImg.ImageUrl = "picture\up.gif"
+            EURImg.UpdateAfterCallBack = True
+            EURImg.DataBind()
+        End If
+        If (str_Renamed.Trim = "Sell") Then
+            EURImg.ImageUrl = "picture\down.gif"
+            EURImg.UpdateAfterCallBack = True
+            EURImg.DataBind()
+        End If
+        If (str_Renamed.Trim = "") Then
+            EURImg.ImageUrl = "picture\flat.gif"
+            EURImg.UpdateAfterCallBack = True
+            EURImg.DataBind()
+        End If
+
+        If UBound(arr) - LBound(arr) + 1 = 6 Then
+
+            strSignal = arr(0)
+
+            If InStr(1, strSignal, "Close Sell", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C',dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLDOWNBREAK' and ([Curr]='EURUSD' or [Curr]='EUR/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "S" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing EURUSD Sell")
+                End Try
+
+
+                If InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 Then
+                    clearBuySell()
+                End If
+
+                clearFile()
+
+            End If
+
+            If InStr(1, strSignal, "Close Buy", CompareMethod.Text) > 0 Then
+
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLUPBREAK' and ([Curr]='EURUSD' or [Curr]='EUR/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "B" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing EURUSD Buy")
+                End Try
+
+
+                If InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 Then
+                    Call clearBuySell()
+                End If
+                clearFile()
+
+            End If
+
+        End If
+
+
+        Dim signal As Object
+        Dim strType As String
+        If UBound(arr) - LBound(arr) + 1 = 5 Then
+            strSymbol = arr(1)
+            strRate = arr(2)
+            strDirection = arr(0)
+            strSL = arr(4)
+            strTarget = arr(3)
+            signal = strDirection + " " + strSymbol + " now at " + strRate + " Target = " + strTarget + " SL = " + strSL
+            If strDirection = "Long" Then strType = "BOLLUPBREAK"
+            If strDirection = "Short" Then strType = "BOLLDOWNBREAK"
+
+            If (strType = "BOLLUPBREAK" And InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 And isTradeExistBuy = False) Or (strType = "BOLLDOWNBREAK" And InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 And isTradeExistSell = False) Then
+
+                opExec.ExecuteSql("insert into Signal([Signal],Comments,[Status],[Pivot],dtDateSignal,dtDateClose,[Entry],SL,[Target],SignalType,[curr],StudyTime,isFreeSignal,AmountK) values ('" & signal & "','','T','','" & strNow & "','','" & strRate & "','" & strSL & "','" & strTarget & "','" & strType & "','" & strSymbol & "','',yes," & cmbAmountK.Text & ")")
+
+                If (OpenTrade(strDirection, strSL, strTarget, "EUR/USD", min_amount, strRate, trade, di) = False) Then
+                    Response.Write("Failed to create a EURUSD trade")
+
+                Else
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindRowInTable("offers", "Instrument", instrument)
+                    For Each oRow In oTradesTable.Rows
+
+                        If (strDirection = "Long" And oRow.BS = "S" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                        End If
+                        If (strDirection = "Short" And oRow.BS = "B" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                        End If
+
+                    Next
+
+
+                End If
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C',dtDateClose='" & Now & "' where [Status] = 'T' and SignalType <> '" & strType & "' and [curr] = 'EURUSD' ")
+
+            End If
+
+            clearFile()
+
+        Else
+
+            If InStr(1, strSignal, "Close Sell", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLDOWNBREAK' and ([Curr]='EURUSD' or [Curr]='EUR/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "S" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing EURUSD Sell")
+                End Try
+
+                clearFile()
+                If InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 Then
+                    Call clearBuySell()
+                End If
+
+            End If
+
+            If InStr(1, strSignal, "Close Buy", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLUPBREAK' and ([Curr]='EURUSD' or [Curr]='EUR/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "B" And oRow.Instrument = "EUR/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing EURUSD Buy")
+                End Try
+
+
+                clearFile()
+                If InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 Then
+                    Call clearBuySell()
+                End If
+
+            End If
+
+        End If
+
+
+    End Sub
+
+
+
+    Sub GBPUSD()
+
+
+        Dim opExec As New cs_Operation
+
+        Dim strNow As String
+        strNow = CStr(Now)
+        Dim isTradeExistSell, isTradeExistBuy As Boolean
+
+        strSignal = Text2String("C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\SignalsGU.txt")
+
+        Dim strDirection, strSymbol, strRate, strSL As Object
+        Dim strTarget As String
+        Dim arr() As String
+
+        If strSignal <> "" Then
+            arr = Split(strSignal, "-")
+        Else
+            Exit Sub
+        End If
+
+        Dim str_Renamed As String
+        str_Renamed = Text2String("C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\BuySellGU.txt")
+
+
+        If (str_Renamed.Trim = "Buy") Then
+            GBPImg.ImageUrl = "picture\up.gif"
+            GBPImg.UpdateAfterCallBack = True
+            GBPImg.DataBind()
+        End If
+        If (str_Renamed.Trim = "Sell") Then
+            GBPImg.ImageUrl = "picture\down.gif"
+            GBPImg.UpdateAfterCallBack = True
+            GBPImg.DataBind()
+        End If
+        If (str_Renamed.Trim = "") Then
+            GBPImg.ImageUrl = "picture\flat.gif"
+            GBPImg.UpdateAfterCallBack = True
+            GBPImg.DataBind()
+        End If
+
+
+
+        If UBound(arr) - LBound(arr) + 1 = 6 Then
+
+            strSignal = arr(0)
+
+            If InStr(1, strSignal, "Close Sell", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C',dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLDOWNBREAK' and ([Curr]='GBPUSD' or [Curr]='GBP/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "S" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing GBPUSD Sell")
+                End Try
+
+                If InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 Then
+                    clearBuySellGU()
+                End If
+                clearFileGU()
+
+
+            End If
+
+            If InStr(1, strSignal, "Close Buy", CompareMethod.Text) > 0 Then
+
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLUPBREAK' and ([Curr]='GBPUSD' or [Curr]='GBP/USD')")
+
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "B" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing GBPUSD Sell")
+                End Try
+
+
+
+                If InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 Then
+                    Call clearBuySellGU()
+                End If
+                clearFileGU()
+
+            End If
+
+        End If
+
+
+        Dim signal As Object
+        Dim strType As String
+        If UBound(arr) - LBound(arr) + 1 = 5 Then
+            strSymbol = arr(1)
+            strRate = arr(2)
+            strDirection = arr(0)
+            strSL = arr(4)
+            strTarget = arr(3)
+            signal = strDirection + " " + strSymbol + " now at " + strRate + " Target = " + strTarget + " SL = " + strSL
+            If strDirection = "Long" Then strType = "BOLLUPBREAK"
+            If strDirection = "Short" Then strType = "BOLLDOWNBREAK"
+
+            If (strType = "BOLLUPBREAK" And InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 And isTradeExistBuy = False) Or (strType = "BOLLDOWNBREAK" And InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 And isTradeExistSell = False) Then
+
+                opExec.ExecuteSql("insert into Signal([Signal],Comments,[Status],[Pivot],dtDateSignal,dtDateClose,[Entry],SL,[Target],SignalType,[curr],StudyTime,isFreeSignal,AmountK) values ('" & signal & "','','T','','" & strNow & "','','" & strRate & "','" & strSL & "','" & strTarget & "','" & strType & "','" & strSymbol & "','',yes," & cmbAmountK.Text & ")")
+
+
+                If (OpenTrade(strDirection, strSL, strTarget, "GBP/USD", min_amount, strRate, trade, di) = False) Then
+                    Response.Write("Failed to create a GBPUSD trade")
+                Else
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindRowInTable("offers", "Instrument", instrument)
+                    For Each oRow In oTradesTable.Rows
+
+                        If (strDirection = "Long" And oRow.BS = "S" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                        End If
+                        If (strDirection = "Short" And oRow.BS = "B" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                        End If
+
+                    Next
+
+
+                End If
+
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C',dtDateClose='" & Now & "' where [Status] = 'T' and SignalType <> '" & strType & "' and [curr] = 'GBPUSD' ")
+
+
+            End If
+
+            clearFile()
+
+        Else
+
+            If InStr(1, strSignal, "Close Sell", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLDOWNBREAK' and ([Curr]='GBPUSD' or [Curr]='GBP/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "S" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing EURUSD Sell")
+                End Try
+
+                clearFile()
+                If InStr(1, str_Renamed, "Sell", CompareMethod.Text) > 0 Then
+                    Call clearBuySellGU()
+                End If
+
+
+            End If
+
+            If InStr(1, strSignal, "Close Buy", CompareMethod.Text) > 0 Then
+
+                opExec.ExecuteSql("update Signal set [Status] = 'C', dtDateClose='" & Now & "' where [Status] = 'T' and SignalType = 'BOLLUPBREAK' and ([Curr]='EURUSD' or [Curr]='EUR/USD')")
+
+                Try
+
+
+                    Dim oRow As Object
+                    oTradesTable = DeskBack.FindMainTable("Trades")
+                    For Each oRow In oTradesTable.Rows
+
+
+                        If (oRow.BS = "B" And oRow.Instrument = "GBP/USD") Then
+                            CloseTrade(oRow.TradeID, oRow.BS, oRow.Instrument)
+                            Exit For
+                        End If
+
+                    Next
+
+                Catch ex As Exception
+                    Response.Write("Error while Closing GBPUSD Sell")
+                End Try
+
+
+                clearFileGU()
+                If InStr(1, str_Renamed, "Buy", CompareMethod.Text) > 0 Then
+                    Call clearBuySellGU()
+                End If
+
+            End If
+
+
+        End If
+
+
+    End Sub
+
+
+
+    Private Function Login(ByRef sUserName As Object, ByRef sPassword As Object, ByRef sHostsPath As Object, ByRef sTrading As Object, ByRef oTradeDesk As Object) As Boolean
+
+
+        Login = False
+
+
+        core = New FXCore.CoreAut()
+        desk = core.CreateTradeDesk("trader")
+
+
+        Call desk.Login(sUserName, sPassword, sHostsPath, sTrading)
+        Login = True
+
+
+
+        Dim oRow As Object
+
+
+        oAccountsTable = desk.FindMainTable(tblAccounts)
+
+        oOffersTable = desk.FindMainTable("Offers")
+        account = oAccountsTable.CellValue(1, "AccountID")
+        min_amount = oAccountsTable.CellValue(1, "BaseUnitSize")
+
+        Dim c As Short
+        Dim offset As Object
+
+
+        For Each oRow In oAccountsTable.Rows
+            Me.cmbAccount.Items.Add((oRow.AccountName))
+        Next oRow
+
+        For Each oRow In oOffersTable.Rows
+
+            If oRow.ContractSize <> 1 Then
+
+                If oRow.ContractSize > 11000 Then
+                    miniaccount = False
+                    mult = 100
+                Else
+                    miniaccount = True
+                    mult = 10
+
+                End If
+            Else
+                If desk.GetSystemProperty("COND_DIST") = 10000 Then
+                    miniaccount = True
+                Else
+                    miniaccount = False
+                End If
+
+                mult = 1 / 1000
+            End If
+
+        Next oRow
+
+
+
+        Me.cmbAmountK.Items.Clear()
+
+        c = 1
+        'Adds the amounts for the AmountK field
+        'UPGRADE_WARNING: Couldn't resolve default property of object mult. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        If mult > 1 Then
+
+            Do Until c > 10
+                'UPGRADE_WARNING: Couldn't resolve default property of object mult. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                Me.cmbAmountK.Items.Insert(c - 1, CStr(c * mult))
+                c = c + 1
+
+            Loop
+
+            'TONI ACCOUNT
+            'Call cmbAmountK.AddItem(5, 0)
+
+        Else
+
+            'UPGRADE_WARNING: Couldn't resolve default property of object miniaccount. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            If miniaccount = True Then
+                'UPGRADE_WARNING: Couldn't resolve default property of object offset. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                offset = 10000
+            Else
+                'UPGRADE_WARNING: Couldn't resolve default property of object offset. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                offset = 100000
+            End If
+
+            Do Until c > 10
+                'UPGRADE_WARNING: Couldn't resolve default property of object offset. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                'UPGRADE_WARNING: Couldn't resolve default property of object mult. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                Me.cmbAmountK.Items.Insert(c - 1, CStr(c * (mult * offset)))
+                c = c + 1
+            Loop
+
+            'TONI ACCOUNT
+            'Call cmbAmountK.AddItem(5, 0)
+
+        End If
+
+        multLot = mult
+        DeskBack = desk
+
+        cmbAmountK.UpdateAfterCallBack = True
+        cmbAmountK.DataBind()
+
+        Call Updater()
+
+    End Function
+
+    Private Sub Updater()
+
+
+
+        Dim iRow, oRow, amount As Object
+
+        oAccountsTable = desk.FindMainTable(tblAccounts)
+        oOffersTable = desk.FindMainTable(tblOffers)
+        oClosedTradesTable = desk.FindMainTable("closed trades")
+        amount = 0
+
+
+        Dim res As Integer
+
+        Dim data As New DataSet
+        Dim t1 As New DataTable("ClosedTrades")
+
+        Dim newrow As DataRow
+        Dim newCell As New Data.DataColumn()
+
+
+        oClosedTradesTable = desk.FindMainTable("Closed Trades")
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "TradeID"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Instrument"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Amount"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "S/B"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Open"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Close"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Stop"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "Limit"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "PL"
+        t1.Columns.Add(newCell)
+
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "GrossPL"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "OpenTime"
+        t1.Columns.Add(newCell)
+
+        newCell = New Data.DataColumn()
+        newCell.ColumnName = "ClosedTime"
+        t1.Columns.Add(newCell)
+
+
+        For Each oRow In oClosedTradesTable.Rows
+
+            newrow = t1.NewRow()
+
+            newrow("TradeID") = oRow.TradeID
+            newrow("Instrument") = oRow.Instrument
+            newrow("Amount") = oRow.AmountK
+            newrow("S/B") = oRow.BS
+            newrow("Open") = oRow.Open
+            newrow("Close") = oRow.Close
+            newrow("OpenTime") = oRow.OpenTime
+            newrow("ClosedTime") = oRow.CloseTime
+
+            newrow("PL") = oRow.PL
+            newrow("GrossPL") = oRow.GrossPL
+
+            res = res + oRow.PL
+
+            t1.Rows.Add(newrow)
+
+        Next
+
+
+        data.Tables.Add(t1)
+        GridView2.DataSource = data
+        GridView2.DataBind()
+
+
+
+        'For Each oRow In oAccountsTable.Rows
+        '    If oRow.AccountName = Me.cmbAccount.Text Then
+        '        oEquity.Text = Format(System.Math.Round(oRow.Equity, 2), "$#,##0.00").ToString()
+        '        oBalance.Text = Format(System.Math.Round(oRow.Balance, 2), "$#,##0.00")
+        '        oUsableMr.Text = Format(System.Math.Round(oRow.UsableMargin, 2), "$#,##0.00")
+        '        Exit For
+        '    End If
+        'Next oRow
+
+
+        'txtClosedPips.Text = res
+        'txtOpenedPips.Text = getOpenedPips()
+
+
+
+
+    End Sub
+
+    Private Function getOpenedPips() As Short
+
+
+        Try
+
+            Dim oTable, oRow, oCell, acct As Object
+            Dim sumPips As Short
+            Dim isEURExist As Boolean
+            Dim isGBPExist As Boolean
+
+
+            Dim i, j As Integer
+
+
+
+
+            Dim data As New DataSet
+
+
+            Dim t1 As New DataTable("Trades")
+
+            Dim newrow As DataRow
+            Dim newCell As New Data.DataColumn()
+
+
+
+            oClosedTradesTable = DeskBack.FindMainTable("Trades")
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "TradeID"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Instrument"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Amount"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "S/B"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Open"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Close"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Stop"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Limit"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "PL"
+            t1.Columns.Add(newCell)
+
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "GrossPL"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Time"
+            t1.Columns.Add(newCell)
+
+
+
+            For Each oRow In oClosedTradesTable.Rows
+
+                newrow = t1.NewRow()
+
+                newrow("TradeID") = oRow.TradeID
+                newrow("Instrument") = oRow.Instrument
+                newrow("Amount") = oRow.AmountK
+                newrow("S/B") = oRow.BS
+                newrow("Open") = oRow.Open
+                newrow("Close") = oRow.Close
+                newrow("Stop") = oRow.Stop
+                newrow("Limit") = oRow.Limit
+                newrow("PL") = oRow.PL
+                newrow("GrossPL") = Convert.ToDouble(oRow.GrossPL)
+                newrow("Time") = oRow.Time
+
+                sumPips = sumPips + CShort(oRow.PL)
+
+                t1.Rows.Add(newrow)
+
+            Next
+
+
+            data.Tables.Add(t1)
+            GridView1.DataSource = data
+            GridView1.DataBind()
+
+
+
+
+            getOpenedPips = sumPips
+
+        Catch ex As Exception
+            getOpenedPips = 0
+        End Try
+
+
+    End Function
+
+
+    Private Function getClosedPips() As Short
+
+
+        Try
+
+            Dim sumPips As Integer
+
+            oClosedTradesTable = DeskBack.FindMainTable("Closed Trades")
+
+            For Each oRow In oClosedTradesTable.Rows
+
+                sumPips = sumPips + CShort(oRow.PL)
+
+            Next
+
+            getClosedPips = sumPips
+
+        Catch ex As Exception
+            getClosedPips = 0
+        End Try
+
+
+    End Function
+
+
+
+    Protected Sub cmdLogOut_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdLogOut.Click
+
+        If DeskBack.IsLoggedIn() Then Call desk.Logout()
+
+        Response.Redirect("fxcm.aspx")
+
+    End Sub
+
+    Public Function Text2String(ByRef strPath As String) As String
+        On Error GoTo ErrTrap
+        Dim intFileNumber As Short
+
+
+        'UPGRADE_WARNING: Dir has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        If Dir(strPath) = "" Then Exit Function
+        intFileNumber = FreeFile()
+        FileOpen(intFileNumber, strPath, OpenMode.Input)
+
+        Text2String = InputString(intFileNumber, LOF(intFileNumber))
+ErrTrap:
+        FileClose(intFileNumber)
+    End Function
+
+    Private Sub clearBuySell()
+
+        Dim sFileText As String
+        Dim iFileNo As Short
+        iFileNo = FreeFile()
+        'open the file for writing
+        'Open App.Path + "\experts\files\BuySell.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        FileOpen(iFileNo, "C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\BuySell.txt", OpenMode.Output) 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+
+
+        PrintLine(iFileNo, "") 'blank line
+        FileClose(iFileNo)
+
+    End Sub
+
+    Private Sub clearBuySellGU()
+
+        Dim sFileText As String
+        Dim iFileNo As Short
+        iFileNo = FreeFile()
+        'open the file for writing
+        'Open App.Path + "\experts\files\BuySellGU.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        FileOpen(iFileNo, "C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\BuySellGU.txt", OpenMode.Output) 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+
+        PrintLine(iFileNo, "") 'blank line
+        FileClose(iFileNo)
+
+    End Sub
+
+    Private Sub clearFile()
+
+        Dim sFileText As String
+        Dim iFileNo As Short
+        iFileNo = FreeFile()
+        'open the file for writing
+        ' Open App.Path + "\experts\files\Signals.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        FileOpen(iFileNo, "C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\Signals.txt", OpenMode.Output) 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        'Open "C:\Signals.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+
+        PrintLine(iFileNo, "") 'blank line
+        FileClose(iFileNo)
+
+    End Sub
+
+    Private Sub clearFileGU()
+
+        Dim sFileText As String
+        Dim iFileNo As Short
+        iFileNo = FreeFile()
+        'open the file for writing
+        'Open App.Path + "\experts\files\SignalsGU.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        FileOpen(iFileNo, "C:\Program Files (x86)\MetaTrader - AAAFx\experts\files\SignalsGU.txt", OpenMode.Output) 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+        'Open "C:\SignalsGU.txt" For Output As #iFileNo 'please note, if this file already exists it will be overwritten!       'write some example text to the file  Print #iFileNo, "first line of text"  Print #iFileNo, "   second line of text"
+
+
+        PrintLine(iFileNo, "") 'blank line
+        FileClose(iFileNo)
+
+    End Sub
+
+    Private Function OpenTrade(ByVal Direction As String, ByVal stopP As Double, ByVal LimitP As Double, ByVal instrument As String, ByVal min_amount As Double, ByVal rate As Double, ByVal trade As Object, ByVal di As Object) As Boolean
+
+
+        Dim Trail, lots As Double
+        Dim QuoteID, OrderID, Dealer As Object
+        Dim oRow As Object
+        Dim acct As Double
+        Dim isBuy As Boolean
+
+
+        Try
+
+
+            'Checks whether its a buy or sell
+            If Direction = "Long" Then
+                isBuy = True
+
+            Else
+                isBuy = False
+            End If
+
+            Try
+                lots = Me.cmbAmountK.Text / multLot
+            Catch ex As Exception
+                lots = Request("cmbAmountK") / multLot
+            End Try
+
+
+            oRow = DeskBack.FindRowInTable("offers", "Instrument", instrument)
+
+            If (Direction = "Short") Then
+                rate = oRow.Bid
+            Else
+                rate = oRow.Ask
+            End If
+            QuoteID = oRow.QuoteID
+
+            oRow = DeskBack.FindRowInTable("accounts", "AccountName", Me.cmbAccount.Text)
+
+            acct = oRow.AccountID
+
+
+            'Place Market Order
+
+            'DeskBack.OpenTrade(acct, instrument, isBuy, CLng(lots), rate, QuoteID, 0, stopP, LimitP, Trail, OrderID, Dealer)
+            DeskBack.OpenTrade(acct, instrument, isBuy, CLng(lots), rate, QuoteID, 0, stopP, LimitP, 0, OrderID, Dealer)
+
+
+
+            If (instrument = "GBPUSD" Or instrument = "GBP/USD") Then
+                clearFileGU()
+            ElseIf (instrument = "EURUSD" Or instrument = "EUR/USD") Then
+                clearFile()
+            End If
+
+            OpenTrade = True
+
+            Synchronize()
+
+
+
+            GridView1.UpdateAfterCallBack = True
+
+            GridView1.DataBind()
+
+
+
+        Catch ex As Exception
+            OpenTrade = False
+        End Try
+
+
+    End Function
+
+    Function GetOffer(ByVal isBuy As Boolean, ByVal sInstrument As String, ByRef QuoteID As Double) As Double
+
+
+        Try
+
+
+            Dim oRow As Object
+
+
+            GetOffer = -1
+
+            oRow = desk.FindRowInTable("offers", "Instrument", sInstrument)
+            If isBuy Then
+                GetOffer = oRow.Ask
+            Else
+                GetOffer = oRow.Bid
+            End If
+            QuoteID = oRow.QuoteID
+
+
+        Catch ex As Exception
+            GetOffer = -1
+        End Try
+
+
+    End Function
+
+    Private Sub CloseTrade(ByRef strTradeID As String, ByRef strBuySell As String, ByRef strCurr As String)
+
+        Dim isBuy, Limit, Stops, Trail, lots As Object
+        Dim QuoteID, Rate, Dealer As Object
+        Dim oRow As Object
+        Dim acct As Object
+
+
+        Try
+
+            Limit = 0
+
+            If strBuySell = "B" Then
+                isBuy = True
+            Else
+                isBuy = False
+            End If
+
+            Dim itMarket As Short
+
+            If (strCurr = "EURJPY" Or strCurr = "EUR/JPY") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "EUR/JPY") : itMarket = 6
+            End If
+            If (strCurr = "EURCHF" Or strCurr = "EUR/CHF") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "EUR/CHF") : itMarket = 6
+            End If
+            If (strCurr = "GBPJPY" Or strCurr = "GBP/JPY") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "GBP/JPY") : itMarket = 15
+            End If
+            If (strCurr = "AUDUSD" Or strCurr = "AUD/USD") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "AUD/USD") : itMarket = 6
+            End If
+            If (strCurr = "USDCAD" Or strCurr = "USD/CAD") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "USD/CAD") : itMarket = 6
+            End If
+            If (strCurr = "GBPUSD" Or strCurr = "GBP/USD") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "GBP/USD") : itMarket = 6
+            End If
+            If (strCurr = "EURUSD" Or strCurr = "EUR/USD") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "EUR/USD") : itMarket = 6
+            End If
+            If (strCurr = "USDJPY" Or strCurr = "USD/JPY") Then
+                Rate = GetOfferByCurrency(isBuy, strCurr, QuoteID, "USD/JPY") : itMarket = 6
+            End If
+
+            oRow = DeskBack.FindRowInTable("accounts", "AccountName", Me.cmbAccount.Text)
+
+            acct = oRow.AccountID
+            oRow = DeskBack.FindRowInTable("trades", "TradeID", strTradeID)
+
+            lots = oRow.AmountK / multLot
+
+            Dim ss As String
+            ss = oRow.OpenOrderID
+
+            DeskBack.CloseTrade(strTradeID, CLng(lots), Rate, QuoteID, itMarket, ss, Dealer)
+
+
+            Synchronize()
+
+
+        Catch ex As Exception
+
+
+        End Try
+
+
+
+    End Sub
+
+    Public Function GetOfferByCurrency(ByRef isBuy As Object, ByRef sInstrument As Object, ByRef QuoteID As Object, ByRef strCurr As Object) As Object
+        Static oRow As Object
+
+        Try
+
+
+            GetOfferByCurrency = -1
+
+            oRow = DeskBack.FindRowInTable("offers", "Instrument", strCurr)
+            If isBuy Then
+                GetOfferByCurrency = oRow.Ask
+            Else
+                GetOfferByCurrency = oRow.Bid
+            End If
+            QuoteID = oRow.QuoteID
+
+            If Err.Number Then
+                Exit Function
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+
+
+    End Function
+
+    Protected Sub Synchronize()
+        Try
+
+            Dim oTable, oRow, oCell, acct As Object
+            Dim sumPips As Short
+            Dim isEURExist As Boolean
+            Dim isGBPExist As Boolean
+
+
+            Dim i, j As Integer
+
+
+            Dim data As New DataSet
+
+
+            Dim t1 As New DataTable("Trades")
+
+            Dim newrow As DataRow
+            Dim newCell As New Data.DataColumn()
+
+
+
+            oClosedTradesTable = DeskBack.FindMainTable("Trades")
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "TradeID"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Instrument"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Amount"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "S/B"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Open"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Close"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Stop"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Limit"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "PL"
+            t1.Columns.Add(newCell)
+
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "GrossPL"
+            t1.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Time"
+            t1.Columns.Add(newCell)
+
+
+
+            For Each oRow In oClosedTradesTable.Rows
+
+                newrow = t1.NewRow()
+
+                newrow("TradeID") = oRow.TradeID
+                newrow("Instrument") = oRow.Instrument
+                newrow("Amount") = oRow.AmountK
+                newrow("S/B") = oRow.BS
+                newrow("Open") = oRow.Open
+                newrow("Close") = oRow.Close
+                newrow("Stop") = oRow.Stop
+                newrow("Limit") = oRow.Limit
+                newrow("PL") = oRow.PL
+                newrow("GrossPL") = Convert.ToDouble(oRow.GrossPL)
+                newrow("Time") = oRow.Time
+
+                t1.Rows.Add(newrow)
+
+            Next
+
+
+            GridView1.UpdateAfterCallBack = True
+            data.Tables.Add(t1)
+            GridView1.DataSource = data
+            GridView1.DataBind()
+
+            Dim dd As New com.rpchost.www.grabdata
+
+            dd.SetOpenTrades(t1)
+
+
+
+            Dim t2 As New DataTable
+            oClosedTradesTable = DeskBack.FindMainTable("Closed Trades")
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "TradeID"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Instrument"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Amount"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "S/B"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Open"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Close"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Stop"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Limit"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "PL"
+            t2.Columns.Add(newCell)
+
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "GrossPL"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "OpenTime"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "ClosedTime"
+            t2.Columns.Add(newCell)
+
+            newCell = New Data.DataColumn()
+            newCell.ColumnName = "Profit"
+            t2.Columns.Add(newCell)
+
+
+
+            For Each oRow In oClosedTradesTable.Rows
+
+                newrow = t2.NewRow()
+
+                newrow("TradeID") = oRow.TradeID
+                newrow("Instrument") = oRow.Instrument
+                newrow("Amount") = oRow.AmountK
+                newrow("S/B") = oRow.BS
+                newrow("Open") = oRow.Open
+                newrow("Close") = oRow.Close
+                newrow("OpenTime") = oRow.OpenTime
+                newrow("ClosedTime") = oRow.CloseTime
+
+                newrow("PL") = oRow.PL
+                newrow("GrossPL") = oRow.GrossPL
+
+                newrow("Profit") = oRow.PL
+
+                dd.SetClosedTrades(oRow.TradeID, oRow.CloseTime, oRow.PL)
+
+
+                t2.Rows.Add(newrow)
+
+            Next
+
+            data.Tables.Clear()
+
+
+            data.Tables.Add(t2)
+            GridView2.DataSource = data
+            'GridView2.UpdateAfterCallBack = True
+            GridView2.DataBind()
+            GridView2.Visible = True
+
+
+        Catch ex As Exception
+            'Response.Write("ERROR WHILE SYNCHRONIZING")
+        End Try
+
+
+    End Sub
+
+    Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Synchronize()
+    End Sub
+
+
+    Protected Sub DD()
+
+        Dim lbl As LinkButton = GridView1.Rows(1).Cells(1).FindControl("LinkClose")
+        lbl.Text = "Closing"
+        GridView1.UpdateAfterCallBack = True
+        'GridView1.DataBind()
+
+    End Sub
+
+
+    Protected Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
+
+        Dim ss As String
+
+
+        If (e.CommandName = "Select") Then
+
+
+
+            Dim selectRow As GridViewRow = GridView1.SelectedRow
+
+
+            Dim row As GridViewRow
+            row = ((e.CommandSource).NamingContainer)
+
+            ss = row.RowIndex
+
+
+            Dim lbl As Button = GridView1.Rows(ss).Cells(1).FindControl("deleteButton")
+            lbl.Text = "Closing"
+            lbl.Enabled = False
+            lbl.ForeColor = Color.Red
+
+
+            GridView1.UpdateAfterCallBack = True
+
+            str1 = GridView1.Rows(ss).Cells(1).Text
+            str2 = GridView1.Rows(ss).Cells(4).Text
+            str3 = GridView1.Rows(ss).Cells(2).Text
+
+
+            Dim EUR As System.Threading.Thread = New Threading.Thread(AddressOf CloseThread)
+            EUR.Start()
+
+        End If
+    End Sub
+
+
+    Protected Sub CloseThread()
+
+        CloseTrade(str1, str2, str3)
+
+        Synchronize()
+
+    End Sub
+
+
+    Protected Sub GridView1_RowUpdating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewUpdateEventArgs) Handles GridView1.RowUpdating
+
+
+        GridView1.Rows(1).Cells(1).Text = "Closing"
+        GridView1.Rows(1).Cells(1).CssClass = "RedTextBold"
+
+        GridView1.UpdateAfterCallBack = True
+        GridView1.PostCallBackFunction = "RefreshMap"
+        GridView1.DataBind()
+
+
+    End Sub
+End Class

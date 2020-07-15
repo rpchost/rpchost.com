@@ -1,0 +1,241 @@
+<Awmds>
+<General_segment>
+<General_segment_id>
+<Customs_office_code>11</Customs_office_code>
+<Voyage_number>LAM-I123</Voyage_number>
+<Date_of_departure>2019-02-18</Date_of_departure>
+<Date_of_arrival>2019-02-17</Date_of_arrival>
+<Type>IM</Type>
+</General_segment_id>
+<Totals_segment>
+<Total_number_of_bols>3</Total_number_of_bols>
+<Total_number_of_packages>110</Total_number_of_packages>
+<Total_number_of_containers>0</Total_number_of_containers>
+<Total_gross_mass>1070000.00</Total_gross_mass>
+</Totals_segment>
+<Transport_information>
+<Carrier>
+<Carrier_code>00003006</Carrier_code>
+<Carrier_name/>
+<Carrier_address/>
+</Carrier>
+<Mode_of_transport_code>1</Mode_of_transport_code>
+<Identity_of_transporter>MSC MATILDA</Identity_of_transporter>
+<Nationality_of_transporter_code>TR</Nationality_of_transporter_code>
+<Place_of_transporter></Place_of_transporter>
+<Registration_number_of_transport_code></Registration_number_of_transport_code>
+<IMO_Number>1234567</IMO_Number>
+<Master_information>.
+</Master_information>
+</Transport_information>
+<Load_unload_place>
+<Place_of_departure_code>BEANR</Place_of_departure_code>
+<Place_of_destination_code>LBBEY</Place_of_destination_code>
+</Load_unload_place>
+</General_segment>
+<Bol_segment>
+<Bol_id>
+<Bol_reference>STL001</Bol_reference>
+<Line_number>1</Line_number>
+<Subline_number/>
+<Bol_nature>23</Bol_nature>
+<Bol_type_code>001</Bol_type_code>
+<Master_bol_ref_number/>
+<Unique_carrier_reference/>
+</Bol_id>
+<Load_unload_place>
+<Original_place_of_loading_code>BEANR</Original_place_of_loading_code>
+<Place_of_loading_code>BEANR</Place_of_loading_code>
+<Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+</Load_unload_place>
+<Traders_segment>
+<Exporter>
+<Exporter_name>shipper sjkdfkjsd skdfksld</Exporter_name>
+<Exporter_address>ksdjfsdf sd sd jfklsd jfk
+sdfsd hfkjsdhfjksd
+</Exporter_address>
+</Exporter>
+<Notify>
+<Notify_code/>
+<Notify_name>same as consignee</Notify_name>
+<Notify_address>
+</Notify_address>
+</Notify>
+<Consignee>
+<Consignee_code/>
+<Consignee_name>consignee sdjhsdfjksd skdfs</Consignee_name>
+<Consignee_address>sldfjsk ksdjfklsdjfk
+</Consignee_address>
+</Consignee>
+</Traders_segment>
+<Goods_segment>
+<Number_of_packages>80</Number_of_packages>
+<Package_type_code>61</Package_type_code>
+<Gross_mass>988000.00</Gross_mass>
+<Shipping_marks>softpro jdeideh
+</Shipping_marks>
+<Goods_description>stc hot rolled steel
+4655 djkfhg sdj jsdkf
+kdfj ksdjh ksjd
+</Goods_description>
+<Volume_in_cubic_meters>0</Volume_in_cubic_meters>
+<Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+<Information/>
+</Goods_segment>
+<Value_segment>
+<Freight_segment>
+<PC_indicator></PC_indicator>
+<Freight_currency/>
+</Freight_segment>
+<Customs_segment>
+<Customs_currency/>
+</Customs_segment>
+<Insurance_segment>
+<Insurance_currency/>
+</Insurance_segment>
+<Transport_segment>
+<Transport_currency/>
+</Transport_segment>
+</Value_segment>
+<Location>
+<Location_code></Location_code>
+<Location_info/>
+</Location>
+</Bol_segment>
+<Bol_segment>
+<Bol_id>
+<Bol_reference>STL002</Bol_reference>
+<Line_number>2</Line_number>
+<Subline_number/>
+<Bol_nature>23</Bol_nature>
+<Bol_type_code>001</Bol_type_code>
+<Master_bol_ref_number/>
+<Unique_carrier_reference/>
+</Bol_id>
+<Load_unload_place>
+<Original_place_of_loading_code>BEANR</Original_place_of_loading_code>
+<Place_of_loading_code>BEANR</Place_of_loading_code>
+<Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+</Load_unload_place>
+<Traders_segment>
+<Exporter>
+<Exporter_name>shipper sjkdfkjsd skdfksld</Exporter_name>
+<Exporter_address>ksdjfsdf sd sd jfklsd jfk
+sdfsd hfkjsdhfjksd
+</Exporter_address>
+</Exporter>
+<Notify>
+<Notify_code/>
+<Notify_name>same as consignee</Notify_name>
+<Notify_address>
+</Notify_address>
+</Notify>
+<Consignee>
+<Consignee_code/>
+<Consignee_name>consignee sdjhsdfjksd skdfs</Consignee_name>
+<Consignee_address>sldfjsk ksdjfklsdjfk
+</Consignee_address>
+</Consignee>
+</Traders_segment>
+<Goods_segment>
+<Number_of_packages>20</Number_of_packages>
+<Package_type_code>61</Package_type_code>
+<Gross_mass>72000.00</Gross_mass>
+<Shipping_marks>Yared dflkj
+</Shipping_marks>
+<Goods_description>stc steel hfdsgsdf
+sldfj sdjf
+</Goods_description>
+<Volume_in_cubic_meters>0</Volume_in_cubic_meters>
+<Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+<Information/>
+</Goods_segment>
+<Value_segment>
+<Freight_segment>
+<PC_indicator></PC_indicator>
+<Freight_currency/>
+</Freight_segment>
+<Customs_segment>
+<Customs_currency/>
+</Customs_segment>
+<Insurance_segment>
+<Insurance_currency/>
+</Insurance_segment>
+<Transport_segment>
+<Transport_currency/>
+</Transport_segment>
+</Value_segment>
+<Location>
+<Location_code></Location_code>
+<Location_info/>
+</Location>
+</Bol_segment>
+<Bol_segment>
+<Bol_id>
+<Bol_reference>STL003</Bol_reference>
+<Line_number>3</Line_number>
+<Subline_number/>
+<Bol_nature>23</Bol_nature>
+<Bol_type_code>001</Bol_type_code>
+<Master_bol_ref_number/>
+<Unique_carrier_reference/>
+</Bol_id>
+<Load_unload_place>
+<Original_place_of_loading_code>ITBCI</Original_place_of_loading_code>
+<Place_of_loading_code>ITBCI</Place_of_loading_code>
+<Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+</Load_unload_place>
+<Traders_segment>
+<Exporter>
+<Exporter_name>shipper sjkdfkjsd skdfksld</Exporter_name>
+<Exporter_address>ksdjfsdf sd sd jfklsd jfk
+sdfsd hfkjsdhfjksd
+</Exporter_address>
+</Exporter>
+<Notify>
+<Notify_code/>
+<Notify_name>same as consignee</Notify_name>
+<Notify_address>
+</Notify_address>
+</Notify>
+<Consignee>
+<Consignee_code/>
+<Consignee_name>consignee sdjhsdfjksd skdfs</Consignee_name>
+<Consignee_address>sldfjsk ksdjfklsdjfk
+</Consignee_address>
+</Consignee>
+</Traders_segment>
+<Goods_segment>
+<Number_of_packages>10</Number_of_packages>
+<Package_type_code>61</Package_type_code>
+<Gross_mass>10000.00</Gross_mass>
+<Shipping_marks>jsdhf skjdhfkjsdfh
+sdjj sdf j klsd
+</Shipping_marks>
+<Goods_description>sjfs sldkjlksdjf
+</Goods_description>
+<Volume_in_cubic_meters>0</Volume_in_cubic_meters>
+<Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+<Information/>
+</Goods_segment>
+<Value_segment>
+<Freight_segment>
+<PC_indicator></PC_indicator>
+<Freight_currency/>
+</Freight_segment>
+<Customs_segment>
+<Customs_currency/>
+</Customs_segment>
+<Insurance_segment>
+<Insurance_currency/>
+</Insurance_segment>
+<Transport_segment>
+<Transport_currency/>
+</Transport_segment>
+</Value_segment>
+<Location>
+<Location_code></Location_code>
+<Location_info/>
+</Location>
+</Bol_segment>
+</Awmds>

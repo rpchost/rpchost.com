@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /EconomicCalendar.aspx
+Disallow: /ForexCalendar.aspx
+Disallow: /SqwakBoxHist.aspx

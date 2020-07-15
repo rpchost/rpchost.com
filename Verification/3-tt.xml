@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AsycudaWorld_Manifest id="37">
+<Identification_segment>
+<Voyage_number>104</Voyage_number>
+<Date_of_departure>2016-11-17</Date_of_departure>
+<Customs_office_segment>
+<Code>14</Code>
+<Name>صيدا</Name>
+</Customs_office_segment>
+</Identification_segment>
+<General_segment>
+<Master_information>SAYED ELSHEKH</Master_information>
+<Manifest_type>0</Manifest_type>
+<Totals_segment>
+<Total_number_of_bols>2</Total_number_of_bols>
+<Total_numer_of_packages>69</Total_numer_of_packages>
+<Total_number_of_containers>0</Total_number_of_containers>
+<Total_gross_mass>686.92</Total_gross_mass>
+</Totals_segment>
+<Arrival_segment>
+<Date_of_arrival>11/3/08</Date_of_arrival>
+<Time_of_arrival/>
+</Arrival_segment>
+<Departure_segment>
+<Place_of_departure_code>EGPSD</Place_of_departure_code>
+<Place_of_departure_name>Port Said</Place_of_departure_name>
+</Departure_segment>
+<Destination_segment>
+<Place_of_destination_code>LBSAY</Place_of_destination_code>
+<Place_of_destination_name>Sayda</Place_of_destination_name>
+</Destination_segment>
+<Carrier_segment>
+<Carrier_code>01271913</Carrier_code>
+<Carrier_name>الشركة اللبنانية للتجارة العامة ت0</Carrier_name>
+<Carrier_address>الجنوب, صيدا, صيدا
+الدكرمان
+رياض الصلح</Carrier_address>
+</Carrier_segment>
+<Shipping_Agent_segment>
+<Shipping_Agent_code>
+<null/>
+</Shipping_Agent_code>
+<Shipping_Agent_name>
+<null/>
+</Shipping_Agent_name>
+</Shipping_Agent_segment>
+<Transport_segment>
+<Name_of_transporter>SUZY</Name_of_transporter>
+<Place_of_transporter>
+<null/>
+</Place_of_transporter>
+<Mode_of_transport_segment>
+<Code>1</Code>
+<Name>بحر</Name>
+</Mode_of_transport_segment>
+<Nationality_of_transport_segment>
+<Code>KM</Code>
+<Name>كوموروس</Name>
+</Nationality_of_transport_segment>
+<Transporter_registration_segment>
+<Registration_number>
+<null/>
+</Registration_number>
+<Registration_date/>
+</Transporter_registration_segment>
+</Transport_segment>
+<General_segment>
+<Tonnage_segment>
+<Tonnage_gross/>
+<Tonnage_net/>
+</Tonnage_segment>
+<Tonnage_last_discharge/>
+</General_segment>
+</General_segment>
+</AsycudaWorld_Manifest>

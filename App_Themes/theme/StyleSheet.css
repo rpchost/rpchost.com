@@ -1,0 +1,425 @@
+﻿.hbody
+{
+	
+		scrollbar-face-color:8C8C8C;
+		scrollbar-highlight-color:000000;
+		
+		
+		scrollbar-shadow-color: 000000;
+		scrollbar-arrow-color:CFD0D0;
+		scrollbar-track-color: cccccc;
+		scrollbar-base-color:ffffff;
+		
+		margin-left:0;
+		margin-top:0;
+	
+	
+	BACKGROUND-COLOR: White;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: .8em;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    WORD-SPACING: normal;
+    }
+    
+html {
+scrollbar-base-color: #727070;
+scrollbar-arrow-color: ffffff;
+scrollbar-track-color: #EDEBEB;
+
+scrollbar-shadow-color: black;
+scrollbar-lightshadow-color: black; 
+scrollbar-darkshadow-color: EDEBEB;
+
+scrollbar-highlight-color: D2D0D0;
+scrollbar-3dlight-color: black;
+    
+  
+  height: 100%;
+
+}
+body
+{
+  height: 100%;
+}
+
+.Norm
+{
+	color: Green;
+	font-family:Arial;
+	font-size: 13;
+}
+
+.bord
+{
+	 background-color:E1DDCD;
+}
+.Build
+{
+	font-size:11pt; 
+	color:a18a08;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+	
+}
+.Buildblue
+{
+	font-size:11pt; 
+	color:#5273bd;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+	
+}
+.News
+{
+	font-size:10pt; 
+	color:a18a08;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+}
+
+.News:hover
+{
+	font-size:10pt; 
+	color:#5273bd;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:underline;
+}
+
+.FontRegister
+{
+	color: Green;
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size: 13;
+    font-weight:bold;
+    
+}
+
+.FontDev
+{
+	font-style:normal;
+	font-family:Arial;
+	font-weight:bold;
+	color:#033dd0;
+	font-size:13px;
+}
+.FontDev1
+{
+	font-style:normal;
+	font-family:Arial;
+	color: Black;
+	font-size:13px;
+}
+.FooterContact
+{
+	font-style:normal;
+	font-family:Arial;
+	color: Black;
+	font-size:11px;
+	text-align:center;
+}
+.alertsbg
+{
+	background-color:#990000;
+	color:White;
+	font-family:Verdana;
+ font-size:10px;
+ font-weight:bold;
+ padding-left:3px;
+ 
+ text-decoration:none
+}
+.alertsbgWeek
+{
+	background-color:#990000;
+	color:White;
+	font-family:Verdana;
+ font-size:10px;
+ font-weight:bold;
+ text-align:center;
+  padding-top:3px; 
+ text-decoration:none
+}
+.alertsTitle
+{
+	
+	color:#000000;
+	font-family:Verdana;
+ font-size:11px;
+ font-weight:bold;
+ padding-left:3px;
+
+ text-decoration:none
+}
+.alertsAnalysis
+{
+	
+	color:#000000;
+	font-family:Verdana;
+ font-size:11px;
+ font-weight:normal;
+ padding-left:3px;
+
+ text-decoration:none
+}
+
+.HeightTD
+{
+	height:466px;
+}
+
+
+.AnthemGridView
+{
+border-color :Blue ;
+Border-Width : 2;
+background:"#C1BFBF";
+font-style:normal;
+Font-Size:"8";
+font-weight:bold;
+font-family:Verdana;
+}
+
+
+
+.head000 {font-size:10pt; color:a18a08; font-weight:bold; font-family :Arial;text-align:left; text-decoration:none;}
+.head00 {font-size:9pt;font-family :arial; color:000000; font-weight:normal; font-family :Arial;text-align:left; text-decoration:none;}
+.head00Ar {font-size:12pt;font-family :arial; color:000000; font-weight:BOLD; font-family :Arial;text-align:right; text-decoration:none;}
+.head01{font-size:10pt; color:1b2f5c; font-weight:bold; font-family :Arial;text-align:left;}
+.head01Ar{font-size:15pt; color:1b2f5c; font-weight:bold; font-family :Arial;text-align:right;}
+.head02{font-size:8pt; color:a18a08 ; font-family :Arial;text-align:left;font-weight:bold;}
+.head03{font-size:12pt; font-family :Arial;text-align:center;font-weight:bold;}
+.head03Ar{font-size:13.1pt; font-family :Arial;text-align:center;font-weight:normal;}
+	
+	.TDRightHeader1
+	{
+		background-color: #ffce00;
+	}
+	.TDRightHeader2
+	{ 
+		background-color: #808AAD;
+	}
+	.TDRightHeader2Ar
+	{ 
+		background-color: #808AAD;
+	}
+	
+	.TDRightHeader3
+	{ 
+		background-color: #F1F1F1;
+		 
+	}
+	
+	.TDRightHeader33
+	{ 
+		background-color: 740000;
+	}
+	
+	.TDRightHeader4
+	{ 
+		 background-color: #ceefde;
+		 font-size:11;
+		 font-family:Arial;
+	}
+	.headerLeft2 { FONT-SIZE: 8pt; COLOR:#0000FF; FONT-FAMILY: Arial }
+	.headerLeft0 { FONT-SIZE: 11pt; COLOR:#327317; FONT-FAMILY: Arial; FONT-WEIGHT : bolder;  font-style:italic; text-decoration:underline }
+	.headerLeft1 { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #327317; FONT-FAMILY: Arial }
+
+    .index1 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #2d33bb; FONT-FAMILY: Arial }
+	.index2 { FONT-SIZE: 10pt; COLOR: #145acd; FONT-FAMILY: Arial }
+	.index3 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial }
+	.index4 { FONT-SIZE: 8pt; COLOR: #2d33bb; FONT-FAMILY: Arial }
+	.index5 { FONT-SIZE: 10pt; COLOR: #327317; FONT-FAMILY: Arial }
+	.index6 { FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #327317; FONT-FAMILY: Arial }
+	.GreenText { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #4EA823; FONT-FAMILY: Arial; text-decoration:underline }
+	.MaroonText { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #a50316; FONT-FAMILY: Arial}
+	.WhiteText{FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	.WhiteTextAr{FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	
+	
+	.INPUTBUTTON {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:  Blue;
+	border: 1px solid #336699;
+	background-color:  FFCC66 ;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;	
+    color:  Blue;
+    font-style:normal;
+    font-weight:bold;
+    }
+    
+    .INPUTBUTTON_10 {FONT: 10px Tahoma, Verdana, sans-serif;
+	COLOR:  Blue;
+	border: 1px solid #336699;
+	background-color:  FFCC66 ;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;	
+    color:  Blue;
+    font-style:normal;
+    font-weight:bold;
+    }
+    
+    .INPUTBUTTONNew {border-left: thin solid Gray;
+	border-right: thin solid Gray;
+	border-top: 1px solid #336699;
+	border-bottom: 1px solid Gray;
+	background-color:Silver;
+		font-style:normal;
+    	font-weight:bold;
+	font-variant: normal;
+	font-size: 12px;
+	line-height: normal;
+	font-family: Tahoma, Verdana, sans-serif;
+		width: 22px;
+}
+    
+      .INPUTTEXT {FONT: 18px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    	
+     }
+     
+       .INPUTTEXTRED {FONT: 12px Tahoma, Verdana, bold;
+                      
+                      
+	COLOR:green;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    	
+     }
+    
+     
+     .BlueTextNews{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none;}
+     .BlueTextNews:Hover{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+     
+    .INPUTTEXTbtn {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:blue;
+	font-weight:bold;
+	border: 1px solid #336699;
+	background-color: #ffce00;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    
+    cursor:hand;
+    width:105px;
+    	
+     }
+     
+     
+     .INPUTHeaderAnthGridV {FONT: 10px Tahoma, Verdana, sans-serif;
+	COLOR:black;
+	font-weight:bold;
+	border: 1px solid #336699;
+	background-color: #EAAB27;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    
+    cursor:hand;
+    width:105px;
+    	
+     }
+     
+      .INPUTChildGridV {FONT: 10px Tahoma, Verdana, sans-serif;
+	COLOR:black;
+	font-weight:bold;
+	border: 1px solid #336699;
+	background-color: #B6B6B6;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    
+    cursor:hand;
+    width:105px;
+    	
+     }
+     
+     .InfoMail{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none}
+     .InfoMail:hover{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR:#009899; FONT-FAMILY: Arial; text-decoration:none}
+     
+     .LNewsAr{FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #0000FF; FONT-FAMILY: verdana; text-decoration:none}
+     
+    
+	.BlueText{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none}
+	.BlueTextAr{FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none}
+	.BlueSmallText{FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlueSmallText8{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.MaroonSmallText8{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR:Maroon; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlueSmallText8Und{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial;}
+	.BlueSmallTextLine{FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlackSmallText8{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText9{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText10{FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	
+	.BlackSmallText11{FONT-WEIGHT: normal; FONT-SIZE: 11pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	
+	 BlackSmallText13{FONT-WEIGHT: bold; FONT-SIZE: 14pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	
+	.BlackSmallText{FONT-WEIGHT: normal; FONT-SIZE: 7.5pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlueTextHand{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlackTextBold { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial;
+	margin-right: 0px;}
+	.BlackTextBold7 { FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial;
+	margin-right: 0px;}
+	.BlackTextBoldAr { FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial }
+	.BlacknormalText{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlacknormalTextAr{FONT-WEIGHT: normal; FONT-SIZE: 11pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.RednormalText{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #C61818; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackTextBold10{FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.RedTextBold { FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #CF2030; FONT-FAMILY: Arial }
+	.mimistyle{ FONT-FAMILY: Arial;color:"#3100ce";FONT-SIZE: 12pt;FONT-WEIGHT: bold; }
+    .Greentext1{ background:"#84ce9c";FONT-WEIGHT: bold;FONT-SIZE: 9pt;}
+    .Bluesmalltext7{FONT-WEIGHT: normal;FONT-SIZE: 6pt;FONT-FAMILY: Arial;color:Blue}
+    .bluetext1{FONT-WEIGHT: normal;FONT-SIZE: 7pt;COLOR:Blue} 
+    .HeaderUserName{FONT-WEIGHT: bold;FONT-SIZE: 8pt;COLOR:blue;FONT-FAMILY: Arial } 
+    .HeaderUserNameAr{FONT-WEIGHT: bold;FONT-SIZE: 10pt;COLOR:blue;FONT-FAMILY: Arial } 
+    .text{color:"#9c0000";FONT-WEIGHT: bold;FONT-SIZE: 10pt;FONT-FAMILY: Arial }
+    .backButt{ background :"#ffce00"; color:Blue; font-family:Arial; font-style: normal;}
+    .BlackTextBoldItalic { FONT-WEIGHT: bold; FONT-SIZE: 9pt;  COLOR: #000000; FONT-FAMILY: Arial }
+	.SmallWhiteText{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	
+	.MenuSub1 { color:#000000; font-size:15px; font-weight:bold; font-family:Arial; TEXT-DECORATION: blink; }
+	.MenuSub1:Hover { color:#808AAD; font-weight:bold; font-size:15px; font-family:Arial; TEXT-DECORATION: blink; }

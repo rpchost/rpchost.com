@@ -1,0 +1,592 @@
+﻿<!-- #include file="HexGadgets.inc.vbs.asp" -->
+<!-- #include file="HexDns.inc.vbs.asp" -->
+<!-- #include file="HexTcpQuery.inc.vbs.asp" -->
+<!-- #include file="Whois.inc.vbs.asp" -->
+<!-- #include file="UtilityVars.inc.vbs.asp" -->
+<%
+'// Domain Check engine
+'// version 2006-07-17
+'// 
+'// Checks the availability of any domain name
+'// under any TLD.
+'//
+'// Use with Utility.inc.vbs.asp
+'//
+'// Inputs:
+'//
+'// HexGadgets (components) required:
+'//   - HexDns
+'//   - HexTcpQuery (for Whois.inc.vbs.asp)
+'// Info: http://www.HexGadgets.com/
+'// Download: http://www.hexillion.com/download/HexGadgets.exe
+'//
+'// Other dependencies:
+'//   - HexGadgets.inc.vbs.asp
+'//   - HexDns.inc.vbs.asp
+'//   - Whois.inc.vbs.asp
+'//   - UtilityVars.inc.vbs.asp
+'//   - VBScript 5.0 or later
+'//     Get the latest at http://msdn.microsoft.com/scripting/
+'//
+'// History:
+'// 2006-07-17  Switched back to using standard (local) DNS servers
+'// 2003-09-01  Fixed: Whois server response wasn't HTML-encoded
+'// 2003-04-15  Added DNS test and combined conclusion
+'// 2001-05-06  Created (rewrite of original AspCheckDomain)
+'//
+'// Copyright 2001-2006 Hexillion Technologies. All rights reserved.
+'// 
+'// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY
+'// OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+'// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTIBILITY AND/OR
+'// FITNESS FOR A PARTICULAR PURPOSE.
+
+Class DomainCheck
+
+	property Get Name()
+		Name = "Domain Check"
+    End Property
+
+	property Get Desc()
+		Desc = "See if a domain is available"
+    End Property
+
+	property Get ViewSourceURL()
+		ViewSourceURL = "http://www.hexillion.com/samples/view_src.asp?name=DomainCheck.inc.vbs.asp"
+    End Property
+
+	property Get DownloadSourceURL()
+		DownloadSourceURL = "http://www.hexillion.com/samples/#DomainCheck"
+    End Property
+
+    Private m_oDns       '// HexDns.Connection object
+    Private m_oLkup      '// HexDns.Lookup object
+    Private m_oWhois     '// Whois object
+    Private m_lDnsErr    '// HexDns license error
+    Private m_lTcpqErr   '// HexTcpQuery license error
+
+    Private m_sDomain    '// Domain to check
+    Private m_lAddr      '// IP addr derived from input addr
+    Private m_sTLD       '// TLD from domain
+    Private m_sRoot      '// Section of domain for use in queries
+
+    Private Sub Class_Initialize()
+        '// Create objects
+        m_oDns = Server.CreateObject("HexDns.Connection")
+        m_oLkup = Server.CreateObject("HexDns.Lookup")
+        m_oWhois = New Whois
+
+        '// Save license error codes
+        m_lDnsErr = m_oDns.Error
+        m_lTcpqErr = m_oWhois.Error
+
+        '// Leave other members uninitialized
+        '// to indicate input has not been processed
+
+        '// Initialize display strings
+        HexDnsInit()
+    End Sub
+
+
+    Private Sub Class_Terminate()
+        m_oWhois = Nothing
+        m_oLkup = Nothing
+        m_oDns = Nothing
+    End Sub
+
+
+    Sub WriteForm()
+        '// Check for form input, set defaults
+        m_sDomain = GetVar(m_sDomain, "domain", c_varDomain, null)
+        m_sDomain = GetVar(m_sDomain, c_varNone, c_varDerivedDomain, "internet.co.uk")
+
+        WriteLn("<form method=""POST"" action=""" & request("SCRIPT_NAME") & """>")
+        WriteLn("<table cellpadding=""5"" cellspacing=""0"" border=""0"">")
+        WriteLn("	<tr>")
+        WriteLn("		<td>www.</td>")
+        WriteLn("		<td class=""bugfix""><input type=""text"" name=""domain"" size=""25"" value=""" & server.HTMLEncode(m_sDomain) & """></td>")
+        WriteLn("		<td><input border=""0"" src=""btn_go.gif"" name=""go"" type=""image"" width=""35"" height=""21"" align=""absmiddle""></td>")
+        WriteLn("	</tr>")
+        WriteLn("</table>")
+        WriteLn("</form>")
+    End Sub
+
+
+    Sub WriteOutput()
+        If "" <> request("domain") Then DoCheckDomain()
+
+        '// Main work is put off in separate routine
+        '// so "exit sub" statements won't skip the following
+        WriteLicenseWarning("HexTcpQuery", m_oWhois.TcpQueryObj, m_lTcpqErr)
+        WriteLicenseWarning("HexDns", m_oDns, m_lDnsErr)
+    End Sub
+
+    '// Use this method to check domains from your own code.
+    '// It returns a DomainCheckResult object (defined below).
+    Function Check(ByVal sDomain)
+        '// Condition input
+        '// May want to check for "http://" or "www" here
+        sDomain = trim(sDomain)
+
+        Dim iWhoisResult, iDnsResult, iConclusion, sComment
+
+        '// Use dictionaries for function outputs
+        Dim WhoisOut, DnsOut
+        WhoisOut = server.CreateObject("Scripting.Dictionary")
+        DnsOut = server.CreateObject("Scripting.Dictionary")
+
+        '// Do tests
+        iDnsResult = DoDnsTest(sDomain, DnsOut)
+        iWhoisResult = DoWhoisTest(sDomain, WhoisOut)
+
+        If resultTaken = iDnsResult Or resultTaken = iWhoisResult Then
+            iConclusion = resultTaken
+            sComment = "The domain has been registered. However, the registrant may offer it for sale."
+
+        ElseIf resultAvailable = iWhoisResult Or resultAvailable = iDnsResult Then
+            iConclusion = resultAvailable
+            sComment = "The domain appears to be available for registration.<p>It's possible you won't be able to register the domain because it is:</p>" & _
+                       "<ul>" & _
+                       "<li>Disallowed for some reason (too short, too long, invalid characters, etc.)</li>" & vbcrlf & _
+                       "<li>In the middle of the registration process</li>" & vbcrlf & _
+                       "<li>Already registered but ""on hold"" for non-payment</li>" & vbcrlf & _
+                       "<li>Already registered but not listed or used</li>" & vbcrlf & _
+                       "<li>Already registered but not visible due to DNS misconfiguration</li>" & vbcrlf & _
+                       "</ul><p>You will need to check with your domain registrar for the final word.</p>"
+
+        Else
+            iConclusion = resultInconclusive
+            sComment = "Could not determine the domain's status."
+        End If
+
+        '// Build result object
+        Dim result
+        result = New DomainCheckResult
+        result.DnsResult = iDnsResult
+        result.DnsComment = DnsOut("sComment")
+        result.WhoisResult = iWhoisResult
+        result.WhoisComment = WhoisOut("sComment")
+        result.WhoisText = WhoisOut("sWhoisText")
+        result.ConclusionResult = iConclusion
+        result.ConclusionComment = sComment
+
+        Check = result
+    End Function
+
+
+    Private Sub DoCheckDomain()
+
+        '// Condition input
+        '// May want to check for "http://" or "www" here
+        m_sDomain = trim(m_sDomain)
+
+        '// Set cookie
+        InitCookieVars()
+        SetVar(c_varDomain, m_sDomain)
+
+        '// Tell user we're working on it		
+        Response.Write("<p>Checking domain availability...</p>")
+        Response.Flush()
+
+        '// Do the tests
+        Dim oResult
+        oResult = Check(m_sDomain)
+
+        '// Print results
+        Response.Write("<h3>Results</h3>")
+        Response.Write("<table cellpadding=""5"" cellspacing=""0"" border=""0"">")
+        Response.Write("<tr><td align=""right"" valign=""top"">from DNS:</td><td>")
+        Select Case oResult.DnsResult
+            Case resultInconclusive
+                Response.Write("<b>Inconclusive</b>. ")
+                Response.Write(oResult.DnsComment)
+            Case resultAvailable
+                Response.Write("<b>Available</b>. ")
+            Case resultTaken
+                Response.Write("<b>Taken</b>. ")
+        End Select
+        Response.Write("</td></tr>")
+        Response.Write("<tr><td align=""right"" valign=""top"">from Whois:</td><td>")
+        Select Case oResult.WhoisResult
+            Case resultInconclusive
+                Response.Write("<b>Inconclusive</b>. ")
+                Response.Write(oResult.WhoisComment)
+            Case resultAvailable
+                Response.Write("<b>Available</b>. ")
+            Case resultTaken
+                Response.Write("<b>Taken</b>. ")
+        End Select
+        Response.Write("</td></tr>")
+        Response.Write("</td></tr>")
+        Response.Write("<tr><td align=""right"" valign=""top"">conclusion:</td><td>")
+        Select Case oResult.ConclusionResult
+            Case resultInconclusive
+                Response.Write("<b>Inconclusive</b>. ")
+            Case resultAvailable
+                Response.Write("<b><font color=""green"">Available</font></b>. ")
+            Case resultTaken
+                Response.Write("<b><font color=""red"">Taken</font></b>. ")
+        End Select
+        Response.Write(oResult.ConclusionComment)
+
+        '// If there might be a web site...
+        If resultTaken = oResult.ConclusionResult And resultAvailable <> oResult.DnsResult Then
+            '// Provide a link
+            'Response.Write "<br>Web site: <a href=""http://www." & m_sDomain & """>www</a>.<a href=""http://" & m_sDomain & """>" & m_sDomain & "</a>"
+            Response.Write("<p>Web site: <a href=""http://www." & m_sDomain & "/"">http://www." & m_sDomain & "/</a></p>")
+        End If
+
+        Response.Write("</td></tr>")
+        Response.Write("</table>")
+
+        '// If there's Whois output...
+        If len(oResult.WhoisText) Then
+            '// Display it
+            Response.Write("<h3>Whois output</h3><pre>")
+            Response.Write(Server.HTMLEncode(oResult.WhoisText) & "</pre>")
+        End If
+    End Sub
+
+
+    Private Function DoWhoisTest(ByVal sDomain, ByVal WhoisOut)
+        WhoisOut("sWhoisText") = ""
+        WhoisOut("lError") = 0
+        WhoisOut("sComment") = ""
+        WhoisOut("sRegistrarServer") = ""
+        WhoisOut("sWhoisServer") = ""
+
+        '// Find the Whois server for the domain
+        Dim sServer
+        sServer = m_oWhois.GetServer(sDomain)
+        If 0 = len(sServer) Then
+            DoWhoisTest = resultInconclusive
+            WhoisOut("lError") = m_oWhois.Error
+            WhoisOut("sComment") = m_oWhois.ErrorString
+            Exit Function
+        End If
+        WhoisOut("sWhoisServer") = sServer
+
+        '// Get the IP address for the server
+        Dim lAddr
+        lAddr = m_oLkup.LookUp(sServer)
+
+        '// If no IP addr...
+        If 0 = lAddr Then
+            DoWhoisTest = resultInconclusive
+            WhoisOut("lError") = m_oLkup.Error
+            WhoisOut("sComment") = "DNS lookup for <span class=""ipaddr"">" & _
+                       Server.HTMLEncode(sServer) & _
+                       "</span> failed: <b>" & _
+                       GetDnsErrorString(m_oLkup.Error) & "</b>"
+            Exit Function
+        End If
+
+        '// Build query string
+        Dim bInternic, sQuery, sResponse
+        sQuery = sDomain
+        bInternic = m_oWhois.IsInternicDom(sDomain)
+        If bInternic Then sQuery = "dom " & sQuery
+
+        '// Query the server
+        sResponse = m_oWhois.Query(lAddr, sQuery)
+        WhoisOut("sWhoisText") = sResponse
+
+        '// Try to interpret the result
+        '// If it's an InterNIC domain...
+        If bInternic Then
+
+            '// Interpretation is straightforward
+            If instr(1, sResponse, "Whois Server:") Then
+                DoWhoisTest = resultTaken
+                WhoisOut("sComment") = "The domain has definitely been registered. " & _
+                                "However, the registrant may be offering it for sale."
+
+            ElseIf instr(1, sResponse, "No match") Then
+                DoWhoisTest = resultAvailable
+
+            Else
+                DoWhoisTest = resultInconclusive
+                If m_oWhois.Error Then
+                    WhoisOut("lError") = m_oWhois.Error
+                    WhoisOut("sComment") = m_oWhois.ErrorString
+                Else
+                    WhoisOut("sComment") = "Could not interpret Whois results. Consult the DNS results or look for Whois output below."
+                End If
+            End If
+
+        Else
+            '// Non-Internic domains are harder because the whois
+            '// output varies all over the map. We'll just have
+            '// to make some educated guesses.
+            Dim aNegPhrases, aPosPhrases
+            aNegPhrases = Array( _
+                                 "no match", _
+                                 "no entries", _
+                                 "not found", _
+                                 "no data", _
+                                 "no such domain", _
+                                 "not a registered", _
+                                 "no encontr", _
+                                 "do not have an entry", _
+                                 "no entry", _
+                                 "no relevent", _
+                                 "no existe", _
+                                 "nomatch", _
+                                 "220 Available", _
+                                 "no information" _
+                               )
+
+            aPosPhrases = Array( _
+                                 "Organization:", _
+                                 "Name server:", _
+                                 "Name servers listed", _
+                                 "nserver", _
+                                 "record last updated", _
+                                 "Registrant:", _
+                                 "[Registrant]", _
+                                 "registrant_contact", _
+                                 "admin-c", _
+                                 "tech-c", _
+                                 "domainname.name:", _
+                                 "Technical Contact", _
+                                 "Contacto Tecnico", _
+                                 "Creation Date:", _
+                                 "Domain information" _
+                               )
+
+
+            If PhraseMatch(sResponse, aPosPhrases) Then
+                DoWhoisTest = resultTaken
+                WhoisOut("sComment") = "The domain is taken"
+
+            ElseIf PhraseMatch(sResponse, aNegPhrases) Then
+                DoWhoisTest = resultAvailable
+
+            Else
+                DoWhoisTest = resultInconclusive
+                If m_oWhois.Error Then
+                    WhoisOut("lError") = m_oWhois.Error
+                    WhoisOut("sComment") = "Whois query failed: <b>" & m_oWhois.ErrorString & "</b>"
+                Else
+                    WhoisOut("sComment") = "Could not interpret the Whois output. Consult the DNS results or look for the Whois output below."
+                End If
+            End If
+
+        End If
+
+    End Function
+
+
+    '// Find one of an array of phrases in a string
+    Private Function PhraseMatch(ByVal s, ByVal aPhrases)
+        PhraseMatch = False
+        Dim sPhrase
+        For Each sPhrase In aPhrases
+            If instr(1, s, sPhrase, vbTextCompare) Then
+                PhraseMatch = True
+                Exit For
+            End If
+        Next
+    End Function
+
+
+    Private Function DoDnsTest(ByVal sDomain, ByVal DnsOut)
+        DnsOut("lError") = 0
+        DnsOut("sComment") = ""
+
+        '// Check for default server
+        If 0 = m_oDns.RemoteAddr Then
+            DoDnsTest = resultInconclusive
+            DnsOut("sComment") = "Could not perform DNS test because HexDns " & _
+                                    "does not have a DNS server address. " & _
+                                    "You can specify DNS servers in " & _
+                                    "the Windows TCP/IP properties or set the " & _
+                                    "HexDns Connection.RemoteAddr property " & _
+                                    "directly."
+            Exit Function
+        End If
+
+        Dim aServers, sServer, oResponse
+
+        '// Uncomment this to use some DNS servers
+        '// that recognize "alternative" TLDs in addition
+        '// to the standard TLDs.
+        '		aServers = Array( m_oLkup.StringToAddr( "192.147.236.1" ),  _
+        '		                  m_oLkup.StringToAddr( "204.80.125.130" ), _
+        '		                  m_oLkup.StringToAddr( "199.166.31.3" ) )
+
+        aServers = m_oDns.ServerAddrs
+
+        '// Tune down the timeout a bit	                 
+        m_oDns.Timeout = 4000
+
+        '// Loop through the servers		                 
+        For Each sServer In aServers
+
+            '// Set current server address
+            m_oDns.RemoteAddr = sServer
+
+            '// Query for records
+            oResponse = m_oDns.Query(sDomain, hexDnsTypeNS)
+
+            '// If there was a communication error...
+            If hexDnsErrSuccess <> m_oDns.Error Then
+                '// Do nothing
+                '// Fall through and try next server
+
+                '// Else if there was an error from the server...
+            ElseIf hexDnsMsgRcodeSuccess <> oResponse.ResponseCode Then
+
+                '// If it was a domain-not-found error...
+                If hexDnsMsgRcodeNameError = oResponse.ResponseCode Then
+                    '// The domain is available
+                    DoDnsTest = resultAvailable
+
+                Else
+                    '// Something else went wrong
+                    DnsOut("sComment") = "DNS server returned an error: <b>" & GetMsgRcodeString(oResponse.ResponseCode) & "</b>"
+                    DoDnsTest = resultInconclusive
+
+                End If
+
+                '// We're finished
+                Exit For
+
+            Else
+                '// No errors, so domain was found
+
+                '// Did we receive any nameservers?
+                '// Scan answer records
+                Dim lIndex, oRec, bFound
+                lIndex = oResponse.AnswerRecords.Count
+                Do While lIndex > 0
+                    If hexDnsTypeNS = oResponse.AnswerRecords(lIndex).Type Then
+                        bFound = True
+                        Exit Do
+                    End If
+                    lIndex = lIndex - 1
+                Loop
+
+                If Not bFound Then
+                    '// Scan authority records
+                    lIndex = oResponse.AuthRecords.Count
+                    Do While lIndex > 0
+                        If hexDnsTypeNS = oResponse.AuthRecords(lIndex).Type Then
+                            bFound = True
+                            Exit Do
+                        End If
+                        lIndex = lIndex - 1
+                    Loop
+                End If
+
+                '// If we didn't get any nameservers...
+                If Not bFound Then
+
+                    '// The domain must be available
+                    '// We probably didn't get a domain-not-found error because
+                    '// the TLD nameserver has a wildcard A record that points
+                    '// to the registration web site.
+                    DoDnsTest = resultAvailable
+
+                Else
+                    '// The domain is taken
+                    DoDnsTest = resultTaken
+                End If
+
+                '// We're finished		
+                Exit For
+
+            End If
+        Next
+
+        '// If we've finished looping through the servers
+        '// and still have an error...
+        If hexDnsErrSuccess <> m_oDns.Error Then
+            DnsOut("sComment") = "DNS query failed: <b>" & GetDnsErrorString(m_oDns.Error) & "</b>"
+            DnsOut("lError") = m_oDns.Error
+            DoDnsTest = resultInconclusive
+        End If
+
+    End Function
+
+    Private Sub WriteLn(ByVal s)
+        Response.Write(s & vbcrlf)
+    End Sub
+
+End Class
+
+
+'// Result codes
+Const resultInconclusive = 0
+Const resultAvailable = 1
+Const resultTaken = 2
+
+'// Class for holding results. Used as return value of DomainCheck.Check
+Class DomainCheckResult
+
+    Private m_iDnsResult            '// Result code from DNS check
+    Private m_sDnsComment           '// Comment from DNS check
+    Private m_iWhoisResult          '// Result code from Whois check
+    Private m_sWhoisComment         '// Comment from Whois check
+    Private m_sWhoisText            '// Raw output (if any) from Whois server
+    Private m_iConclusionResult     '// Final conclusion drawn from DNS and Whois checks
+    Private m_sConclusionComment    '// Final conclusion comment
+
+	public property Get DnsResult()
+		DnsResult = m_iDnsResult
+    End Property
+
+	public property Let DnsResult( value )
+		m_iDnsResult = value
+    End Property
+
+	public property Get DnsComment()
+		DnsComment = m_sDnsComment
+    End Property
+
+	public property Let DnsComment( value )
+		m_sDnsComment = value
+    End Property
+
+	public property Get WhoisResult()
+		WhoisResult = m_iWhoisResult
+    End Property
+
+	public property Let WhoisResult( value )
+		m_iWhoisResult = value
+    End Property
+
+	public property Get WhoisComment()
+		WhoisComment = m_sWhoisComment
+    End Property
+
+	public property Let WhoisComment( value )
+		m_sWhoisComment = value
+    End Property
+
+	public property Get WhoisText()
+		WhoisText = m_sWhoisText
+    End Property
+
+	public property Let WhoisText( value )
+		m_sWhoisText = value
+    End Property
+
+	public property Get ConclusionResult()
+		ConclusionResult = m_iConclusionResult
+    End Property
+
+	public property Let ConclusionResult( value )
+		m_iConclusionResult = value
+    End Property
+
+	public property Get ConclusionComment()
+		ConclusionComment = m_sConclusionComment
+    End Property
+
+	public property Let ConclusionComment( value )
+		m_sConclusionComment = value
+    End Property
+
+End Class
+%>

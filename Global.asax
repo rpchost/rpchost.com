@@ -1,0 +1,1 @@
+<%@ Application Inherits="rpchost.Global" Language="VB" %>

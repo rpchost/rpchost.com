@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "rpchost", ".", "{12339FAC-2F27-4A71-AA61-439FEE17C273}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/rpchost"
+		Debug.AspNetCompiler.PhysicalPath = "..\rpchost\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\rpchost\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/rpchost"
+		Release.AspNetCompiler.PhysicalPath = "..\rpchost\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\rpchost\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63830"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12339FAC-2F27-4A71-AA61-439FEE17C273}.Debug|.NET.ActiveCfg = Debug|.NET
+		{12339FAC-2F27-4A71-AA61-439FEE17C273}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

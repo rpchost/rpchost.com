@@ -1,0 +1,102 @@
+﻿Imports System.Data.OleDb
+
+Namespace rpchost
+
+
+    Partial Class Forex_Videos
+        Inherits System.Web.UI.Page
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+
+        Dim strID As String
+
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+            opExec = New cs_Operation
+            Dim str As String
+            Dim arr() As String
+
+            str = Request.QueryString("head")
+         
+            Dim reader As OleDbDataReader = opExec.rdGetReader("select * from strategy where StrategyLink like '" & str & "%' ")
+            Try
+                reader.Read()
+                If reader.HasRows = True Then
+
+                    lblHead.Text = str
+                    lblDesc.Text = reader("StrategyText")
+                    lblEmbed.Text = reader("StrategyVideo")
+                    HyperLink1.Text = "[Access youtube video directly and post your ideas and questions]"
+                    HyperLink1.NavigateUrl = reader("Field3")
+
+                    strID = reader("ID")
+
+                End If
+
+                lblText.Text = getComments(strID)
+
+            Catch ex As Exception
+                Response.Write(ex.Message)
+            Finally
+                opExec.closeConnection()
+            End Try
+        End Sub
+
+        Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+            Page.Validate()
+
+            Dim strComment As String
+
+            If Request.Form("txtComment") <> "" Then
+
+                strComment = "<b>" & Session("Name") & "</b> [ " & Today & " ]<br>" & Request.Form("txtComment") & ""
+
+                Dim con As New cs_Operation
+                con.ExecuteSql("insert into FundAlert (AlertText,AlertHeadLine) values ('" & strComment & "','" & strID & "')")
+                txtComment.Text = ""
+
+                con.closeConnection()
+
+                Response.Redirect("Forex-strategies.aspx")
+
+            End If
+
+
+        End Sub
+
+
+        Private Function getComments(ByVal strID As String) As String
+
+            Dim strRes As String = ""
+            Dim opExec As New cs_Operation
+
+            Dim reader As OleDbDataReader = opExec.rdGetReader("select * from FundAlert where AlertHeadLine = '" & strID & "' order by FundID DESC")
+            Try
+
+                If reader.HasRows = True Then
+                    While reader.Read()
+
+                        strRes = strRes & " <br> " & reader("AlertText") & "<br>"
+
+                    End While
+                End If
+
+                getComments = strRes
+
+            Catch ex As Exception
+                Response.Write(ex.Message)
+                getComments = ""
+            Finally
+                reader.Close()
+                opExec.closeConnection()
+            End Try
+
+        End Function
+
+
+    End Class
+
+  
+
+End Namespace

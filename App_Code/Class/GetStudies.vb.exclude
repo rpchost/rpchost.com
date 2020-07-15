@@ -1,0 +1,784 @@
+Imports System.Net
+Imports System
+Imports System.Reflection
+Imports System.Security.Permissions
+Imports System.Security
+Imports System.IO
+Imports System.Collections
+Imports System.Text
+Imports System.Web
+
+
+Namespace rpchost
+
+
+Public Class GetStudies
+
+    Private Shared strFilePath As String = HttpContext.Current.Server.MapPath("studies.htm")
+    Private Shared strFilePathBack As String = HttpContext.Current.Server.MapPath("studiesBack.htm")
+
+    Public tTime As String
+    Public EMA8 As String
+    Public EMA21 As String
+    Public EMA55 As String
+    Public MACDValue As String
+    Public MACDSignal As String
+    Public RSI As String
+    Public ADX As String
+    Public PosDMI As String
+    Public NegDMI As String
+
+    Public EURJPYtTime As String
+    Public EURJPYEMA8 As String
+    Public EURJPYEMA21 As String
+    Public EURJPYEMA55 As String
+    Public EURJPYMACDValue As String
+    Public EURJPYMACDSignal As String
+    Public EURJPYRSI As String
+    Public EURJPYADX As String
+    Public EURJPYPosDMI As String
+    Public EURJPYNegDMI As String
+
+    Public EURCHFtTime As String
+    Public EURCHFEMA8 As String
+    Public EURCHFEMA21 As String
+    Public EURCHFEMA55 As String
+    Public EURCHFMACDValue As String
+    Public EURCHFMACDSignal As String
+    Public EURCHFRSI As String
+    Public EURCHFADX As String
+    Public EURCHFPosDMI As String
+    Public EURCHFNegDMI As String
+
+
+    Public GbpJpytTime As String
+    Public GbpJpyEMA8 As String
+    Public GbpJpyEMA21 As String
+    Public GbpJpyEMA55 As String
+    Public GbpJpyMACDValue As String
+    Public GbpJpyMACDSignal As String
+    Public GbpJpyRSI As String
+    Public GbpJpyADX As String
+    Public GbpJpyPosDMI As String
+    Public GbpJpyNegDMI As String
+
+    Public AUDUSDtTime As String
+    Public AUDUSDEMA8 As String
+    Public AUDUSDEMA21 As String
+    Public AUDUSDEMA55 As String
+    Public AUDUSDMACDValue As String
+    Public AUDUSDMACDSignal As String
+    Public AUDUSDRSI As String
+    Public AUDUSDADX As String
+    Public AUDUSDPosDMI As String
+    Public AUDUSDNegDMI As String
+
+
+    Public Function GrabPage() As String
+        Try
+
+            'writeToHtml("http://localhost/forex/studies.html")
+            writeToHtml("http://www.actionforex.com/forex_analysis_and_forecasts/action_bias/gbpusd_200603225802/")
+            GetNumbers()
+
+
+        Catch ex As System.IO.IOException
+            HttpContext.Current.Response.Write(ex.Message)
+        Catch ex As Exception
+            'HttpContext.Current.Response.Write("At the current time there is high traffic on the server, please try again within seconds. <br><br> Traffic ...")
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            'Dispose()
+        End Try
+    End Function
+
+    Public Function GrabPageEurJpy() As String
+        Try
+
+            'writeToHtml("http://localhost/forex/studies.html")
+            writeToHtml("http://www.actionforex.com/forex_analysis_and_forecasts/action_bias/eurjpy_200603225807/")
+            GetNumbersEURJpy()
+
+
+        Catch ex As System.IO.IOException
+            HttpContext.Current.Response.Write(ex.Message)
+        Catch ex As Exception
+            'HttpContext.Current.Response.Write("At the current time there is high traffic on the server, please try again within seconds. <br><br> Traffic ...")
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            'Dispose()
+        End Try
+    End Function
+
+    Public Function GrabPageEurChf() As String
+        Try
+
+            'writeToHtml("http://localhost/forex/studies.html")
+            writeToHtml("http://www.actionforex.com/forex_analysis_and_forecasts/action_bias/eurjpy_200603225809/")
+            GetNumbersEurChf()
+
+
+        Catch ex As System.IO.IOException
+            HttpContext.Current.Response.Write(ex.Message)
+        Catch ex As Exception
+            'HttpContext.Current.Response.Write("At the current time there is high traffic on the server, please try again within seconds. <br><br> Traffic ...")
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            'Dispose()
+        End Try
+    End Function
+
+
+    Public Function GrabPageGbpJpy() As String
+        Try
+
+            'writeToHtml("http://localhost/forex/studies.html")
+            writeToHtml("http://www.actionforex.com/forex_analysis_and_forecasts/action_bias/gbpjpy_200603225810/")
+            GetNumbersGbpJpy()
+
+
+        Catch ex As System.IO.IOException
+            HttpContext.Current.Response.Write(ex.Message)
+        Catch ex As Exception
+            'HttpContext.Current.Response.Write("At the current time there is high traffic on the server, please try again within seconds. <br><br> Traffic ...")
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            'Dispose()
+        End Try
+    End Function
+
+    Public Function GrabPageAudUsd() As String
+        Try
+
+            writeToHtml("http://www.actionforex.com/forex_analysis_and_forecasts/action_bias/eurjpy_200603225805/")
+            GetNumbersAudUsd()
+
+
+        Catch ex As System.IO.IOException
+            HttpContext.Current.Response.Write(ex.Message)
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            'Dispose()
+        End Try
+    End Function
+
+    Private Function getHtml(ByVal str As String) As String
+
+        Dim objResponse As System.Net.WebResponse
+        Dim objRequest As System.Net.WebRequest
+        objRequest = HttpWebRequest.Create(str)
+        objResponse = objRequest.GetResponse()
+        Dim sr As New System.IO.StreamReader(objResponse.GetResponseStream())
+        Return sr.ReadToEnd()
+
+    End Function
+
+    Private Sub writeToHtml(ByVal Str As String)
+
+        Dim LogFile As New FileInfo(strFilePath)
+        Dim fs1 As FileStream
+        Dim w1 As StreamWriter
+
+        If LogFile.Exists Then
+
+            'Try
+            LogFile.Delete()
+            ' fs1 = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+            ' Catch ex As Exception
+            ' LogFile = New FileInfo(strFilePathBack)
+            ' fs1 = New FileStream(strFilePathBack, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+            ' End Try
+
+            fs1 = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+            fs1.Lock(0, SeekOrigin.End)
+            w1 = New StreamWriter(fs1)
+
+            w1.BaseStream.Seek(0, SeekOrigin.End)
+
+            w1.Write(getHtml(Str))
+
+            fs1.Unlock(0, SeekOrigin.End)
+
+            w1.Flush()
+
+            w1.Close()
+            fs1.Close()
+
+        End If
+
+        'Dispose()
+
+    End Sub
+
+    Private Function GetNumbers() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        fs = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "tech-table") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = ""
+        While InStr(1, strLine, "GBPUSD") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+
+        Dim arr() As String
+        Dim arrRes() As String
+
+        Try
+
+            arr = strLine.Split("<td>")
+            strLine = arr(6)
+            arr = strLine.Split(">")
+            tTime = arr(1)
+
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EMA8 = arrRes(1)
+
+            ADX = arr(8) : arrRes = ADX.Split(">") : ADX = arrRes(1)
+            MACDValue = arr(12) : arrRes = MACDValue.Split(">") : MACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EMA21 = arr(4) : arrRes = EMA21.Split(">") : EMA21 = arrRes(1)
+
+            PosDMI = arr(8) : arrRes = PosDMI.Split(">") : PosDMI = arrRes(1)
+
+            MACDSignal = arr(12) : arrRes = MACDSignal.Split(">") : MACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EMA55 = arr(4) : arrRes = EMA55.Split(">") : EMA55 = arrRes(1)
+            NegDMI = arr(8) : arrRes = NegDMI.Split(">") : NegDMI = arrRes(1)
+            RSI = arr(12) : arrRes = RSI.Split(">") : RSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        Catch ex As Exception
+
+            w = New StreamReader(fs)
+            strLine = Trim(w.ReadLine)
+            While InStr(1, strLine, ">Technical Studies<") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            ' strLine = ""
+
+            'arr = strLine.Split("<td>")
+            'strLine = arr(6)
+            'arr = strLine.Split(">")
+            tTime = System.String.Format("{0: hh:00:00 tt}", Convert.ToDateTime(Now))
+
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EMA8 = arrRes(1)
+
+            ADX = arr(8) : arrRes = ADX.Split(">") : ADX = arrRes(1)
+            MACDValue = arr(12) : arrRes = MACDValue.Split(">") : MACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EMA21 = arr(4) : arrRes = EMA21.Split(">") : EMA21 = arrRes(1)
+            PosDMI = arr(8) : arrRes = PosDMI.Split(">") : PosDMI = arrRes(1)
+            MACDSignal = arr(12) : arrRes = MACDSignal.Split(">") : MACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EMA55 = arr(4) : arrRes = EMA55.Split(">") : EMA55 = arrRes(1)
+            NegDMI = arr(8) : arrRes = NegDMI.Split(">") : NegDMI = arrRes(1)
+            RSI = arr(12) : arrRes = RSI.Split(">") : RSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        End Try
+
+        Return strLine
+
+    End Function
+
+
+    Private Function GetNumbersEurJpy() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        fs = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "tech-table") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = ""
+        While InStr(1, strLine, "EURJPY") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+
+        Dim arr() As String
+        Dim arrRes() As String
+
+        Try
+
+            arr = strLine.Split("<td>")
+            strLine = arr(6)
+            arr = strLine.Split(">")
+            EURJPYtTime = arr(1)
+
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EURJPYEMA8 = arrRes(1)
+
+            EURJPYADX = arr(8) : arrRes = EURJPYADX.Split(">") : EURJPYADX = arrRes(1)
+            EURJPYMACDValue = arr(12) : arrRes = EURJPYMACDValue.Split(">") : EURJPYMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EURJPYEMA21 = arr(4) : arrRes = EURJPYEMA21.Split(">") : EURJPYEMA21 = arrRes(1)
+            EURJPYPosDMI = arr(8) : arrRes = EURJPYPosDMI.Split(">") : EURJPYPosDMI = arrRes(1)
+            EURJPYMACDSignal = arr(12) : arrRes = EURJPYMACDSignal.Split(">") : EURJPYMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EURJPYEMA55 = arr(4) : arrRes = EURJPYEMA55.Split(">") : EURJPYEMA55 = arrRes(1)
+            EURJPYNegDMI = arr(8) : arrRes = EURJPYNegDMI.Split(">") : EURJPYNegDMI = arrRes(1)
+            EURJPYRSI = arr(12) : arrRes = EURJPYRSI.Split(">") : EURJPYRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        Catch ex As Exception
+
+            w = New StreamReader(fs)
+            strLine = Trim(w.ReadLine)
+            While InStr(1, strLine, ">Technical Studies<") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            ' strLine = ""
+
+            'arr = strLine.Split("<td>")
+            'strLine = arr(6)
+            'arr = strLine.Split(">")
+            EURJPYtTime = System.String.Format("{0: hh:00:00 tt}", Convert.ToDateTime(Now))
+
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EURJPYEMA8 = arrRes(1)
+
+            EURJPYADX = arr(8) : arrRes = EURJPYADX.Split(">") : EURJPYADX = arrRes(1)
+            EURJPYMACDValue = arr(12) : arrRes = EURJPYMACDValue.Split(">") : EURJPYMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EURJPYEMA21 = arr(4) : arrRes = EURJPYEMA21.Split(">") : EURJPYEMA21 = arrRes(1)
+            EURJPYPosDMI = arr(8) : arrRes = EURJPYPosDMI.Split(">") : EURJPYPosDMI = arrRes(1)
+            EURJPYMACDSignal = arr(12) : arrRes = EURJPYMACDSignal.Split(">") : EURJPYMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EURJPYEMA55 = arr(4) : arrRes = EURJPYEMA55.Split(">") : EURJPYEMA55 = arrRes(1)
+            EURJPYNegDMI = arr(8) : arrRes = EURJPYNegDMI.Split(">") : EURJPYNegDMI = arrRes(1)
+            EURJPYRSI = arr(12) : arrRes = EURJPYRSI.Split(">") : EURJPYRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        End Try
+
+        Return strLine
+
+    End Function
+
+
+
+    Private Function GetNumbersEurChf() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        fs = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "tech-table") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = ""
+        While InStr(1, strLine, "EURCHF") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+
+        Dim arr() As String
+        Dim arrRes() As String
+
+        Try
+
+            arr = strLine.Split("<td>")
+            strLine = arr(6)
+            arr = strLine.Split(">")
+            EURCHFtTime = arr(1)
+
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EURCHFEMA8 = arrRes(1)
+
+            EURCHFADX = arr(8) : arrRes = EURCHFADX.Split(">") : EURCHFADX = arrRes(1)
+            EURCHFMACDValue = arr(12) : arrRes = EURCHFMACDValue.Split(">") : EURCHFMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EURCHFEMA21 = arr(4) : arrRes = EURCHFEMA21.Split(">") : EURCHFEMA21 = arrRes(1)
+            EURCHFPosDMI = arr(8) : arrRes = EURCHFPosDMI.Split(">") : EURCHFPosDMI = arrRes(1)
+            EURCHFMACDSignal = arr(12) : arrRes = EURCHFMACDSignal.Split(">") : EURCHFMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EURCHFEMA55 = arr(4) : arrRes = EURCHFEMA55.Split(">") : EURCHFEMA55 = arrRes(1)
+            EURCHFNegDMI = arr(8) : arrRes = EURCHFNegDMI.Split(">") : EURCHFNegDMI = arrRes(1)
+            EURCHFRSI = arr(12) : arrRes = EURCHFRSI.Split(">") : EURCHFRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        Catch ex As Exception
+
+            w = New StreamReader(fs)
+            strLine = Trim(w.ReadLine)
+            While InStr(1, strLine, ">Technical Studies<") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            ' strLine = ""
+
+            'arr = strLine.Split("<td>")
+            'strLine = arr(6)
+            'arr = strLine.Split(">")
+            EURCHFtTime = System.String.Format("{0: hh:00:00 tt}", Convert.ToDateTime(Now))
+
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : EURCHFEMA8 = arrRes(1)
+
+            EURCHFADX = arr(8) : arrRes = EURCHFADX.Split(">") : EURCHFADX = arrRes(1)
+            EURCHFMACDValue = arr(12) : arrRes = EURCHFMACDValue.Split(">") : EURCHFMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            EURCHFEMA21 = arr(4) : arrRes = EURCHFEMA21.Split(">") : EURCHFEMA21 = arrRes(1)
+            EURCHFPosDMI = arr(8) : arrRes = EURCHFPosDMI.Split(">") : EURCHFPosDMI = arrRes(1)
+            EURCHFMACDSignal = arr(12) : arrRes = EURCHFMACDSignal.Split(">") : EURCHFMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            EURCHFEMA55 = arr(4) : arrRes = EURCHFEMA55.Split(">") : EURCHFEMA55 = arrRes(1)
+            EURCHFNegDMI = arr(8) : arrRes = EURCHFNegDMI.Split(">") : EURCHFNegDMI = arrRes(1)
+            EURCHFRSI = arr(12) : arrRes = EURCHFRSI.Split(">") : EURCHFRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        End Try
+
+        Return strLine
+
+    End Function
+
+
+    Private Function GetNumbersGbpJpy() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        fs = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "tech-table") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = ""
+        While InStr(1, strLine, "GBPJPY") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+
+        Dim arr() As String
+        Dim arrRes() As String
+
+        Try
+
+            arr = strLine.Split("<td>")
+            strLine = arr(6)
+            arr = strLine.Split(">")
+            GbpJpytTime = arr(1)
+
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : GbpJpyEMA8 = arrRes(1)
+
+            GbpJpyADX = arr(8) : arrRes = GbpJpyADX.Split(">") : GbpJpyADX = arrRes(1)
+            GbpJpyMACDValue = arr(12) : arrRes = GbpJpyMACDValue.Split(">") : GbpJpyMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            GbpJpyEMA21 = arr(4) : arrRes = GbpJpyEMA21.Split(">") : GbpJpyEMA21 = arrRes(1)
+            GbpJpyPosDMI = arr(8) : arrRes = GbpJpyPosDMI.Split(">") : GbpJpyPosDMI = arrRes(1)
+            GbpJpyMACDSignal = arr(12) : arrRes = GbpJpyMACDSignal.Split(">") : GbpJpyMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            GbpJpyEMA55 = arr(4) : arrRes = GbpJpyEMA55.Split(">") : GbpJpyEMA55 = arrRes(1)
+            GbpJpyNegDMI = arr(8) : arrRes = GbpJpyNegDMI.Split(">") : GbpJpyNegDMI = arrRes(1)
+            GbpJpyRSI = arr(12) : arrRes = GbpJpyRSI.Split(">") : GbpJpyRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        Catch ex As Exception
+
+            w = New StreamReader(fs)
+            strLine = Trim(w.ReadLine)
+            While InStr(1, strLine, ">Technical Studies<") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            ' strLine = ""
+
+            'arr = strLine.Split("<td>")
+            'strLine = arr(6)
+            'arr = strLine.Split(">")
+            GbpJpytTime = System.String.Format("{0: hh:00:00 tt}", Convert.ToDateTime(Now))
+
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : GbpJpyEMA8 = arrRes(1)
+
+            GbpJpyADX = arr(8) : arrRes = GbpJpyADX.Split(">") : GbpJpyADX = arrRes(1)
+            GbpJpyMACDValue = arr(12) : arrRes = GbpJpyMACDValue.Split(">") : GbpJpyMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            GbpJpyEMA21 = arr(4) : arrRes = GbpJpyEMA21.Split(">") : GbpJpyEMA21 = arrRes(1)
+            GbpJpyPosDMI = arr(8) : arrRes = GbpJpyPosDMI.Split(">") : GbpJpyPosDMI = arrRes(1)
+            GbpJpyMACDSignal = arr(12) : arrRes = GbpJpyMACDSignal.Split(">") : GbpJpyMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            GbpJpyEMA55 = arr(4) : arrRes = GbpJpyEMA55.Split(">") : GbpJpyEMA55 = arrRes(1)
+            GbpJpyNegDMI = arr(8) : arrRes = GbpJpyNegDMI.Split(">") : GbpJpyNegDMI = arrRes(1)
+            GbpJpyRSI = arr(12) : arrRes = GbpJpyRSI.Split(">") : GbpJpyRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        End Try
+
+        Return strLine
+
+    End Function
+
+
+    Private Function GetNumbersAudUsd() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        fs = New FileStream(strFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "tech-table") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = ""
+        While InStr(1, strLine, "AUDUSD") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+
+        Dim arr() As String
+        Dim arrRes() As String
+
+        Try
+
+            arr = strLine.Split("<td>")
+            strLine = arr(6)
+            arr = strLine.Split(">")
+            AUDUSDtTime = arr(1)
+
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : AUDUSDEMA8 = arrRes(1)
+
+            AUDUSDADX = arr(8) : arrRes = AUDUSDADX.Split(">") : AUDUSDADX = arrRes(1)
+            AUDUSDMACDValue = arr(12) : arrRes = AUDUSDMACDValue.Split(">") : AUDUSDMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            AUDUSDEMA21 = arr(4) : arrRes = AUDUSDEMA21.Split(">") : AUDUSDEMA21 = arrRes(1)
+            AUDUSDPosDMI = arr(8) : arrRes = AUDUSDPosDMI.Split(">") : AUDUSDPosDMI = arrRes(1)
+            AUDUSDMACDSignal = arr(12) : arrRes = AUDUSDMACDSignal.Split(">") : AUDUSDMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            AUDUSDEMA55 = arr(4) : arrRes = AUDUSDEMA55.Split(">") : AUDUSDEMA55 = arrRes(1)
+            AUDUSDNegDMI = arr(8) : arrRes = AUDUSDNegDMI.Split(">") : AUDUSDNegDMI = arrRes(1)
+            AUDUSDRSI = arr(12) : arrRes = AUDUSDRSI.Split(">") : AUDUSDRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        Catch ex As Exception
+
+            w = New StreamReader(fs)
+            strLine = Trim(w.ReadLine)
+            While InStr(1, strLine, ">Technical Studies<") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            ' strLine = ""
+
+            'arr = strLine.Split("<td>")
+            'strLine = arr(6)
+            'arr = strLine.Split(">")
+            AUDUSDtTime = System.String.Format("{0: hh:00:00 tt}", Convert.ToDateTime(Now))
+
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            ' strLine = Trim(w.ReadLine)
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            strLine = arr(4)
+
+            arrRes = strLine.Split(">") : AUDUSDEMA8 = arrRes(1)
+
+            AUDUSDADX = arr(8) : arrRes = AUDUSDADX.Split(">") : AUDUSDADX = arrRes(1)
+            AUDUSDMACDValue = arr(12) : arrRes = AUDUSDMACDValue.Split(">") : AUDUSDMACDValue = arrRes(1)
+
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split("</td><td>")
+            AUDUSDEMA21 = arr(4) : arrRes = AUDUSDEMA21.Split(">") : AUDUSDEMA21 = arrRes(1)
+            AUDUSDPosDMI = arr(8) : arrRes = AUDUSDPosDMI.Split(">") : AUDUSDPosDMI = arrRes(1)
+            AUDUSDMACDSignal = arr(12) : arrRes = AUDUSDMACDSignal.Split(">") : AUDUSDMACDSignal = arrRes(1)
+            strLine = Trim(w.ReadLine)
+            'strLine = Trim(w.ReadLine)
+            arr = strLine.Split("</td><td>")
+            AUDUSDEMA55 = arr(4) : arrRes = AUDUSDEMA55.Split(">") : AUDUSDEMA55 = arrRes(1)
+            AUDUSDNegDMI = arr(8) : arrRes = AUDUSDNegDMI.Split(">") : AUDUSDNegDMI = arrRes(1)
+            AUDUSDRSI = arr(12) : arrRes = AUDUSDRSI.Split(">") : AUDUSDRSI = arrRes(1)
+
+            fs.Close()
+            w.Close()
+
+        End Try
+
+        Return strLine
+
+    End Function
+
+End Class
+
+End Namespace

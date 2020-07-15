@@ -1,0 +1,17 @@
+﻿
+Imports System.IO
+
+
+Partial Class MT4_Indicators_MT4Indicators
+    Inherits System.Web.UI.Page
+
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim dirInfo As New DirectoryInfo("../MT4 Indicators")
+
+        articleList.DataSource = dirInfo.GetFiles()
+        articleList.DataBind()
+    End Sub
+
+End Class

@@ -1,0 +1,4340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Awmds>
+    <General_segment>
+        <General_segment_id>
+            <Customs_office_code>11</Customs_office_code>
+            <Voyage_number>MSC-IAAELIE4</Voyage_number>
+            <Date_of_departure>2017-01-13</Date_of_departure>
+            <Date_of_arrival>2017-01-09</Date_of_arrival>
+            <Type>IM</Type>
+        </General_segment_id>
+        <Totals_segment>
+            <Total_number_of_bols>75</Total_number_of_bols>
+            <Total_number_of_packages>47007</Total_number_of_packages>
+            <Total_number_of_containers>0</Total_number_of_containers>
+            <Total_gross_mass>2081667.70</Total_gross_mass>
+        </Totals_segment>
+        <Transport_information>
+            <Carrier>
+                <Carrier_code>00006839</Carrier_code>
+                <Carrier_name />
+                <Carrier_address />
+            </Carrier>
+            <Mode_of_transport_code>1</Mode_of_transport_code>
+            <Identity_of_transporter>E.R. ELSFLETH</Identity_of_transporter>
+            <Nationality_of_transporter_code>LR</Nationality_of_transporter_code>
+            <Place_of_transporter />
+            <Registration_number_of_transport_code />
+            <Master_information>.</Master_information>
+        </Transport_information>
+        <Load_unload_place>
+            <Place_of_departure_code>GRPIR</Place_of_departure_code>
+            <Place_of_departure_code2>ITVCE</Place_of_departure_code2>
+            <Date_of_departure2>2017-01-06</Date_of_departure2>
+            <Place_of_departure_code3>ITTRS</Place_of_departure_code3>
+            <Date_of_departure3>2017-01-04</Date_of_departure3>
+            <Place_of_departure_code4>ITRAN</Place_of_departure_code4>
+            <Date_of_departure4>2017-01-03</Date_of_departure4>
+            <Place_of_departure_code5>EGALY</Place_of_departure_code5>
+            <Date_of_departure5>2016-12-30</Date_of_departure5>
+            <Place_of_destination_code>LBBEY</Place_of_destination_code>
+        </Load_unload_place>
+        <Transit_segment>
+            <Port_of_loading />
+            <Port_of_discharge />
+            <Type>0</Type>
+            <Number>818</Number>
+            <Weight>13597380.00</Weight>
+            <Remarks>ON BOARD</Remarks>
+        </Transit_segment>
+        <Transit_segment>
+            <Port_of_loading>INKRI</Port_of_loading>
+            <Port_of_discharge>EGALY</Port_of_discharge>
+            <Type>0</Type>
+            <Number>4</Number>
+            <Weight>86220.00</Weight>
+            <Remarks>CIGARETTES</Remarks>
+        </Transit_segment>
+        <Transit_segment>
+            <Port_of_loading>INMAA</Port_of_loading>
+            <Port_of_discharge>EGALY</Port_of_discharge>
+            <Type>0</Type>
+            <Number>6</Number>
+            <Weight>145630.00</Weight>
+            <Remarks>CIGARETTES</Remarks>
+        </Transit_segment>
+        <Transit_segment>
+            <Port_of_loading>INMAA</Port_of_loading>
+            <Port_of_discharge>EGEDK</Port_of_discharge>
+            <Type>0</Type>
+            <Number>13</Number>
+            <Weight>312070.00</Weight>
+            <Remarks>CIGARETTES</Remarks>
+        </Transit_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>BMOU2067134</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2220</Tar>
+            <Seals>OCTAL023191</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>BMOU2220921</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2220</Tar>
+            <Seals>OCTAL023195</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>CAXU8077830</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25360.00</Weight>
+            <Tar>3870</Tar>
+            <Seals>EU09656019</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>FCIU8874018</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25300.00</Weight>
+            <Tar>3900</Tar>
+            <Seals>EU09656017</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>GLDU0222971</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2360</Tar>
+            <Seals>OCTAL018920</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>GLDU2108037</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023198</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>GLDU3678311</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2160</Tar>
+            <Seals>OCTAL023190</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>IPXU3167727</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2250</Tar>
+            <Seals>OCTAL023193</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU1039885</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023188</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU1058709</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023192</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU1464020</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL018919</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU3327200</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023194</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU6227925</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023200</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU6981149</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2220</Tar>
+            <Seals>OCTAL023189</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MEDU8036614</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25340.00</Weight>
+            <Tar>3940</Tar>
+            <Seals>EU09656020</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MSCU3279180</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL018917</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MSCU3751399</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2280</Tar>
+            <Seals>OCTAL023199</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MSCU7962511</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25310.00</Weight>
+            <Tar>3940</Tar>
+            <Seals>EU09656050</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>MSCU8295692</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25320.00</Weight>
+            <Tar>3990</Tar>
+            <Seals>EU09656014</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TCKU2234821</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2180</Tar>
+            <Seals>OCTAL023197</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TCLU2904073</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2200</Tar>
+            <Seals>OCTAL023187</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TEMU3460601</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2200</Tar>
+            <Seals>OCTAL018921</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TGHU1406389</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2200</Tar>
+            <Seals>OCTAL023196</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TGHU2979791</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2200</Tar>
+            <Seals>OCTAL018922</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TGHU8030890</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25310.00</Weight>
+            <Tar>3870</Tar>
+            <Seals>EU09656011</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TGHU8865142</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25300.00</Weight>
+            <Tar>3870</Tar>
+            <Seals>EU09656012</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TRHU2373173</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2180</Tar>
+            <Seals>OCTAL018916</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TRLU3921808</Ctn_reference>
+            <Type_of_container>2210</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>22700.00</Weight>
+            <Tar>2220</Tar>
+            <Seals>OCTAL018918</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+        <Transshipment_container_segment>
+            <Port_of_loading>GRPIR</Port_of_loading>
+            <Port_of_discharge>TRISK</Port_of_discharge>
+            <Ctn_reference>TRLU5721619</Ctn_reference>
+            <Type_of_container>4510</Type_of_container>
+            <Empty_Full>F</Empty_Full>
+            <Weight>25380.00</Weight>
+            <Tar>3712</Tar>
+            <Seals>EU09656018</Seals>
+            <Remarks />
+        </Transshipment_container_segment>
+    </General_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>300221132</Bol_reference>
+            <Line_number>2</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>1646</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>5974.58</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>300221360</Bol_reference>
+            <Line_number>46</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>44</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>17023.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>571646515</Bol_reference>
+            <Line_number>47</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>3400.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>571657277</Bol_reference>
+            <Line_number>3</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>34</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>1604.25</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>571676751</Bol_reference>
+            <Line_number>48</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>113</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>2228.96</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUEI723783</Bol_reference>
+            <Line_number>1</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>EGALY</Original_place_of_loading_code>
+            <Place_of_loading_code>EGALY</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>784</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>225000.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUIC115004</Bol_reference>
+            <Line_number>59</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRSKG</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>58</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>99246.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUIC115491</Bol_reference>
+            <Line_number>60</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRSKG</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>8608</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>50420.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUIC115616</Bol_reference>
+            <Line_number>61</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRSKG</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>1089</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>228145.50</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUIC116242</Bol_reference>
+            <Line_number>62</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRSKG</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>31</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>420.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUIC116341</Bol_reference>
+            <Line_number>63</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRSKG</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>56</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>8512.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUJ5399421</Bol_reference>
+            <Line_number>64</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>SAKAC</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>2970</Number_of_packages>
+            <Package_type_code>62</Package_type_code>
+            <Gross_mass>75825.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUJ5400369</Bol_reference>
+            <Line_number>65</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>SAKAC</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>990</Number_of_packages>
+            <Package_type_code>62</Package_type_code>
+            <Gross_mass>25275.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUJ5400385</Bol_reference>
+            <Line_number>66</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>SAKAC</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>990</Number_of_packages>
+            <Package_type_code>62</Package_type_code>
+            <Gross_mass>25275.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUKD487258</Bol_reference>
+            <Line_number>75</Line_number>
+            <Subline_number />
+            <Bol_nature>21</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>INMAA</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>52</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>9877.10</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11PFZ</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUKD526618</Bol_reference>
+            <Line_number>67</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>INCCU</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>335</Number_of_packages>
+            <Package_type_code>65</Package_type_code>
+            <Gross_mass>9080.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUKD534133</Bol_reference>
+            <Line_number>68</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>INTUT</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>190</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>84717.40</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUKD537896</Bol_reference>
+            <Line_number>69</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>INCCU</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>154</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>90600.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUKD539439</Bol_reference>
+            <Line_number>70</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>INTUT</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>160</Number_of_packages>
+            <Package_type_code>34</Package_type_code>
+            <Gross_mass>39200.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUPI553632</Bol_reference>
+            <Line_number>71</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRPIR</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>112</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>18190.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUPI554168</Bol_reference>
+            <Line_number>72</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRPIR</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>74</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>45303.48</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCURW788500</Bol_reference>
+            <Line_number>42</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITTRS</Original_place_of_loading_code>
+            <Place_of_loading_code>ITTRS</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>4052</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>4823.47</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCURW788690</Bol_reference>
+            <Line_number>43</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITTRS</Original_place_of_loading_code>
+            <Place_of_loading_code>ITTRS</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>1380</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>2198.20</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK039880</Bol_reference>
+            <Line_number>4</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>43</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>20493.50</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK077765</Bol_reference>
+            <Line_number>5</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>800</Number_of_packages>
+            <Package_type_code>62</Package_type_code>
+            <Gross_mass>20400.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK077997</Bol_reference>
+            <Line_number>6</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>21</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>7898.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK078292</Bol_reference>
+            <Line_number>7</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>623</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>3588.23</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK078938</Bol_reference>
+            <Line_number>8</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>430</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>2765.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK079118</Bol_reference>
+            <Line_number>9</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>797</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>18333.60</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK079357</Bol_reference>
+            <Line_number>10</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>784</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>51750.40</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK080868</Bol_reference>
+            <Line_number>11</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>75</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>1615.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK081445</Bol_reference>
+            <Line_number>12</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>1439</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>2797.54</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK083110</Bol_reference>
+            <Line_number>13</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>60</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>15692.30</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK083524</Bol_reference>
+            <Line_number>14</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>1339</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>21589.49</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK083698</Bol_reference>
+            <Line_number>15</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>49</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>9033.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK083771</Bol_reference>
+            <Line_number>16</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>48</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>3445.73</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK083854</Bol_reference>
+            <Line_number>17</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>19</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>4493.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK084019</Bol_reference>
+            <Line_number>49</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>116</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>2760.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK084050</Bol_reference>
+            <Line_number>18</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>10</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>12309.60</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK084340</Bol_reference>
+            <Line_number>19</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>775</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>6604.40</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK084480</Bol_reference>
+            <Line_number>20</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>19</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>6670.60</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK085040</Bol_reference>
+            <Line_number>21</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>290</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>3684.08</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK085339</Bol_reference>
+            <Line_number>22</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>3700.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK085511</Bol_reference>
+            <Line_number>23</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>79</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>3174.50</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK087921</Bol_reference>
+            <Line_number>24</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2370</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>23924.59</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK088135</Bol_reference>
+            <Line_number>25</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>259</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>24100.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK088143</Bol_reference>
+            <Line_number>26</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2395</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>2892.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK088150</Bol_reference>
+            <Line_number>27</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2123</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>25540.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK089240</Bol_reference>
+            <Line_number>28</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>52</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>1317.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK091428</Bol_reference>
+            <Line_number>29</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>100</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>4840.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK092400</Bol_reference>
+            <Line_number>30</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>2162</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>11837.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK095106</Bol_reference>
+            <Line_number>31</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>26</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>27050.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK095270</Bol_reference>
+            <Line_number>32</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>140</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>11535.35</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK095353</Bol_reference>
+            <Line_number>33</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>40</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>1405.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK098837</Bol_reference>
+            <Line_number>34</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>60</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>18525.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK107133</Bol_reference>
+            <Line_number>44</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITTRS</Original_place_of_loading_code>
+            <Place_of_loading_code>ITTRS</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>1380</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>25301.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK107406</Bol_reference>
+            <Line_number>45</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITTRS</Original_place_of_loading_code>
+            <Place_of_loading_code>ITTRS</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>76</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>4301.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK108495</Bol_reference>
+            <Line_number>50</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>880</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>18181.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK109071</Bol_reference>
+            <Line_number>51</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>32</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>11184.75</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK109279</Bol_reference>
+            <Line_number>52</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>72</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>21694.91</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK109683</Bol_reference>
+            <Line_number>53</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>2088</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>11185.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK110475</Bol_reference>
+            <Line_number>54</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>36</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>10142.15</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK110954</Bol_reference>
+            <Line_number>55</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>198</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>291180.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUVK114378</Bol_reference>
+            <Line_number>56</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>52</Number_of_packages>
+            <Package_type_code>24</Package_type_code>
+            <Gross_mass>52800.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUYL749853</Bol_reference>
+            <Line_number>35</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>19</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>8719.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUYL751305</Bol_reference>
+            <Line_number>57</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>250</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>6122.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>MSCUYL754994</Bol_reference>
+            <Line_number>58</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITVCE</Original_place_of_loading_code>
+            <Place_of_loading_code>ITVCE</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>7</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>11510.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL407853</Bol_reference>
+            <Line_number>73</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRPIR</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>20</Number_of_packages>
+            <Package_type_code>24</Package_type_code>
+            <Gross_mass>2600.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL409665</Bol_reference>
+            <Line_number>36</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>35</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>1992.71</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL410634</Bol_reference>
+            <Line_number>37</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>82</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>2516.20</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL413033</Bol_reference>
+            <Line_number>38</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        
+        <Goods_segment>
+            <Number_of_packages>81</Number_of_packages>
+            <Package_type_code>27</Package_type_code>
+            <Gross_mass>75820.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL413577</Bol_reference>
+            <Line_number>39</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>54</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>3261.50</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL415128</Bol_reference>
+            <Line_number>40</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>96</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>24460.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL415136</Bol_reference>
+            <Line_number>41</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>ITRAN</Original_place_of_loading_code>
+            <Place_of_loading_code>ITRAN</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        <Goods_segment>
+            <Number_of_packages>45</Number_of_packages>
+            <Package_type_code>23</Package_type_code>
+            <Gross_mass>1889.63</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+    <Bol_segment>
+        <Bol_id>
+            <Bol_reference>SGL416785</Bol_reference>
+            <Line_number>74</Line_number>
+            <Subline_number />
+            <Bol_nature>23</Bol_nature>
+            <Bol_type_code>001</Bol_type_code>
+            <Bol_value>CR</Bol_value>
+            <Master_bol_ref_number />
+            <Unique_carrier_reference />
+        </Bol_id>
+        <Bol_shipment>
+            <Bol_shipment_type>NO</Bol_shipment_type>
+        </Bol_shipment>
+        <Load_unload_place>
+            <Original_place_of_loading_code>GRPIR</Original_place_of_loading_code>
+            <Place_of_loading_code>GRPIR</Place_of_loading_code>
+            <Place_of_unloading_code>LBBEY</Place_of_unloading_code>
+        </Load_unload_place>
+        <Traders_segment>
+            <Exporter>
+                <Exporter_name>To Order</Exporter_name>
+                <Exporter_address>.</Exporter_address>
+            </Exporter>
+            <Notify>
+                <Notify_code />
+                <Notify_name>To Order</Notify_name>
+                <Notify_address>.</Notify_address>
+            </Notify>
+            <Consignee>
+                <Consignee_code />
+                <Consignee_name>To Order</Consignee_name>
+                <Consignee_address>.</Consignee_address>
+            </Consignee>
+        </Traders_segment>
+        
+        
+        <Goods_segment>
+            <Number_of_packages>35</Number_of_packages>
+            <Package_type_code>99</Package_type_code>
+            <Gross_mass>48704.00</Gross_mass>
+            <Shipping_marks>As per Container Details</Shipping_marks>
+            <Goods_description>As per Container Details</Goods_description>
+            <Num_of_ctn_for_this_bol>0</Num_of_ctn_for_this_bol>
+            <Information />
+        </Goods_segment>
+        <Value_segment />
+        <Location>
+            <Location_code>11CT</Location_code>
+            <Location_info />
+        </Location>
+    </Bol_segment>
+</Awmds>

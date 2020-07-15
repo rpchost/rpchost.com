@@ -1,0 +1,311 @@
+<%@ Control Language="vb" AutoEventWireup="false" Inherits="rightheader" CodeFile="rightheader.ascx.vb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" >
+    <title>Untitled Page</title>
+    
+    <script>
+        var simpleText = "hello_world";
+        var finalSplitText = simpleText.split("_");
+        var splitText = finalSplitText[0];
+
+        function insertText() {
+            document.getElementById('someId').InnerHTML = splitText;
+        }
+</script>
+
+</head>
+<body onload="insertText()">
+ <a href = test.html id="someId">I need the value of "splitText" variable here</a>
+ 
+		<table cellSpacing="0" cellPadding="0" width=140 border="0" height="100%">
+			<tr>
+				<td class="TDRightHeader1" vAlign="top" height="20"></td>
+			</tr>
+			<tr>
+				<td width="100%" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td vAlign="middle" width="100%" bgColor="#5273bd"  height="22"><DIV class="whitetext">&nbsp;&nbsp; 
+						Services we Offer</DIV>
+				</td>
+			</tr>
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="Login.aspx"  title="Free Forex Signal">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp;&nbsp;Control Panel</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="https://play.google.com/store/apps/details?id=com.RPCHOST.rpc"  title="ANDROID Forex Signals">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Android Signals</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="LoginSignals.aspx"  title="Free Forex Signal">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Free Forex Signals</DIV>
+					</A>
+				</td>
+			</tr>
+		
+			
+				<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="performance.aspx"  title="Performance">
+						<DIV class="head00">&nbsp;&nbsp; &nbsp;Performance</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink"  href="advertise.aspx"  title="Advertise with us">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Advertise with us</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="Ex4_To_Mq4.aspx"  title="Ex4 to Mq4 Decompiler">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Ex4 To Mq4</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="FXAS_Platform.aspx"  title="Download FXAS Automatic Trading Robot">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Download FXAS</DIV>
+					</A>
+				</td>
+			</tr>--%>
+			
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="RealAccount.aspx"  title="Download FXAS Automatic Trading Robot">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Download LIVE FXAS</DIV>
+					</A>
+				</td>
+			</tr>--%>
+			
+			
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="IssueIndicator.aspx"  title="Download JoeChalhoub_FxCrusher Rpchost.com indicator">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Download Indicator</DIV>
+					</A>
+				</td>
+			</tr>--%>
+			
+			
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="MT4Indicators.aspx"  title="Forex Indicators">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex MT4 Indicators</DIV>
+					</A>
+				</td>
+			</tr>--%>
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="Forex-Strategies.aspx"  title="Forex Strategies">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex Strategies</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="Economic-Calendar.aspx"  title="Global Economic Calendar and News Trading">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Economic Calendar</DIV>
+					</A>
+				</td>
+			</tr>
+				--%>
+			
+			
+			<!--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="TradingHistory.aspx"  title="Trading History">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Trades History</DIV>
+					</A>
+				</td>
+			</tr>-->
+			
+		
+			
+			
+			<!--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="guide.aspx"  title="Trading Guide">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Trading Guide</DIV>
+					</A>
+				</td>
+			</tr>-->
+			<%--<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" target= new href="http://rpchost.gooboards.com/"  title="Forex Forum">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex Forum</DIV>
+					</A>
+				</td>
+			</tr>--%>
+			
+			
+			
+		
+			
+			
+		<!--	<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td vAlign="middle" width="100%" bgColor="#5273bd" height="5">
+				</td>
+			</tr>-->
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="ForexArticles.aspx"  title="Forex Articles">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex Articles</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="links.aspx"  title="Forex Links">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex Links</DIV>
+					</A>
+				</td>
+			</tr>
+						
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="forextrading.aspx"  title="Forex Trading">
+						<DIV class="head00">&nbsp;&nbsp;&nbsp; Forex Trading</DIV>
+					</A>
+				</td>
+			</tr>
+			
+			
+			
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28"><A style="TEXT-DECORATION: blink" href="forex.aspx"  title="Trading Signals">
+						<DIV class="head00">&nbsp;&nbsp; &nbsp;Trading Signals</DIV>
+					</A>
+				</td>
+			</tr>
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			
+			<tr>
+				<td vAlign="middle" width="100" bgColor="#5273bd" height="22"><DIV class="whitetext">&nbsp;&nbsp; 
+						PIPS PROFIT</DIV>
+				</td>
+			</tr>
+			<tr>
+				<td width="100" bgColor="#ffffff" height="1"></td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="130" height="28">
+					
+					
+					<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0">
+						<TR>
+								<TD class="head00" bgcolor="ceefde">&nbsp;Pips for this day&nbsp;&nbsp;&nbsp;&nbsp; 
+									=
+									<asp:Label Runat="server" ID="lblDay"></asp:Label></TD>
+						</TR>
+						<TR>
+								<TD class="head00" bgcolor="ceefde">&nbsp;Pips for this month =
+									<asp:Label Runat="server" ID="lblMonth"></asp:Label></TD>
+						</TR>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="100" height="8"></td>
+			</tr>
+			
+			<tr>
+				<td class="TDRightHeader3" vAlign="middle" width="100" height="8"></td>
+			</tr>
+			
+		
+			
+					</body>
+</html>

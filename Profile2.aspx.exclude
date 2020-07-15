@@ -1,0 +1,895 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Profile.aspx.vb" Inherits="Profile2" %>
+
+<%@ register tagprefix="uc1" tagname="right" src="headers/rightheader.ascx"%>
+<%@ register tagprefix="uc2" tagname="right" src="headers/upperheader.ascx"%>
+<%@ register tagprefix="uc4" tagname="right" src="headers/headerbutton.ascx"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>Currency Exchange | Forex | Trading Signals | </title>
+		<META NAME="AREA" CONTENT="Forex Finance">
+		<META HTTP-EQUIV="AUDIENCE" CONTENT="General">
+		<META NAME="TITLE" CONTENT="Rpchost.com - Registration form; become a member and get access to the Forex trading platform">
+		<META NAME="SUBJECT" CONTENT="Forex Signals, forecasts and analysis">
+		<META NAME="PLACENAME" CONTENT="Forex Traders Heaven">
+		<META NAME="CREATOR" CONTENT="Rpchost.com">
+		<META HTTP-EQUIV="Content-language" CONTENT="en-US">
+		<META NAME="COPYRIGHT" CONTENT="Rpchost.com">
+		<META NAME="DESCRIPTION" CONTENT="Rpchost.com visitors can use this page to register and access the online foreign exchange currency trading signals">
+		<META NAME="KEYWORDS" CONTENT="forex, account, trading Signals, currency">
+		<META NAME="ABSTRACT" CONTENT="The best forex signals online - Rpchost.com provides real time free forex signals, technical and fundamental signals, the best online resource for forex traders.">
+		<META name="robots" content="index, follow">
+		<META NAME="AUTHOR" CONTENT="Rpchost.com">
+		<LINK rel="stylesheet" type="text/css" href="StyleSheet.css">
+		
+		
+		<script language="javascript" >
+
+	function ClientValidate(sender, args)     
+    {
+        if (args.Value == "0" || args.Value == "-1")
+               args.IsValid=false;     
+         else     
+               args.IsValid=true;     
+    }
+
+
+
+        </script>
+    
+    
+	    <style type="text/css">
+            .style2
+            {
+                height: 31px;
+                width: 50px;
+            }
+            .style6
+            {
+                height: 36px;
+                width: 50px;
+            }
+            .style7
+            {
+                width: 50px;
+            }
+        </style>
+	</HEAD>
+	<body leftMargin="0" topmargin="0">
+		<form id="Form1" method="post" runat="server">
+			<TABLE borderColor="#3366CC" height="100%" cellSpacing="0" cellPadding="0" width="100%"
+				align="center" border="0">
+				<TR>
+					<TD width="100%" colSpan="3">
+
+					</TD>
+				</TR>
+				<TR>
+					<TD colSpan="3"></TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" height="100%">
+						<table cellSpacing="0" cellPadding="0" height="100%">
+							<tr>
+								<td>
+									<uc1:right runat="server" id="RightHeader"></uc1:right>
+								</td>
+							</tr>
+						</table>
+					</TD>
+					<TD vAlign="top" width="100%" height="100%">
+						<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<tr>
+								<td vAlign="top">
+									<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+										<TR>
+											<TD>
+												<uc4:right runat="server" id="headerbutton"></uc4:right>
+											</TD>
+										</TR>
+										
+										<TR><td height=1></td></tr>
+										
+										<TR>
+														<td Width="100%" Class="inputtitletext" valign=middle Height="25">
+																		<!-- Content goes here -->
+																		<div class=head09 >PROFILE</div>
+																	
+																	</td>
+													</TR>
+													
+									</TABLE>
+								</td>
+							</tr>
+							<TR>
+								<td height="2"></td>
+							</TR>
+							<tr>
+								<td align="center" colSpan="4"  width="100%">
+									<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0" height="100%">
+										<tr>
+											<td>
+												<!-- Content goes here -->
+												<TABLE WIDTH="100%" BORDER="0" CELLSPACING="00" CELLPADDING="0">
+													
+													<TR>
+														<TD height="60" class="style7">
+														</TD>
+														<TD></TD>
+														<TD></TD>
+													</TR>
+													
+													
+													<TR>
+														<TD Width=80>&nbsp;
+															<asp:label id="Label9" runat="server" CssClass="head09" >User ID</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtUserID" Width="200px" Enabled=false CssClass="inputtext" Runat="server"></asp:textbox></TD>
+														<TD style="WIDTH: 5px; HEIGHT: 31px">
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD Width=80>&nbsp;
+															<asp:label id="Label1" runat="server" CssClass="head09" >First name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtFirst" Width="200px" CssClass="inputtext" Runat="server" MaxLength=50></asp:textbox>
+															<asp:RequiredFieldValidator id="RequiredFieldValidator1"  runat="server" ErrorMessage="*" ControlToValidate="txtFirst"></asp:RequiredFieldValidator>
+															</TD>
+														<TD style="WIDTH: 5px; HEIGHT: 31px">
+															</TD>
+													</TR>
+													<TR>
+														<TD class="style2">&nbsp;
+															<asp:label id="Label2" runat="server" CssClass="head09">Last name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtLast" Width="200px" CssClass="inputtext" Runat="server" MaxLength=50></asp:textbox>
+															<asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" Width="7px" ErrorMessage="*" ControlToValidate="txtLast"></asp:RequiredFieldValidator>
+															</TD>
+														<TD style="WIDTH: 5px; HEIGHT: 31px">
+															</TD>
+													</TR>
+														<TR>
+														<TD class="style2">&nbsp;
+															<asp:label id="Label18" runat="server" CssClass="head09">Father name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtFatherName" Width="200px" CssClass="inputtext" Runat="server" MaxLength=50></asp:textbox>
+															<asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server" Width="7px" ErrorMessage="*" ControlToValidate="txtFatherName"></asp:RequiredFieldValidator>
+															</TD>
+														<TD style="WIDTH: 5px; HEIGHT: 31px">
+															</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD class="style2">&nbsp;
+															<asp:label id="Label21" runat="server" CssClass="head09">Mobile Phone</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtMobile" Width="200px" CssClass="inputtext" Runat="server" MaxLength=30></asp:textbox>
+															<asp:RequiredFieldValidator id="RequiredFieldValidator6" runat="server" Width="7px" ErrorMessage="*" ControlToValidate="txtMobile"></asp:RequiredFieldValidator>
+															</TD>
+														<TD style="WIDTH: 5px; HEIGHT: 31px">
+															</TD>
+													</TR>
+													
+														<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label19" runat="server" CssClass="head09"></asp:label></TD>
+														<TD height=30>
+														
+														<asp:Label ID="Label20" runat=server Text = "In case you want to withdraw money by Western union or Bank transfer, we need your correct Full name (First, Last and Father name) as it appears in your identity card" CssClass=RedTextBold></asp:Label>
+															
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  height=20 >
+															</TD>
+														<TD height=30>
+															</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style7">&nbsp;
+															<asp:label id="Label3" runat="server" CssClass="head09">Email</asp:label> </TD>
+														<TD height=30>
+															<asp:textbox id="txtEmail" Width="200px" CssClass="inputtext" Runat="server" MaxLength=50></asp:textbox>
+															<asp:Image ID="Image1" ToolTip="In case you want to fund your account by paying with credit card, we will send you a payoneer invoice to this email" imageUrl ="picture/exclamation.jpg" runat=server  />
+															
+															</TD>
+														<TD style="WIDTH: 5px">
+															<asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server" Width="7px" ErrorMessage="*" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label8" runat="server" CssClass="head09">Password</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtPass" Width="200px" CssClass="inputtext" Runat="server" ToolTip="Password must not contain spaces; minimum 6 characters; maximum 10 characters " MaxLength="10"></asp:textbox>&nbsp;<asp:Image ToolTip="Password must not contain spaces; minimum 6 characters; maximum 10 characters " imageUrl ="picture/exclamation.jpg" runat=server  /></TD>
+														<TD style="WIDTH: 5px; HEIGHT: 36px">
+															<asp:RequiredFieldValidator id="RequiredFieldValidator5" runat="server" Width="7px" ErrorMessage="*" ControlToValidate="txtPass"></asp:RequiredFieldValidator>
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  height=20 >
+															</TD>
+														<TD height=30>
+															</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD  colspan=3><hr />
+															
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  colspan=3 align=center class="head06">
+														  E-Wallets
+														</TD>
+													</TR>
+														<TR>
+														<TD   height=20>
+														   
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD Width=300>&nbsp;
+															<asp:label id="Label4" runat="server"  CssClass="head09">Perfect Money account</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtPerfectMoney" width="200px"  CssClass="inputtext" Runat="server" MaxLength="15"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label6" runat="server" CssClass="head09">Payeer account</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtPayeer"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="15"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label7" runat="server" CssClass="head09">Bitcoin Wallet</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtBitcoin"  Width="400px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label5" runat="server" CssClass="head09"></asp:label></TD>
+														<TD height=30>
+														
+														<asp:Label runat=server Text = "Wrong Perfect Money account, payeer account and Bitcoin wallet are not refundable <br> Be sure to provide your exact accounts" CssClass=RedTextBold></asp:Label>
+															
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD height=30>
+															
+														<TD >
+															
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  colspan=3><hr />
+															
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  colspan=3 align=center class="head06">
+														   Bank Account
+														</TD>
+													</TR>
+														<TR>
+														<TD   height=20>
+														   
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label10" runat="server" CssClass="head09">Bank Name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtBankname"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label12" runat="server" CssClass="head09">Bank Country</asp:label></TD>
+														<TD height=30>
+															
+																<asp:dropdownlist id="ddlCountry" Width="200px" CssClass="inputtext" Runat="server">
+																
+																
+										<asp:ListItem Value="0" Selected="True">-- Select Country --</asp:ListItem>
+										<asp:ListItem value="800">Australia</asp:ListItem>
+<asp:ListItem value="404">Canada</asp:ListItem>
+<asp:ListItem value="1">France</asp:ListItem>
+<asp:ListItem value="4">Germany</asp:ListItem>
+<asp:ListItem value="732">Japan</asp:ListItem>
+<asp:ListItem value="3">Netherlands</asp:ListItem>
+<asp:ListItem value="39">Switzerland</asp:ListItem>
+<asp:ListItem value="6">United Kingdom</asp:ListItem>
+<asp:ListItem value="400">USA</asp:ListItem>
+<asp:ListItem value="-1">------- All countries -------</asp:ListItem>
+<asp:ListItem value="660">Afghanistan</asp:ListItem>
+<asp:ListItem value="33">Åland Islands</asp:ListItem>
+<asp:ListItem value="70">Albania</asp:ListItem>
+<asp:ListItem value="208">Algeria</asp:ListItem>
+<asp:ListItem value="810">American Samoa</asp:ListItem>
+<asp:ListItem value="43">Andorra</asp:ListItem>
+<asp:ListItem value="330">Angola</asp:ListItem>
+<asp:ListItem value="446">Anguilla</asp:ListItem>
+<asp:ListItem value="891">Antarctica</asp:ListItem>
+<asp:ListItem value="459">Antigua and Barbuda</asp:ListItem>
+<asp:ListItem value="528">Argentina</asp:ListItem>
+<asp:ListItem value="77">Armenia</asp:ListItem>
+<asp:ListItem value="474">Aruba</asp:ListItem>
+<asp:ListItem value="800">Australia</asp:ListItem>
+<asp:ListItem value="38">Austria</asp:ListItem>
+<asp:ListItem value="78">Azerbaijan</asp:ListItem>
+<asp:ListItem value="453">Bahamas</asp:ListItem>
+<asp:ListItem value="640">Bahrain</asp:ListItem>
+<asp:ListItem value="666">Bangladesh</asp:ListItem>
+<asp:ListItem value="469">Barbados</asp:ListItem>
+<asp:ListItem value="73">Belarus</asp:ListItem>
+<asp:ListItem value="102">Belgium</asp:ListItem>
+<asp:ListItem value="421">Belize</asp:ListItem>
+<asp:ListItem value="284">Benin</asp:ListItem>
+<asp:ListItem value="413">Bermuda</asp:ListItem>
+<asp:ListItem value="675">Bhutan</asp:ListItem>
+<asp:ListItem value="516">Bolivia</asp:ListItem>
+<asp:ListItem value="953">Bonaire, Saint Eustatius and Saba</asp:ListItem>
+<asp:ListItem value="93">Bosnia and Herzegovina</asp:ListItem>
+<asp:ListItem value="391">Botswana</asp:ListItem>
+<asp:ListItem value="892">Bouvet Island</asp:ListItem>
+<asp:ListItem value="508">Brazil</asp:ListItem>
+<asp:ListItem value="357">British Indian Ocean Territory</asp:ListItem>
+<asp:ListItem value="703">Brunei Darussalam</asp:ListItem>
+<asp:ListItem value="68">Bulgaria</asp:ListItem>
+<asp:ListItem value="236">Burkina Faso</asp:ListItem>
+<asp:ListItem value="328">Burundi</asp:ListItem>
+<asp:ListItem value="696">Cambodia</asp:ListItem>
+<asp:ListItem value="302">Cameroon</asp:ListItem>
+<asp:ListItem value="404">Canada</asp:ListItem>
+<asp:ListItem value="21">Canary Islands</asp:ListItem>
+<asp:ListItem value="247">Cape Verde</asp:ListItem>
+<asp:ListItem value="463">Cayman Islands</asp:ListItem>
+<asp:ListItem value="306">Central African Republic</asp:ListItem>
+<asp:ListItem value="22">Ceuta</asp:ListItem>
+<asp:ListItem value="244">Chad</asp:ListItem>
+<asp:ListItem value="512">Chile</asp:ListItem>
+<asp:ListItem value="720">China</asp:ListItem>
+<asp:ListItem value="834">Christmas Island</asp:ListItem>
+<asp:ListItem value="833">Cocos (Keeling) Islands</asp:ListItem>
+<asp:ListItem value="480">Colombia</asp:ListItem>
+<asp:ListItem value="375">Comoros</asp:ListItem>
+<asp:ListItem value="322">Congo, Dem. Republic</asp:ListItem>
+<asp:ListItem value="318">Congo, Republic</asp:ListItem>
+<asp:ListItem value="837">Cook Islands</asp:ListItem>
+<asp:ListItem value="436">Costa Rica</asp:ListItem>
+<asp:ListItem value="272">Cote d'Ivoire</asp:ListItem>
+<asp:ListItem value="92">Croatia</asp:ListItem>
+<asp:ListItem value="952">Curaçao</asp:ListItem>
+<asp:ListItem value="600">Cyprus</asp:ListItem>
+<asp:ListItem value="61">Czech Republic</asp:ListItem>
+<asp:ListItem value="8">Denmark</asp:ListItem>
+<asp:ListItem value="338">Djibouti</asp:ListItem>
+<asp:ListItem value="460">Dominica</asp:ListItem>
+<asp:ListItem value="456">Dominican Republic</asp:ListItem>
+<asp:ListItem value="626">East-Timor</asp:ListItem>
+<asp:ListItem value="500">Ecuador</asp:ListItem>
+<asp:ListItem value="220">Egypt</asp:ListItem>
+<asp:ListItem value="428">El Salvador</asp:ListItem>
+<asp:ListItem value="310">Equatorial Guinea</asp:ListItem>
+<asp:ListItem value="336">Eritrea</asp:ListItem>
+<asp:ListItem value="53">Estonia</asp:ListItem>
+<asp:ListItem value="334">Ethiopia</asp:ListItem>
+<asp:ListItem value="529">Falkland Islands</asp:ListItem>
+<asp:ListItem value="25">Faroe Islands</asp:ListItem>
+<asp:ListItem value="815">Fiji</asp:ListItem>
+<asp:ListItem value="32">Finland</asp:ListItem>
+<asp:ListItem value="1">France</asp:ListItem>
+<asp:ListItem value="496">French Guiana</asp:ListItem>
+<asp:ListItem value="822">French Polynesia</asp:ListItem>
+<asp:ListItem value="894">French Southern Territories</asp:ListItem>
+<asp:ListItem value="314">Gabon</asp:ListItem>
+<asp:ListItem value="252">Gambia</asp:ListItem>
+<asp:ListItem value="76">Georgia</asp:ListItem>
+<asp:ListItem value="4">Germany</asp:ListItem>
+<asp:ListItem value="276">Ghana</asp:ListItem>
+<asp:ListItem value="44">Gibraltar</asp:ListItem>
+<asp:ListItem value="9">Greece</asp:ListItem>
+<asp:ListItem value="406">Greenland</asp:ListItem>
+<asp:ListItem value="473">Grenada</asp:ListItem>
+<asp:ListItem value="458">Guadeloupe</asp:ListItem>
+<asp:ListItem value="831">Guam</asp:ListItem>
+<asp:ListItem value="416">Guatemala</asp:ListItem>
+<asp:ListItem value="87">Guernsey</asp:ListItem>
+<asp:ListItem value="260">Guinea</asp:ListItem>
+<asp:ListItem value="257">Guinea-Bissau</asp:ListItem>
+<asp:ListItem value="488">Guyana</asp:ListItem>
+<asp:ListItem value="452">Haiti</asp:ListItem>
+<asp:ListItem value="835">Heard Island and McDonald Islands</asp:ListItem>
+<asp:ListItem value="424">Honduras</asp:ListItem>
+<asp:ListItem value="740">Hong Kong</asp:ListItem>
+<asp:ListItem value="64">Hungary</asp:ListItem>
+<asp:ListItem value="24">Iceland</asp:ListItem>
+<asp:ListItem value="664">India</asp:ListItem>
+<asp:ListItem value="700">Indonesia</asp:ListItem>
+<asp:ListItem value="7">Ireland</asp:ListItem>
+<asp:ListItem value="86">Isle Of Man</asp:ListItem>
+<asp:ListItem value="624">Israel</asp:ListItem>
+<asp:ListItem value="5">Italy</asp:ListItem>
+<asp:ListItem value="464">Jamaica</asp:ListItem>
+<asp:ListItem value="732">Japan</asp:ListItem>
+<asp:ListItem value="88">Jersey</asp:ListItem>
+<asp:ListItem value="628">Jordan</asp:ListItem>
+<asp:ListItem value="79">Kazakhstan</asp:ListItem>
+<asp:ListItem value="346">Kenya</asp:ListItem>
+<asp:ListItem value="812">Kiribati</asp:ListItem>
+<asp:ListItem value="728">Korea, South</asp:ListItem>
+<asp:ListItem value="636">Kuwait</asp:ListItem>
+<asp:ListItem value="83">Kyrgyzstan</asp:ListItem>
+<asp:ListItem value="684">Laos</asp:ListItem>
+<asp:ListItem value="54">Latvia</asp:ListItem>
+<asp:ListItem value="604">Lebanon</asp:ListItem>
+<asp:ListItem value="395">Lesotho</asp:ListItem>
+<asp:ListItem value="268">Liberia</asp:ListItem>
+<asp:ListItem value="37">Liechtenstein</asp:ListItem>
+<asp:ListItem value="55">Lithuania</asp:ListItem>
+<asp:ListItem value="104">Luxembourg</asp:ListItem>
+<asp:ListItem value="743">Macau</asp:ListItem>
+<asp:ListItem value="96">Macedonia (Former Yugoslav Republic)</asp:ListItem>
+<asp:ListItem value="370">Madagascar</asp:ListItem>
+<asp:ListItem value="386">Malawi</asp:ListItem>
+<asp:ListItem value="701">Malaysia</asp:ListItem>
+<asp:ListItem value="667">Maldives</asp:ListItem>
+<asp:ListItem value="232">Mali</asp:ListItem>
+<asp:ListItem value="46">Malta</asp:ListItem>
+<asp:ListItem value="824">Marshall Islands</asp:ListItem>
+<asp:ListItem value="462">Martinique</asp:ListItem>
+<asp:ListItem value="228">Mauritania</asp:ListItem>
+<asp:ListItem value="373">Mauritius</asp:ListItem>
+<asp:ListItem value="377">Mayotte</asp:ListItem>
+<asp:ListItem value="23">Melilla</asp:ListItem>
+<asp:ListItem value="412">Mexico</asp:ListItem>
+<asp:ListItem value="823">Micronesia</asp:ListItem>
+<asp:ListItem value="74">Moldova</asp:ListItem>
+<asp:ListItem value="95">Monaco</asp:ListItem>
+<asp:ListItem value="716">Mongolia</asp:ListItem>
+<asp:ListItem value="99">Montenegro</asp:ListItem>
+<asp:ListItem value="470">Montserrat</asp:ListItem>
+<asp:ListItem value="204">Morocco</asp:ListItem>
+<asp:ListItem value="366">Mozambique</asp:ListItem>
+<asp:ListItem value="676">Myanmar</asp:ListItem>
+<asp:ListItem value="389">Namibia</asp:ListItem>
+<asp:ListItem value="803">Nauru</asp:ListItem>
+<asp:ListItem value="672">Nepal</asp:ListItem>
+<asp:ListItem value="3">Netherlands</asp:ListItem>
+<asp:ListItem value="809">New Caledonia</asp:ListItem>
+<asp:ListItem value="804">New Zealand</asp:ListItem>
+<asp:ListItem value="432">Nicaragua</asp:ListItem>
+<asp:ListItem value="240">Niger</asp:ListItem>
+<asp:ListItem value="288">Nigeria</asp:ListItem>
+<asp:ListItem value="838">Niue</asp:ListItem>
+<asp:ListItem value="836">Norfolk Island</asp:ListItem>
+<asp:ListItem value="820">Northern Mariana Islands</asp:ListItem>
+<asp:ListItem value="28">Norway</asp:ListItem>
+<asp:ListItem value="649">Oman</asp:ListItem>
+<asp:ListItem value="662">Pakistan</asp:ListItem>
+<asp:ListItem value="825">Palau</asp:ListItem>
+<asp:ListItem value="625">Palestinian Territory</asp:ListItem>
+<asp:ListItem value="442">Panama</asp:ListItem>
+<asp:ListItem value="801">Papua New Guinea</asp:ListItem>
+<asp:ListItem value="520">Paraguay</asp:ListItem>
+<asp:ListItem value="504">Peru</asp:ListItem>
+<asp:ListItem value="708">Philippines</asp:ListItem>
+<asp:ListItem value="813">Pitcairn Islands</asp:ListItem>
+<asp:ListItem value="60">Poland</asp:ListItem>
+<asp:ListItem value="10">Portugal</asp:ListItem>
+<asp:ListItem value="444">Puerto Rico</asp:ListItem>
+<asp:ListItem value="644">Qatar</asp:ListItem>
+<asp:ListItem value="372">Reunion</asp:ListItem>
+<asp:ListItem value="66">Romania</asp:ListItem>
+<asp:ListItem value="75">Russian Federation</asp:ListItem>
+<asp:ListItem value="324">Rwanda</asp:ListItem>
+<asp:ListItem value="476">Saint-Barthélemy</asp:ListItem>
+<asp:ListItem value="475">Saint-Martin</asp:ListItem>
+<asp:ListItem value="819">Samoa</asp:ListItem>
+<asp:ListItem value="47">San Marino</asp:ListItem>
+<asp:ListItem value="311">Sao Tome and Principe</asp:ListItem>
+<asp:ListItem value="632">Saudi Arabia</asp:ListItem>
+<asp:ListItem value="248">Senegal</asp:ListItem>
+<asp:ListItem value="98">Serbia</asp:ListItem>
+<asp:ListItem value="355">Seychelles</asp:ListItem>
+<asp:ListItem value="264">Sierra Leone</asp:ListItem>
+<asp:ListItem value="706">Singapore</asp:ListItem>
+<asp:ListItem value="951">Sint Maarten</asp:ListItem>
+<asp:ListItem value="63">Slovakia</asp:ListItem>
+<asp:ListItem value="91">Slovenia</asp:ListItem>
+<asp:ListItem value="806">Solomon Islands</asp:ListItem>
+<asp:ListItem value="342">Somalia</asp:ListItem>
+<asp:ListItem value="388">South Africa</asp:ListItem>
+<asp:ListItem value="893">South Georgia and Sandwich Islands</asp:ListItem>
+<asp:ListItem value="11">Spain</asp:ListItem>
+<asp:ListItem value="669">Sri Lanka</asp:ListItem>
+<asp:ListItem value="329">St. Helena</asp:ListItem>
+<asp:ListItem value="449">St. Kitts and Nevis</asp:ListItem>
+<asp:ListItem value="465">St. Lucia</asp:ListItem>
+<asp:ListItem value="408">St. Pierre and Miquelon</asp:ListItem>
+<asp:ListItem value="467">St. Vincent and the Grenadines</asp:ListItem>
+<asp:ListItem value="492">Suriname</asp:ListItem>
+<asp:ListItem value="27">Svalbard</asp:ListItem>
+<asp:ListItem value="393">Swaziland</asp:ListItem>
+<asp:ListItem value="30">Sweden</asp:ListItem>
+<asp:ListItem value="39">Switzerland</asp:ListItem>
+<asp:ListItem value="736">Taiwan</asp:ListItem>
+<asp:ListItem value="82">Tajikistan</asp:ListItem>
+<asp:ListItem value="352">Tanzania</asp:ListItem>
+<asp:ListItem value="680">Thailand</asp:ListItem>
+<asp:ListItem value="280">Togo</asp:ListItem>
+<asp:ListItem value="839">Tokelau</asp:ListItem>
+<asp:ListItem value="817">Tonga</asp:ListItem>
+<asp:ListItem value="472">Trinidad and Tobago</asp:ListItem>
+<asp:ListItem value="212">Tunisia</asp:ListItem>
+<asp:ListItem value="52">Turkey</asp:ListItem>
+<asp:ListItem value="80">Turkmenistan</asp:ListItem>
+<asp:ListItem value="454">Turks and Caicos Islands</asp:ListItem>
+<asp:ListItem value="807">Tuvalu</asp:ListItem>
+<asp:ListItem value="350">Uganda</asp:ListItem>
+<asp:ListItem value="72">Ukraine</asp:ListItem>
+<asp:ListItem value="647">United Arab Emirates</asp:ListItem>
+<asp:ListItem value="6">United Kingdom</asp:ListItem>
+<asp:ListItem value="524">Uruguay</asp:ListItem>
+<asp:ListItem value="400">USA</asp:ListItem>
+<asp:ListItem value="832">US Minor Outlying Islands</asp:ListItem>
+<asp:ListItem value="81">Uzbekistan</asp:ListItem>
+<asp:ListItem value="816">Vanuatu</asp:ListItem>
+<asp:ListItem value="45">Vatican City State</asp:ListItem>
+<asp:ListItem value="484">Venezuela</asp:ListItem>
+<asp:ListItem value="690">Viet Nam</asp:ListItem>
+<asp:ListItem value="468">Virgin Islands (British)</asp:ListItem>
+<asp:ListItem value="457">Virgin Islands (U.S.)</asp:ListItem>
+<asp:ListItem value="811">Wallis and Futuna</asp:ListItem>
+<asp:ListItem value="201">Western Sahara</asp:ListItem>
+<asp:ListItem value="653">Yemen</asp:ListItem>
+<asp:ListItem value="378">Zambia</asp:ListItem>
+<asp:ListItem value="382">Zimbabwe</asp:ListItem>
+
+
+															</asp:dropdownlist>
+															
+															
+															</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													
+													
+														<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label16" runat="server" CssClass="head09">Account Holder Name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtHolder"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label13" runat="server" CssClass="head09">Swift Code</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtSwift"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label14" runat="server" CssClass="head09">IBAN</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtIBAN"  Width="300px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label15" runat="server" CssClass="head09">Account Number</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtAccountNumber"  Width="300px" CssClass="inputtext" Runat="server" MaxLength="100"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+														<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label11" runat="server" CssClass="head09"></asp:label></TD>
+														<TD height=30>
+														
+														<asp:Label ID="Label17" runat=server Text = "Be sure you enter correct bank account data, so it will be no delay when you withdraw your money to your bank account." CssClass=RedTextBold></asp:Label>
+															
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													
+													<TR>
+														<TD  colspan=3>
+														    <hr />
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD  colspan=3 align=center class="head06">
+														   Credit Card
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD height=20 >
+														  
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label22" runat="server" CssClass="head09">Card Number</asp:label></TD>
+														<TD height=30 class=Maroon9>
+															<asp:textbox id="txtCardNumber"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="25"></asp:textbox>
+													        CARD NUMBER (From 16 to 18 digits)
+														</TD>
+															
+															
+															
+														<TD class=RednormalText >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label23" runat="server" CssClass="head09">Expiry Month</asp:label></TD>
+														<TD height=30 class=Maroon9>
+															<asp:textbox id="txtExpiryMonth"  Width="50px" CssClass="inputtext" Runat="server" MaxLength="2"></asp:textbox>
+														&nbsp;1 to 12</TD>
+															
+														<TD >
+															
+														</TD>
+													</TR>
+												
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label24" runat="server" CssClass="head09">Expiry Year</asp:label></TD>
+														<TD height=30 class=Maroon9>
+															<asp:textbox id="txtExpiryYear"  Width="50px" CssClass="inputtext" Runat="server" MaxLength="4"></asp:textbox>
+															4 digits (YYYY) and &gt;= 2018</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label25" runat="server" CssClass="head09">Card Holder Name</asp:label></TD>
+														<TD height=30>
+															<asp:textbox id="txtCardHolderName"  Width="200px" CssClass="inputtext" Runat="server" MaxLength="30"></asp:textbox></TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label26" runat="server" CssClass="head09">CVV</asp:label></TD>
+														<TD height=30 class=Maroon9>
+															<asp:textbox id="txtCVV"  Width="50px" CssClass="inputtext" Runat="server" MaxLength="3"></asp:textbox>
+															3 digits code on the reverse side of the card
+														</TD>
+														<TD>
+															
+														</TD>
+													</TR>
+													
+														<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label27" runat="server" CssClass="head09"></asp:label></TD>
+														<TD height=30>
+														
+														<asp:Label ID="Label28" runat=server Text = "In case you want to pay from credit card and withdraw money to credit card, be sure you enter valid Cedit Card. [You have to verify your documents in order to Deposit and withdraw to credit card]" CssClass=RedTextBold></asp:Label>
+															
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+														<TR>
+														<TD  colspan=3><hr />
+															
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD  colspan=3 align=center class="head06">
+														  Verification
+														</TD>
+													</TR>
+														<TR>
+														<TD   height=20>
+														   
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label29" runat="server" CssClass="head09">Passport or ID</asp:label></TD>
+														<TD height=30>
+															<input id="MyFilePassport" class="inputbutton" type="file" size="40" name="File1" runat="server" onclick="return MyFilePassport_onclick()" />
+															
+															<asp:Image ID="Image2" ToolTip="Please send scan or photo of your ID or Passport. The document should be valid and not expired. The document should be clear." imageUrl ="picture/exclamation.jpg" runat=server  />
+															
+															<asp:Label runat=server ID=lblPassport CssClass=Maroon9></asp:Label>
+															
+														</TD>
+														
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+														<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label31" runat="server" CssClass="head09">Proof of Address</asp:label></TD>
+														<TD height=30>
+															<input id="MyFileProofOfAddress" class="inputbutton" type="file" size="40" name="File1" runat="server" />
+															<asp:Image ID="Image3" ToolTip="Please attach scan or photo of any document of the past 90 days with your name and residential address in English(bank account statement or Utility bill with a barcode, QR code or stamp. We don not accept edited images, please do not bend the document, all parts and edges of the document should be visible.)" imageUrl ="picture/exclamation.jpg" runat=server  />
+															<asp:Label runat=server ID=lblProof CssClass=Maroon9></asp:Label>
+														</TD>
+														
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD >&nbsp;
+															
+														<TD height=20>
+																													
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													<TR>
+														<TD class="style6">&nbsp;
+															<asp:label id="Label30" runat="server" CssClass="head09"></asp:label></TD>
+														<TD height=30>
+														
+														<asp:Label ID="Label32" runat=server Text = "In case you want to pay from credit card and withdraw money to credit card, you have to be verified. <br><br> You have to fill your Credit Card and it must be valid in order to be verified" CssClass=RedTextBold></asp:Label>
+															
+														</TD>
+														<TD >
+															
+														</TD>
+													</TR>
+													
+													
+													<TR>
+														<TD height="130" class="style7"></TD>
+														<TD >
+															<asp:Button id="btnSubmit" CssClass="inputtextbtn" Runat="server" Text="Update Pofile" 
+                                                                Width="128px" Height=30></asp:Button></TD>
+														<TD style="WIDTH: 5px">
+														</TD>
+													</TR>
+																										
+													<TR>
+														<TD class="style7"></TD>
+														<TD >
+														<asp:Label runat=server ID=lblMess CssClass=RednormalTextBold></asp:Label>
+														</TD>
+														<TD style="WIDTH: 5px">
+														</TD>
+													</TR>
+													
+													<%--<TR>
+														<TD style="WIDTH: 475px" colspan="3">&nbsp;
+															<asp:Label id="Label10" runat="server" Width="800" CssClass=RedTextBold> When you register, you will get a userID and password to access our <a href=FreeForexSignal.aspx title="Free Forex Signals">Free Forex Signals</a>, and you can make a payment and get access to the full membership and to the Forex signals <a href=Login.aspx>CONTROL PANEL</a> plus you can download the <a href="https://play.google.com/store/apps/details?id=com.RPCHOST.rpc">RPCHOST.COM FXAS SYSTEM </a> application in your ANDROID and get instant signals with sound alert. Plus you can <a href="issueIndicator.aspx">download Rpchost_Renko </a> expert advisor </asp:Label></TD>
+														<TD style="WIDTH: 139px"></TD>
+														<TD style="WIDTH: 5px">
+														</TD>
+													</TR>--%>
+													
+													
+														<TR>
+														<TD colspan="3" height=20>&nbsp;
+															</TD>
+														<TD ></TD>
+														<TD >
+														</TD>
+													</TR>
+																									
+													
+												</TABLE> <!-- End Content -->
+											</td>
+										</tr>
+										
+										 
+										
+										
+									</TABLE>
+								</td>
+							</tr>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+			</TD></TR></TABLE>
+		</form> </TD></TR>
+		<!-- Start of eWebCounter Code -->
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript" src="eWebCounter.js" ></script>
+		<!-- End of eWebCounter Code -->
+	</body>
+</HTML>

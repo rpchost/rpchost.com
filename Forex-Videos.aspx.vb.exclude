@@ -1,0 +1,70 @@
+﻿Imports System.Data.OleDb
+
+
+Namespace rpchost
+
+
+    Partial Class Forex_Videos
+        Inherits System.Web.UI.Page
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+
+
+#Region " Web Form Designer Generated Code "
+
+        'This call is required by the Web Form Designer.
+        <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+        End Sub
+
+
+        Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+            'CODEGEN: This method call is required by the Web Form Designer
+            'Do not modify it using the code editor.
+            InitializeComponent()
+        End Sub
+
+#End Region
+
+
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+
+            opExec = New cs_Operation
+            Dim str As String
+            Dim arr() As String
+
+            str = Request.QueryString("head")
+            'arr = Split(str, "-")
+
+
+
+            Dim reader As OleDbDataReader = opExec.rdGetReader("select * from SqwakBox where statements like '" & str & "%' ")
+            Try
+                reader.Read()
+                If reader.HasRows = True Then
+
+                    arr = Split(reader("statements"), "-")
+
+                    lblHead.Text = str
+                    lblDesc.Text = arr(1)
+                    lblEmbed.Text = reader("SqwakText")
+                    HyperLink1.Text = "[Access youtube video directly and post your ideas and questions]"
+                    HyperLink1.NavigateUrl = arr(2)
+
+                End If
+
+            Catch ex As Exception
+                Response.Write(ex.Message)
+            End Try
+
+        End Sub
+
+
+        Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+            txtComments.Text = "33"
+        End Sub
+    End Class
+
+End Namespace

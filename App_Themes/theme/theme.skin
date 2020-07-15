@@ -1,0 +1,123 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Label runat="server" cssClass="BlackTextBold" SkinId="LabelSkin"></asp:Label>
+<asp:Label runat="server" cssClass="RednormalText" SkinId="RedLabelSkin"></asp:Label>
+<asp:panel runat="server" cssClass="INPUTTEXTbtn" SkinId="PanelSkin" align="center"></asp:Panel>
+<asp:TextBox runat="server" cssClass="INPUTTEXT" SkinId="TextSkin" align="center"></asp:TextBox>
+<asp:Button runat="server" cssClass="INPUTTEXTbtn" SkinId="ButtonSkin" align="center"></asp:Button>
+<asp:DropDownList runat="server" cssClass="INPUTTEXT" SkinId="DropDownSkin" ></asp:DropDownList>
+
+<asp:Login SkinID="LoginSkin" runat="server" BackColor="WhiteSmoke" BorderColor="Gray" BorderStyle="None" BorderWidth="1px" CssClass="BlackTextBold" Font-Bold="True" Font-Names="Arial" Font-Size="Small"/>
+         
+ 
+<asp:PasswordRecovery runat="server" SkinID="PwdRecSkin" BackColor="White" BorderColor="Gray" BorderStyle="None" BorderWidth="2px" CssClass="BlacknormalText" />
+
+ 
+<ASP:GridView runat="server"
+    BorderColor="Blue"
+    BorderWidth="1"
+        skinID = grdTimesheet
+    >
+
+    <HeaderStyle
+        BackColor="gray"
+        ForeColor="White"
+        Font-Size="13"
+        cssClass = WhiteText
+        Font-Bold=true
+    />
+
+    <RowStyle
+        ForeColor="Black"
+        Font-Size="11"
+        cssClass = BlacknormalText
+        Font-Bold=true
+    />
+
+</ASP:GridView>
+
+
+<ASP:GridView runat="server"
+    BorderColor="#C1BFBF"
+    BorderWidth="3"
+    skinID = grdFxas
+    >
+
+    <HeaderStyle
+        BackColor="gray"
+        ForeColor="White"
+        Font-Size="11"
+        cssClass = WhiteText
+        Font-Bold=true
+    />
+
+    <RowStyle
+        ForeColor="Black"
+        Font-Size="8"
+        cssClass = BlacknormalText
+        Font-Bold=true
+    />
+    </ASP:GridView>
+    
+    
+    <ASP:GridView runat="server"
+    BorderColor="#C1BFBF"
+    BorderWidth="3"
+    skinID = grdTrans
+    >
+
+    <HeaderStyle
+        BackColor="gray"
+        ForeColor="White"
+        Font-Size="8"
+        cssClass = WhiteText
+        Font-Bold=true
+    />
+
+    <RowStyle
+        ForeColor="Black"
+        Font-Size="7"
+        cssClass = BlacknormalText
+        Font-Bold=true
+    />
+    </ASP:GridView>
+    
+    <ASP:GridView runat="server"
+    BorderColor="#C1BFBF"
+    BorderWidth="3"
+    skinID = grdPaymentBackend
+    >
+
+    <HeaderStyle
+        BackColor="gray"
+        ForeColor="White"
+        Font-Size="8"
+        cssClass = WhiteText
+        Font-Bold=true
+    />
+
+    <RowStyle
+        ForeColor="Black"
+        Font-Size="8"
+        cssClass = BlacknormalText
+        Font-Bold=true
+    />
+
+</ASP:GridView>
+
+<asp:Calendar runat="server" skinID = skinCalendar Width="149px" Height="144px" BorderColor="#999999" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" DayNameFormat="FirstLetter" BackColor="White"></asp:Calendar>
+

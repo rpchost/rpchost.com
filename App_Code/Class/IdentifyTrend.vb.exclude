@@ -1,0 +1,1134 @@
+Imports System.Data.OleDb
+
+
+Namespace rpchost
+
+
+Public Class IdentifyTrend
+
+    Public strTrendUP As String
+    Public strTrendDown As String
+    Public strTrendNeu As String
+
+    Public EurJpyTrendEMA, TrendEMA, AUDUSDTrendEMA, GBPJPYTrendEMA, EURCHFTrendEMA As String
+
+    Public CloseEurJpy, CloseEurChf, CloseAudUSd, CloseGbpJpy, CloseGbpUsd As String
+    Public OpenEurJpy, OpenEurChf, OpenAudUSd, OpenGbpJpy, OpenGbpUsd As String
+    Public CandleEurJpy, CandleEurChf, CandleAudUSd, CandleGbpJpy, CandleGbpUsd As String
+
+    Public EurJpyOpen1, EurJpyOpen2, EurJpyOpenPriceTrend, GbpUsdOpen1, GbpUsdOpen2, GbpUsdOpenPriceTrend, AudUsdOpen1, AudUsdOpen2, AudUsdOpenPriceTrend, GbpJpyOpen1, GbpJpyOpen2, GbpJpyOpenPriceTrend, EurChfOpen1, EurChfOpen2, EurChfOpenPriceTrend As String
+
+    Public EMA8_1, EurJpyEMA8_1, AUDUSDEMA8_1, GBPJPYEMA8_1, EURCHFEMA8_1 As String
+    Public EMA8_2, EurJpyEMA8_2, AUDUSDEMA8_2, GBPJPYEMA8_2, EURCHFEMA8_2 As String
+    Public EMA8_3, EurJpyEMA8_3, AUDUSDEMA8_3, GBPJPYEMA8_3, EURCHFEMA8_3 As String
+
+    Public EMA8, EurJpyEMA8, AudUsdEMA8, GbpJpyEMA8, EURCHFEMA8 As String
+
+    Public EMA21_1, EurJpyEMA21_1, AudUsdEMA21_1, GbpJpyEMA21_1, EurChfEMA21_1 As String
+    Public EMA21_2, EurJpyEMA21_2, AudUsdEMA21_2, GbpJpyEMA21_2, EurChfEMA21_2 As String
+    Public EMA21_3, EurJpyEMA21_3, AudUsdEMA21_3, GbpJpyEMA21_3, EurChfEMA21_3 As String
+
+    Public EMA55_1, EurJpyEMA55_1, AudUsdEMA55_1, GbpJpyEMA55_1, EurChfEMA55_1 As String
+    Public EMA55_2, EurJpyEMA55_2, AudUsdEMA55_2, GbpJpyEMA55_2, EurChfEMA55_2 As String
+    Public EMA55_3, EurJpyEMA55_3, AudUsdEMA55_3, GbpJpyEMA55_3, EurChfEMA55_3 As String
+
+    Dim ADX_1, EurJpyADX_1, AudUsdADX_1, GbpJpyADX_1, EurChfADX_1 As String
+    Dim ADX_2, EurJpyADX_2, AudUsdADX_2, GbpJpyADX_2, EurChfADX_2 As String
+    Dim ADX_3, EurJpyADX_3, AudUsdADX_3, GbpJpyADX_3, EurChfADX_3 As String
+
+    Dim RSI_1, EurJpyRSI_1, AudUsdRSI_1, GbpJpyRSI_1, EurChfRSI_1 As String
+    Dim RSI_2, EurJpyRSI_2, AudUsdRSI_2, GbpJpyRSI_2, EurChfRSI_2 As String
+    Dim RSI_3, EurJpyRSI_3, AudUsdRSI_3, GbpJpyRSI_3, EurChfRSI_3 As String
+
+    Dim PosDMI_1, EurJpyPosDMI_1, AudUsdPosDMI_1, GbpJpyPosDMI_1, EurChfPosDMI_1 As String
+    Dim PosDMI_2, EurJpyPosDMI_2, AudUsdPosDMI_2, GbpJpyPosDMI_2, EurChfPosDMI_2 As String
+    Dim NegDMI_1, EurJpyNegDMI_1, AudUsdNegDMI_1, GbpJpyNegDMI_1, EurChfNegDMI_1 As String
+    Dim NegDMI_2, EurJpyNegDMI_2, AudUsdNegDMI_2, GbpJpyNegDMI_2, EurChfNegDMI_2 As String
+
+    Public macdVal_1, macdSignal_1, EurJpyMacdVal_1, EurChfMacdVal_1, GbpJpyMacdVal_1, EurJpyMacdSignal_1, AudUsdMacdVal_1, AudUsdMacdSignal_1, GbpJpyMacdSignal_1, EurChfMacdSignal_1 As String
+    Public macdVal_2, macdSignal_2, EurJpyMacdVal_2, EurChfMacdVal_2, GbpJpyMacdVal_2, EurJpyMacdSignal_2, AudUsdMacdVal_2, AudUsdMacdSignal_2, GbpJpyMacdSignal_2, EurChfMacdSignal_2 As String
+    Public macdVal_3, macdSignal_3, EurJpyMacdVal_3, EurChfMacdVal_3, GbpJpyMacdVal_3, EurJpyMacdSignal_3, AudUsdMacdVal_3, AudUsdMacdSignal_3, GbpJpyMacdSignal_3, EurChfMacdSignal_3 As String
+
+    Public ADXTrend, EurJpyADXTrend, AudUsdADXTrend, GbpJpyADXTrend, EurChfADXTrend As String
+    Public RSITrend, EurJpyRSITrend, AudUsdRSITrend, GbpJpyRSITrend, EurChfRSITrend As String
+    Public MACDTrend, EurJpyMACDTrend, AudUsdMACDTrend, GbpJpyMACDTrend, EurChfMACDTrend As String
+    Public posDMI, NegDMI, NegCrossDMI, PosCrossDMI As String
+    Public posEurJpyDMI, posGbpJpyDMI, NegEurJpyDMI, NegGbpJpyDMI, posAudUsdDMI, NegAudUsdDMI, NegEurJpyCrossDMI, PosEurJpyCrossDMI, NegAudUsdCrossDMI, PosAudUsdCrossDMI, PosGbpJpyCrossDMI, NegGbpJpyCrossDMI, PosEurChfCrossDMI, NegEurChfCrossDMI, NegEURCHFDMI, PosEURCHFDMI As String
+
+    Public Target, EurJpyTarget, AudUsdTarget, GbpJpyTarget, EurChfTarget As Integer
+
+    Public Function Signal() As String
+
+        'If TrendEMA = "UP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        If (TrendEMA = "UP" Or TrendEMA = "UPEMA") And MACDTrend = "UP" And RSITrend = "UP" Then
+            Target = 15
+            Return "BUY"
+            'ElseIf TrendEMA = "GOUP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        ElseIf TrendEMA = "GOUP" And MACDTrend = "UP" And RSITrend = "UP" Then
+            Target = 20
+            Return "BUY"
+            'ElseIf TrendEMA = "DOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf (TrendEMA = "DOWN" Or TrendEMA = "DOWNEMA") And MACDTrend = "DOWN" And RSITrend = "DOWN" Then
+            Target = 15
+            Return "SELL"
+            'ElseIf TrendEMA = "GODOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf TrendEMA = "GODOWN" And MACDTrend = "DOWN" And RSITrend = "DOWN" Then
+            Target = 20
+            Return "SELL"
+        Else
+            If TrendEMA = "" Then Return "NEUTRAL"
+            If TrendEMA <> "" Then Return TrendEMA
+        End If
+
+    End Function
+
+    Public Function SignalEurJpy() As String
+
+        'If TrendEMA = "UP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        If (EurJpyTrendEMA = "UP" Or EurJpyTrendEMA = "UPEMA") And EurJpyMACDTrend = "UP" And EurJpyRSITrend = "UP" Then
+            EurJpyTarget = 15
+            Return "BUY"
+            'ElseIf TrendEMA = "GOUP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        ElseIf EurJpyTrendEMA = "GOUP" And EurJpyMACDTrend = "UP" And EurJpyRSITrend = "UP" Then
+            EurJpyTarget = 20
+            Return "BUY"
+            'ElseIf TrendEMA = "DOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf (EurJpyTrendEMA = "DOWN" Or EurJpyTrendEMA = "DOWNEMA") And EurJpyMACDTrend = "DOWN" And EurJpyRSITrend = "DOWN" Then
+            EurJpyTarget = 15
+            Return "SELL"
+            'ElseIf TrendEMA = "GODOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf EurJpyTrendEMA = "GODOWN" And EurJpyMACDTrend = "DOWN" And EurJpyRSITrend = "DOWN" Then
+            EurJpyTarget = 20
+            Return "SELL"
+        Else
+            If EurJpyTrendEMA = "" Then Return "NEUTRAL"
+            If EurJpyTrendEMA <> "" Then Return EurJpyTrendEMA
+        End If
+
+    End Function
+
+    Public Function SignalEURCHF() As String
+
+        'If TrendEMA = "UP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        If (EURCHFTrendEMA = "UP" Or EURCHFTrendEMA = "UPEMA") And EurChfMACDTrend = "UP" And EurChfRSITrend = "UP" Then
+            EurChfTarget = 15
+            Return "BUY"
+            'ElseIf TrendEMA = "GOUP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        ElseIf EURCHFTrendEMA = "GOUP" And EurChfMACDTrend = "UP" And EurChfRSITrend = "UP" Then
+            EurChfTarget = 20
+            Return "BUY"
+            'ElseIf TrendEMA = "DOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf (EURCHFTrendEMA = "DOWN" Or EURCHFTrendEMA = "DOWNEMA") And EurChfMACDTrend = "DOWN" And EurChfRSITrend = "DOWN" Then
+            EurChfTarget = 15
+            Return "SELL"
+            'ElseIf TrendEMA = "GODOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf EURCHFTrendEMA = "GODOWN" And EurChfMACDTrend = "DOWN" And EurChfRSITrend = "DOWN" Then
+            EurChfTarget = 20
+            Return "SELL"
+        Else
+            If EURCHFTrendEMA = "" Then Return "NEUTRAL"
+            If EURCHFTrendEMA <> "" Then Return EURCHFTrendEMA
+        End If
+
+    End Function
+
+
+    Public Function SignalGbpJpy() As String
+
+        'If TrendEMA = "UP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        If (GBPJPYTrendEMA = "UP" Or GBPJPYTrendEMA = "UPEMA") And GbpJpyMACDTrend = "UP" And GbpJpyRSITrend = "UP" Then
+            GbpJpyTarget = 15
+            Return "BUY"
+            'ElseIf TrendEMA = "GOUP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        ElseIf GBPJPYTrendEMA = "GOUP" And GbpJpyMACDTrend = "UP" And GbpJpyRSITrend = "UP" Then
+            GbpJpyTarget = 20
+            Return "BUY"
+            'ElseIf TrendEMA = "DOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf (GBPJPYTrendEMA = "DOWN" Or GBPJPYTrendEMA = "DOWNEMA") And GbpJpyMACDTrend = "DOWN" And GbpJpyRSITrend = "DOWN" Then
+            GbpJpyTarget = 15
+            Return "SELL"
+            'ElseIf TrendEMA = "GODOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf GBPJPYTrendEMA = "GODOWN" And GbpJpyMACDTrend = "DOWN" And GbpJpyRSITrend = "DOWN" Then
+            GbpJpyTarget = 20
+            Return "SELL"
+        Else
+            If GBPJPYTrendEMA = "" Then Return "NEUTRAL"
+            If GBPJPYTrendEMA <> "" Then Return GBPJPYTrendEMA
+        End If
+
+    End Function
+
+    Public Function SignalAudUsd() As String
+
+        'If TrendEMA = "UP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        If (AUDUSDTrendEMA = "UP" Or AUDUSDTrendEMA = "UPEMA") And AudUsdMACDTrend = "UP" And AudUsdRSITrend = "UP" Then
+            AudUsdTarget = 15
+            Return "BUY"
+            'ElseIf TrendEMA = "GOUP" And ADXTrend = "STRONG" And RSITrend = "UP" And MACDTrend = "UP" Then
+        ElseIf AUDUSDTrendEMA = "GOUP" And AudUsdMACDTrend = "UP" And AudUsdRSITrend = "UP" Then
+            AudUsdTarget = 20
+            Return "BUY"
+            'ElseIf TrendEMA = "DOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf (AUDUSDTrendEMA = "DOWN" Or AUDUSDTrendEMA = "DOWNEMA") And AudUsdMACDTrend = "DOWN" And AudUsdRSITrend = "DOWN" Then
+            AudUsdTarget = 15
+            Return "SELL"
+            'ElseIf TrendEMA = "GODOWN" And ADXTrend = "STRONG" And RSITrend = "DOWN" And MACDTrend = "DOWN" Then
+        ElseIf AUDUSDTrendEMA = "GODOWN" And AudUsdMACDTrend = "DOWN" And AudUsdRSITrend = "DOWN" Then
+            AudUsdTarget = 20
+            Return "SELL"
+        Else
+            If AUDUSDTrendEMA = "" Then Return "NEUTRAL"
+            If AUDUSDTrendEMA <> "" Then Return AUDUSDTrendEMA
+        End If
+
+    End Function
+
+
+    Public Sub Trend()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        posDMI = ""
+        NegDMI = ""
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from study where curr = 'GBPUSD' order by TimeNow DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                'IDENTIFICATION EMA8_1
+                EMA8_1 = reader("EMA8")
+                EMA21_1 = reader("EMA21")
+                EMA55_1 = reader("EMA55")
+                PosDMI_1 = reader("PosDMI")
+                NegDMI_1 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_1
+                ADX_1 = reader("ADX")
+
+                'IDENTIFICATION RSI_1
+                RSI_1 = reader("RSI")
+
+                'IDENTIFICATION macd_1
+                macdVal_1 = reader("MACDValue")
+                macdSignal_1 = reader("MACDSignal")
+
+                reader.Read()
+
+                EMA8_2 = reader("EMA8")
+                EMA21_2 = reader("EMA21")
+                PosDMI_2 = reader("PosDMI")
+                NegDMI_2 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_2
+                ADX_2 = reader("ADX")
+                'IDENTIFICATION RSI_2
+                RSI_2 = reader("RSI")
+
+                'IDENTIFICATION macd_2
+                macdVal_2 = reader("MACDValue")
+                macdSignal_2 = reader("MACDSignal")
+
+                reader.Read()
+
+                EMA8_3 = reader("EMA8")
+                EMA21_3 = reader("EMA21")
+
+                'IDENTIFICATION ADX_3
+                ADX_3 = reader("ADX")
+
+                'IDENTIFICATION RSI_3
+                RSI_3 = reader("RSI")
+
+                'IDENTIFICATION macd_3
+                'macdVal_3 = reader("MACDValue")
+                'macdSignal_3 = reader("MACDSignal")
+
+            End If
+
+            'Identyfying variables
+
+            If EMA8_1 = "" Or IsNothing(EMA8_1) Or EMA8_2 = "" Or IsNothing(EMA8_2) Or EMA8_3 = "" Or IsNothing(EMA8_3) Then
+                TrendEMA = ""
+                Exit Sub
+            End If
+
+            If CDbl(EMA8_1) > CDbl(EMA8_2) Then
+                EMA8 = "UP"
+            Else
+                EMA8 = "DOWN"
+            End If
+
+            If CDbl(PosDMI_1) > CDbl(PosDMI_2) Then
+                posDMI = "UP"
+            Else
+                posDMI = "DOWN"
+            End If
+            If CDbl(NegDMI_1) > CDbl(NegDMI_2) Then
+                NegDMI = "UP"
+            Else
+                NegDMI = "DOWN"
+            End If
+
+
+            PosCrossDMI = ""
+            NegCrossDMI = ""
+
+            'If CDbl(PosDMI_1) > CDbl(PosDMI_2) And CDbl(NegDMI_1) < CDbl(NegDMI_2) And CDbl(PosDMI_2) < CDbl(NegDMI_2) And CDbl(PosDMI_1) > CDbl(NegDMI_1) Then
+            If posDMI = "UP" And NegDMI = "DOWN" And CDbl(PosDMI_1) > CDbl(NegDMI_1) Then
+                PosCrossDMI = "PosDMICROSSUP"
+                NegCrossDMI = ""
+            End If
+            'If CDbl(NegDMI_1) > CDbl(NegDMI_2) And CDbl(PosDMI_1) < CDbl(PosDMI_2) And CDbl(NegDMI_2) < CDbl(PosDMI_2) And CDbl(NegDMI_1) > CDbl(PosDMI_1) Then
+            If posDMI = "DOWN" And NegDMI = "UP" And CDbl(NegDMI_1) > CDbl(PosDMI_1) Then
+                NegCrossDMI = "NegDMICROSSUP"
+                PosCrossDMI = ""
+            End If
+
+            If CDbl(EMA8_1) > CDbl(EMA8_2) And CDbl(EMA8_2) > CDbl(EMA8_3) And CDbl(EMA8_1) > CDbl(EMA21_1) Then
+                TrendEMA = "UP"
+            End If
+            If CDbl(EMA8_1) > CDbl(EMA8_2) And CDbl(EMA8_2) > CDbl(EMA8_3) And CDbl(EMA8_1) > CDbl(EMA21_1) And CDbl(EMA21_1) > CDbl(EMA55_1) Then
+                TrendEMA = "GOUP"
+            End If
+            If CDbl(EMA8_1) < CDbl(EMA8_2) And CDbl(EMA8_2) < CDbl(EMA8_3) And CDbl(EMA8_1) < CDbl(EMA21_1) Then
+                TrendEMA = "DOWN"
+            End If
+            If CDbl(EMA8_1) < CDbl(EMA8_2) And CDbl(EMA8_2) < CDbl(EMA8_3) And CDbl(EMA8_1) < CDbl(EMA21_1) And CDbl(EMA21_1) < CDbl(EMA55_1) Then
+                TrendEMA = "GODOWN"
+            End If
+
+            If (CDbl(ADX_1) > CDbl(ADX_2) And CDbl(ADX_2) > CDbl(ADX_3)) Then 'And ADX_2 > ADX_3 And ADX_1 >= 20 Then
+                ADXTrend = "STRONG"
+            Else
+                ADXTrend = "NEUTRAL"
+            End If
+
+            If RSI_1 > RSI_2 And RSI_1 <= 72 Then
+                RSITrend = "UP"
+            ElseIf RSI_1 > 72 Then
+                RSITrend = "OB"
+            ElseIf RSI_1 < 28 Then
+                RSITrend = "OS"
+            ElseIf RSI_1 < RSI_2 And RSI_1 >= 30 Then
+                RSITrend = "DOWN"
+            Else
+                RSITrend = "NEUTRAL"
+            End If
+
+            If CDbl(macdVal_1) > CDbl(macdSignal_1) And CDbl(macdVal_2) > CDbl(macdSignal_2) And (CDbl(macdVal_1) > CDbl(macdVal_2) And CDbl(macdSignal_1) > CDbl(macdSignal_2)) And Math.Abs(CDbl(macdVal_1) - CDbl(macdVal_2)) > 1 Then
+                MACDTrend = "UP"
+            ElseIf CDbl(macdVal_1) < CDbl(macdSignal_1) And CDbl(macdVal_2) < CDbl(macdSignal_2) And (CDbl(macdVal_1) < CDbl(macdVal_2) And CDbl(macdSignal_1) < CDbl(macdSignal_2)) And Math.Abs(CDbl(macdVal_1) - CDbl(macdVal_2)) > 1 Then
+                MACDTrend = "DOWN"
+            ElseIf CDbl(macdVal_1) > CDbl(macdSignal_1) And CDbl(macdVal_2) > CDbl(macdSignal_2) And (CDbl(macdVal_1) > CDbl(macdVal_2) And CDbl(macdSignal_1) > CDbl(macdSignal_2)) And Math.Abs(CDbl(macdVal_1) - CDbl(macdVal_2)) = 1 Then
+                MACDTrend = "SOFTNEUTRAL"
+            ElseIf CDbl(macdVal_1) < CDbl(macdSignal_1) And CDbl(macdVal_2) < CDbl(macdSignal_2) And (CDbl(macdVal_1) < CDbl(macdVal_2) And CDbl(macdSignal_1) < CDbl(macdSignal_2)) And Math.Abs(CDbl(macdVal_1) - CDbl(macdVal_2)) = 1 Then
+                MACDTrend = "SOFTNEUTRAL"
+            Else
+                MACDTrend = "NEUTRAL"
+            End If
+
+            'If CDbl(EMA8_1) > CDbl(EMA8_3) And CDbl(EMA8_3) < CDbl(reader("EMA21")) And CDbl(EMA8_1) > CDbl(reader("EMA21")) Then 'And MACDTrend = "UP" Then
+            '    TrendEMA = "UPEMA"
+            'End If
+            'If CDbl(EMA8_1) < CDbl(EMA8_3) And CDbl(EMA8_1) < CDbl(reader("EMA21")) And CDbl(EMA8_3) > CDbl(reader("EMA21")) Then 'And MACDTrend = "DOWN" Then
+            '    TrendEMA = "DOWNEMA"
+            'End If
+            'If CDbl(EMA21_1) > CDbl(EMA21_3) And CDbl(EMA21_1) > CDbl(reader("EMA55")) And CDbl(EMA21_3) < CDbl(reader("EMA55")) Then
+            '    TrendEMA = "LONGUPEMA"
+            'End If
+            'If CDbl(EMA21_1) < CDbl(EMA21_3) And CDbl(EMA21_1) < CDbl(reader("EMA55")) And CDbl(EMA21_3) > CDbl(reader("EMA55")) Then
+            '    TrendEMA = "LONGDOWNEMA"
+            'End If
+
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            reader.Close()
+            opExec.closeConnection()
+        End Try
+
+    End Sub
+
+
+    Public Sub TrendEurJpy()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        NegEurJpyDMI = ""
+        posEurJpyDMI = ""
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from study where curr = 'EURJPY' order by TimeNow DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                'IDENTIFICATION EMA8_1
+                EurJpyEMA8_1 = reader("EMA8")
+                EurJpyEMA21_1 = reader("EMA21")
+                EurJpyEMA55_1 = reader("EMA55")
+                EurJpyPosDMI_1 = reader("PosDMI")
+                EurJpyNegDMI_1 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_1
+                EurJpyADX_1 = reader("ADX")
+
+                'IDENTIFICATION RSI_1
+                EurJpyRSI_1 = reader("RSI")
+
+                'IDENTIFICATION macd_1
+                EurJpyMacdVal_1 = reader("MACDValue")
+                EurJpyMacdSignal_1 = reader("MACDSignal")
+
+                reader.Read()
+
+                EurJpyEMA8_2 = reader("EMA8")
+                EurJpyEMA21_2 = reader("EMA21")
+                EurJpyPosDMI_2 = reader("PosDMI")
+                EurJpyNegDMI_2 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_2
+                EurJpyADX_2 = reader("ADX")
+                'IDENTIFICATION RSI_2
+                EurJpyRSI_2 = reader("RSI")
+
+                'IDENTIFICATION macd_2
+                EurJpyMacdVal_2 = reader("MACDValue")
+                EurJpyMacdSignal_2 = reader("MACDSignal")
+
+                reader.Read()
+
+                EurJpyEMA8_3 = reader("EMA8")
+                EurJpyEMA21_3 = reader("EMA21")
+
+                'IDENTIFICATION ADX_3
+                EurJpyADX_3 = reader("ADX")
+
+                'IDENTIFICATION RSI_3
+                EurJpyRSI_3 = reader("RSI")
+
+                'IDENTIFICATION macd_3
+                'macdVal_3 = reader("MACDValue")
+                'macdSignal_3 = reader("MACDSignal")
+
+            End If
+
+            'Identyfying variables
+
+            If EurJpyEMA8_1 = "" Or IsNothing(EurJpyEMA8_1) Or EurJpyEMA8_2 = "" Or IsNothing(EurJpyEMA8_2) Or EurJpyEMA8_3 = "" Or IsNothing(EurJpyEMA8_3) Then
+                EurJpyTrendEMA = ""
+                Exit Sub
+            End If
+
+            If CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA8_2) And Math.Abs(CDbl(Replace(EurJpyEMA8_1, ".", "")) - CDbl(Replace(EurJpyEMA8_2, ".", ""))) >= 3 Then
+                EurJpyEMA8 = "UP"
+            ElseIf CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA8_2) And Math.Abs(CDbl(Replace(EurJpyEMA8_2, ".", "")) - CDbl(Replace(EurJpyEMA8_1, ".", ""))) >= 3 Then
+                EurJpyEMA8 = "DOWN"
+            End If
+
+            If CDbl(EurJpyPosDMI_1) > CDbl(EurJpyPosDMI_2) Then
+                posEurJpyDMI = "UP"
+            Else
+                posEurJpyDMI = "DOWN"
+            End If
+            If CDbl(EurJpyNegDMI_1) > CDbl(EurJpyNegDMI_2) Then
+                NegEurJpyDMI = "UP"
+            Else
+                NegEurJpyDMI = "DOWN"
+            End If
+
+
+            If CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA8_2) And CDbl(EurJpyEMA8_2) > CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA21_1) Then
+                EurJpyTrendEMA = "UP"
+            End If
+            If CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA8_2) And CDbl(EurJpyEMA8_2) > CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA21_1) And CDbl(EurJpyEMA21_1) > CDbl(EurJpyEMA55_1) Then
+                EurJpyTrendEMA = "GOUP"
+            End If
+            If CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA8_2) And CDbl(EurJpyEMA8_2) < CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA21_1) Then
+                EurJpyTrendEMA = "DOWN"
+            End If
+            If CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA8_2) And CDbl(EurJpyEMA8_2) < CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA21_1) And CDbl(EurJpyEMA21_1) < CDbl(EurJpyEMA55_1) Then
+                EurJpyTrendEMA = "GODOWN"
+            End If
+
+            If (CDbl(EurJpyADX_1) > CDbl(EurJpyADX_2) And CDbl(EurJpyADX_2) >= CDbl(EurJpyADX_3)) Then 'And CDbl(EurJpyADX_1) >= 15 Then  'And ADX_2 > ADX_3 And ADX_1 >= 20 Then
+                EurJpyADXTrend = "STRONG"
+            Else
+                EurJpyADXTrend = "NEUTRAL"
+            End If
+
+            NegEurJpyCrossDMI = ""
+            PosEurJpyCrossDMI = ""
+
+            'If CDbl(EurJpyPosDMI_1) > CDbl(EurJpyPosDMI_2) And CDbl(EurJpyNegDMI_1) < CDbl(EurJpyNegDMI_2) And CDbl(EurJpyPosDMI_2) < CDbl(EurJpyNegDMI_2) And CDbl(EurJpyPosDMI_1) > CDbl(EurJpyNegDMI_1) Then
+            If posEurJpyDMI = "UP" And NegEurJpyDMI = "DOWN" And CDbl(EurJpyPosDMI_1) > CDbl(EurJpyNegDMI_1) Then
+                PosEurJpyCrossDMI = "PosDMICROSSUP"
+                NegEurJpyCrossDMI = ""
+            End If
+            'If CDbl(EurJpyNegDMI_1) > CDbl(EurJpyNegDMI_2) And CDbl(EurJpyPosDMI_1) < CDbl(EurJpyPosDMI_2) And CDbl(EurJpyNegDMI_2) < CDbl(EurJpyPosDMI_2) And CDbl(EurJpyNegDMI_1) > CDbl(EurJpyPosDMI_1) Then
+            If posEurJpyDMI = "DOWN" And NegEurJpyDMI = "UP" And CDbl(EurJpyNegDMI_1) > CDbl(EurJpyPosDMI_1) Then
+                NegEurJpyCrossDMI = "NegDMICROSSUP"
+                PosEurJpyCrossDMI = ""
+            End If
+
+
+            If EurJpyRSI_1 > EurJpyRSI_2 And EurJpyRSI_1 <= 72 Then
+                EurJpyRSITrend = "UP"
+            ElseIf EurJpyRSI_1 > 72 Then
+                EurJpyRSITrend = "OB"
+            ElseIf EurJpyRSI_1 < EurJpyRSI_2 And EurJpyRSI_1 >= 30 Then
+                EurJpyRSITrend = "DOWN"
+            ElseIf EurJpyRSI_1 < 28 Then
+                EurJpyRSITrend = "OS"
+            Else
+                EurJpyRSITrend = "NEUTRAL"
+            End If
+
+            If CDbl(EurJpyMacdVal_1) > CDbl(EurJpyMacdSignal_1) And CDbl(EurJpyMacdVal_2) > CDbl(EurJpyMacdSignal_2) And (CDbl(EurJpyMacdVal_1) > CDbl(EurJpyMacdVal_2) And CDbl(EurJpyMacdSignal_1) > CDbl(EurJpyMacdSignal_2)) And Math.Abs(CDbl(EurJpyMacdVal_1) - CDbl(EurJpyMacdVal_2)) > 1 Then 'And macdVal_3 > macdSignal_3 Then
+                EurJpyMACDTrend = "UP"
+            ElseIf CDbl(EurJpyMacdVal_1) < CDbl(EurJpyMacdSignal_1) And CDbl(EurJpyMacdVal_2) < CDbl(EurJpyMacdSignal_2) And (CDbl(EurJpyMacdVal_1) < CDbl(EurJpyMacdVal_2) And CDbl(EurJpyMacdSignal_1) < CDbl(EurJpyMacdSignal_2)) And Math.Abs(CDbl(EurJpyMacdVal_1) - CDbl(EurJpyMacdVal_2)) > 1 Then 'And macdVal_3 < macdSignal_3 Then
+                EurJpyMACDTrend = "DOWN"
+            ElseIf CDbl(EurJpyMacdVal_1) > CDbl(EurJpyMacdSignal_1) And CDbl(EurJpyMacdVal_2) > CDbl(EurJpyMacdSignal_2) And (CDbl(EurJpyMacdVal_1) > CDbl(EurJpyMacdVal_2) And CDbl(EurJpyMacdSignal_1) > CDbl(EurJpyMacdSignal_2)) And Math.Abs(CDbl(EurJpyMacdVal_1) - CDbl(EurJpyMacdVal_2)) = 1 Then
+                EurJpyMACDTrend = "SOFTNEUTRAL"
+            ElseIf CDbl(EurJpyMacdVal_1) < CDbl(EurJpyMacdSignal_1) And CDbl(EurJpyMacdVal_2) < CDbl(EurJpyMacdSignal_2) And (CDbl(EurJpyMacdVal_1) < CDbl(EurJpyMacdVal_2) And CDbl(EurJpyMacdSignal_1) < CDbl(EurJpyMacdSignal_2)) And Math.Abs(CDbl(EurJpyMacdVal_1) - CDbl(EurJpyMacdVal_2)) = 1 Then 'And macdVal_3 < macdSignal_3 Then
+                EurJpyMACDTrend = "SOFTNEUTRAL"
+            Else
+                EurJpyMACDTrend = "NEUTRAL"
+            End If
+
+            If CDbl(EurJpyEMA8_1) > CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_3) < CDbl(reader("EMA21")) And CDbl(EurJpyEMA8_1) >= CDbl(reader("EMA21")) Then 'And CDbl(reader("EMA21")) > CDbl(reader("EMA55")) Then
+                EurJpyTrendEMA = "UPEMA"
+            End If
+            If CDbl(EurJpyEMA8_1) < CDbl(EurJpyEMA8_3) And CDbl(EurJpyEMA8_1) <= CDbl(reader("EMA21")) And CDbl(EurJpyEMA8_3) > CDbl(reader("EMA21")) Then 'And CDbl(reader("EMA21")) < CDbl(reader("EMA55")) Then
+                EurJpyTrendEMA = "DOWNEMA"
+            End If
+            If CDbl(EurJpyEMA21_1) > CDbl(EurJpyEMA21_3) And CDbl(EurJpyEMA21_1) >= CDbl(reader("EMA55")) And CDbl(EurJpyEMA21_3) < CDbl(reader("EMA55")) Then
+                EurJpyTrendEMA = "LONGUPEMA"
+            End If
+            If CDbl(EurJpyEMA21_1) < CDbl(EurJpyEMA21_3) And CDbl(EurJpyEMA21_1) <= CDbl(reader("EMA55")) And CDbl(EurJpyEMA21_3) > CDbl(reader("EMA55")) Then
+                EurJpyTrendEMA = "LONGDOWNEMA"
+            End If
+
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            reader.Close()
+            opExec.closeConnection()
+        End Try
+
+    End Sub
+
+
+    Public Sub TrendEURCHF()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        NegEURCHFDMI = ""
+        PosEURCHFDMI = ""
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from study where curr = 'EURCHF' order by TimeNow DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                'IDENTIFICATION EMA8_1
+                EURCHFEMA8_1 = reader("EMA8")
+                EurChfEMA21_1 = reader("EMA21")
+                EurChfEMA55_1 = reader("EMA55")
+                EurChfPosDMI_1 = reader("PosDMI")
+                EurChfNegDMI_1 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_1
+                EurChfADX_1 = reader("ADX")
+
+                'IDENTIFICATION RSI_1
+                EurChfRSI_1 = reader("RSI")
+
+                'IDENTIFICATION macd_1
+                EurChfMacdVal_1 = reader("MACDValue")
+                EurChfMacdSignal_1 = reader("MACDSignal")
+
+                reader.Read()
+
+                EURCHFEMA8_2 = reader("EMA8")
+                EurChfEMA21_2 = reader("EMA21")
+                EurChfPosDMI_2 = reader("PosDMI")
+                EurChfNegDMI_2 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_2
+                EurChfADX_2 = reader("ADX")
+                'IDENTIFICATION RSI_2
+                EurChfRSI_2 = reader("RSI")
+
+                'IDENTIFICATION macd_2
+                EurChfMacdVal_2 = reader("MACDValue")
+                EurChfMacdSignal_2 = reader("MACDSignal")
+
+
+                reader.Read()
+
+                EURCHFEMA8_3 = reader("EMA8")
+                EurChfEMA21_3 = reader("EMA21")
+
+                'IDENTIFICATION ADX_3
+                EurChfADX_3 = reader("ADX")
+
+                'IDENTIFICATION RSI_3
+                EurChfRSI_3 = reader("RSI")
+
+                'IDENTIFICATION macd_3
+                'macdVal_3 = reader("MACDValue")
+                'macdSignal_3 = reader("MACDSignal")
+
+            End If
+
+            'Identyfying variables
+
+            If EURCHFEMA8_1 = "" Or IsNothing(EURCHFEMA8_1) Or EURCHFEMA8_2 = "" Or IsNothing(EURCHFEMA8_2) Or EURCHFEMA8_3 = "" Or IsNothing(EURCHFEMA8_3) Then
+                EURCHFTrendEMA = ""
+                Exit Sub
+            End If
+
+            If CDbl(EURCHFEMA8_1) > CDbl(EURCHFEMA8_2) And Math.Abs(CDbl(Replace(EURCHFEMA8_1, ".", "")) - CDbl(Replace(EURCHFEMA8_2, ".", ""))) >= 3 Then
+                EURCHFEMA8 = "UP"
+            ElseIf CDbl(EURCHFEMA8_1) < CDbl(EURCHFEMA8_2) And Math.Abs(CDbl(Replace(EURCHFEMA8_2, ".", "")) - CDbl(Replace(EURCHFEMA8_1, ".", ""))) >= 3 Then
+                EURCHFEMA8 = "DOWN"
+            End If
+
+
+            If CDbl(EurChfPosDMI_1) > CDbl(EurChfPosDMI_2) Then
+                PosEURCHFDMI = "UP"
+            Else
+                PosEURCHFDMI = "DOWN"
+            End If
+            If CDbl(EurChfNegDMI_1) > CDbl(EurChfNegDMI_2) Then
+                NegEURCHFDMI = "UP"
+            Else
+                NegEURCHFDMI = "DOWN"
+            End If
+
+
+            If CDbl(EURCHFEMA8_1) > CDbl(EURCHFEMA8_2) And CDbl(EURCHFEMA8_2) > CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_1) > CDbl(EurChfEMA21_1) Then
+                EURCHFTrendEMA = "UP"
+            End If
+            If CDbl(EURCHFEMA8_1) > CDbl(EURCHFEMA8_2) And CDbl(EURCHFEMA8_2) > CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_1) > CDbl(EurChfEMA21_1) And CDbl(EurChfEMA21_1) > CDbl(EurChfEMA55_1) Then
+                EURCHFTrendEMA = "GOUP"
+            End If
+            If CDbl(EURCHFEMA8_1) < CDbl(EURCHFEMA8_2) And CDbl(EURCHFEMA8_2) < CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_1) < CDbl(EurChfEMA21_1) Then
+                EURCHFTrendEMA = "DOWN"
+            End If
+            If CDbl(EURCHFEMA8_1) < CDbl(EURCHFEMA8_2) And CDbl(EURCHFEMA8_2) < CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_1) < CDbl(EurChfEMA21_1) And CDbl(EurChfEMA21_1) < CDbl(EurChfEMA55_1) Then
+                EURCHFTrendEMA = "GODOWN"
+            End If
+
+            If (CDbl(EurChfADX_1) > CDbl(EurChfADX_2) And CDbl(EurChfADX_2) >= CDbl(EurChfADX_3)) Then 'And CDbl(EurChfADX_1) >= 15) Then 'And ADX_2 > ADX_3 And ADX_1 >= 20 Then
+                EurChfADXTrend = "STRONG"
+            Else
+                EurChfADXTrend = "NEUTRAL"
+            End If
+
+            NegEurChfCrossDMI = ""
+            PosEurChfCrossDMI = ""
+
+            'If CDbl(EURCHFPosDMI_1) > CDbl(EURCHFPosDMI_2) And CDbl(EURCHFNegDMI_1) < CDbl(EURCHFNegDMI_2) And CDbl(EURCHFPosDMI_2) < CDbl(EURCHFNegDMI_2) And CDbl(EURCHFPosDMI_1) > CDbl(EURCHFNegDMI_1) Then
+            If PosEURCHFDMI = "UP" And NegEURCHFDMI = "DOWN" And CDbl(EurChfPosDMI_1) > CDbl(EurChfNegDMI_1) Then
+                PosEurChfCrossDMI = "PosDMICROSSUP"
+                NegEurChfCrossDMI = ""
+            End If
+            'If CDbl(EURCHFNegDMI_1) > CDbl(EURCHFNegDMI_2) And CDbl(EURCHFPosDMI_1) < CDbl(EURCHFPosDMI_2) And CDbl(EURCHFNegDMI_2) < CDbl(EURCHFPosDMI_2) And CDbl(EURCHFNegDMI_1) > CDbl(EURCHFPosDMI_1) Then
+            If PosEURCHFDMI = "DOWN" And NegEURCHFDMI = "UP" And CDbl(EurChfNegDMI_1) > CDbl(EurChfPosDMI_1) Then
+                NegEurChfCrossDMI = "NegDMICROSSUP"
+                PosEurChfCrossDMI = ""
+            End If
+
+
+            If EurChfRSI_1 > EurChfRSI_2 And EurChfRSI_1 <= 72 Then
+                EurChfRSITrend = "UP"
+            ElseIf EurChfRSI_1 > 72 Then
+                EurChfRSITrend = "OB"
+            ElseIf EurChfRSI_1 < EurChfRSI_2 And EurChfRSI_1 >= 30 Then
+                EurChfRSITrend = "DOWN"
+            ElseIf EurChfRSI_1 < 28 Then
+                EurChfRSITrend = "OS"
+            Else
+                EurChfRSITrend = "NEUTRAL"
+            End If
+
+            If CDbl(EurChfMacdVal_1) > CDbl(EurChfMacdSignal_1) And CDbl(EurChfMacdVal_2) > CDbl(EurChfMacdSignal_2) And (CDbl(EurChfMacdVal_1) > CDbl(EurChfMacdVal_2) And CDbl(EurChfMacdSignal_1) > CDbl(EurChfMacdSignal_2)) And Math.Abs(CDbl(EurChfMacdVal_1) - CDbl(EurChfMacdVal_2)) > 1 Then 'And macdVal_3 > macdSignal_3 Then
+                EurChfMACDTrend = "UP"
+            ElseIf CDbl(EurChfMacdVal_1) < CDbl(EurChfMacdSignal_1) And CDbl(EurChfMacdVal_2) < CDbl(EurChfMacdSignal_2) And (CDbl(EurChfMacdVal_1) < CDbl(EurChfMacdVal_2) And CDbl(EurChfMacdSignal_1) < CDbl(EurChfMacdSignal_2)) And Math.Abs(CDbl(EurChfMacdVal_1) - CDbl(EurChfMacdVal_2)) > 1 Then 'And macdVal_3 < macdSignal_3 Then
+                EurChfMACDTrend = "DOWN"
+            ElseIf CDbl(EurChfMacdVal_1) > CDbl(EurChfMacdSignal_1) And CDbl(EurChfMacdVal_2) > CDbl(EurChfMacdSignal_2) And (CDbl(EurChfMacdVal_1) > CDbl(EurChfMacdVal_2) And CDbl(EurChfMacdSignal_1) > CDbl(EurChfMacdSignal_2)) And Math.Abs(CDbl(EurChfMacdVal_1) - CDbl(EurChfMacdVal_2)) = 1 Then
+                EurChfMACDTrend = "SOFTNEUTRAL"
+            ElseIf CDbl(EurChfMacdVal_1) < CDbl(EurChfMacdSignal_1) And CDbl(EurChfMacdVal_2) < CDbl(EurChfMacdSignal_2) And (CDbl(EurChfMacdVal_1) < CDbl(EurChfMacdVal_2) And CDbl(EurChfMacdSignal_1) < CDbl(EurChfMacdSignal_2)) And Math.Abs(CDbl(EurChfMacdVal_1) - CDbl(EurChfMacdVal_2)) = 1 Then 'And macdVal_3 < macdSignal_3 Then
+                EurChfMACDTrend = "SOFTNEUTRAL"
+            Else
+                EurChfMACDTrend = "NEUTRAL"
+            End If
+
+            If CDbl(EURCHFEMA8_1) > CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_3) < CDbl(reader("EMA21")) And CDbl(EURCHFEMA8_1) >= CDbl(reader("EMA21")) Then
+                EURCHFTrendEMA = "UPEMA"
+            End If
+            If CDbl(EURCHFEMA8_1) < CDbl(EURCHFEMA8_3) And CDbl(EURCHFEMA8_1) <= CDbl(reader("EMA21")) And CDbl(EURCHFEMA8_3) > CDbl(reader("EMA21")) Then
+                EURCHFTrendEMA = "DOWNEMA"
+            End If
+            If CDbl(EurChfEMA21_1) > CDbl(EurChfEMA21_3) And CDbl(EurChfEMA21_1) >= CDbl(reader("EMA55")) And CDbl(EurChfEMA21_3) < CDbl(reader("EMA55")) Then
+                EURCHFTrendEMA = "LONGUPEMA"
+            End If
+            If CDbl(EurChfEMA21_1) < CDbl(EurChfEMA21_3) And CDbl(EurChfEMA21_1) <= CDbl(reader("EMA55")) And CDbl(EurChfEMA21_3) > CDbl(reader("EMA55")) Then
+                EURCHFTrendEMA = "LONGDOWNEMA"
+            End If
+
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            reader.Close()
+            opExec.closeConnection()
+        End Try
+
+    End Sub
+
+
+    Public Sub TrendGbpJpy()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        NegGbpJpyDMI = ""
+        posGbpJpyDMI = ""
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from study where curr = 'GBPJPY' order by TimeNow DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                'IDENTIFICATION EMA8_1
+                GBPJPYEMA8_1 = reader("EMA8")
+                GbpJpyEMA21_1 = reader("EMA21")
+                GbpJpyEMA55_1 = reader("EMA55")
+                GbpJpyPosDMI_1 = reader("PosDMI")
+                GbpJpyNegDMI_1 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_1
+                GbpJpyADX_1 = reader("ADX")
+
+                'IDENTIFICATION RSI_1
+                GbpJpyRSI_1 = reader("RSI")
+
+                'IDENTIFICATION macd_1
+                GbpJpyMacdVal_1 = reader("MACDValue")
+                GbpJpyMacdSignal_1 = reader("MACDSignal")
+
+
+                reader.Read()
+
+                GBPJPYEMA8_2 = reader("EMA8")
+                GbpJpyEMA21_2 = reader("EMA21")
+                GbpJpyPosDMI_2 = reader("PosDMI")
+                GbpJpyNegDMI_2 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_2
+                GbpJpyADX_2 = reader("ADX")
+                'IDENTIFICATION RSI_2
+                GbpJpyRSI_2 = reader("RSI")
+
+                'IDENTIFICATION macd_2
+                GbpJpyMacdVal_2 = reader("MACDValue")
+                GbpJpyMacdSignal_2 = reader("MACDSignal")
+
+
+                reader.Read()
+
+                GBPJPYEMA8_3 = reader("EMA8")
+                GbpJpyEMA21_3 = reader("EMA21")
+
+                'IDENTIFICATION ADX_3
+                GbpJpyADX_3 = reader("ADX")
+
+                'IDENTIFICATION RSI_3
+                GbpJpyRSI_3 = reader("RSI")
+
+                'IDENTIFICATION macd_3
+                'macdVal_3 = reader("MACDValue")
+                'macdSignal_3 = reader("MACDSignal")
+
+            End If
+
+            'Identyfying variables
+
+            If GBPJPYEMA8_1 = "" Or IsNothing(GBPJPYEMA8_1) Or GBPJPYEMA8_2 = "" Or IsNothing(GBPJPYEMA8_2) Or GBPJPYEMA8_3 = "" Or IsNothing(GBPJPYEMA8_3) Then
+                GBPJPYTrendEMA = ""
+                Exit Sub
+            End If
+
+            If CDbl(GBPJPYEMA8_1) > CDbl(GBPJPYEMA8_2) And Math.Abs(CDbl(Replace(GBPJPYEMA8_1, ".", "")) - CDbl(Replace(GBPJPYEMA8_2, ".", ""))) >= 3 Then
+                GbpJpyEMA8 = "UP"
+            ElseIf CDbl(GBPJPYEMA8_1) < CDbl(GBPJPYEMA8_2) And Math.Abs(CDbl(Replace(GBPJPYEMA8_2, ".", "")) - CDbl(Replace(GBPJPYEMA8_1, ".", ""))) >= 3 Then
+                GbpJpyEMA8 = "DOWN"
+            End If
+
+            If CDbl(GbpJpyPosDMI_1) > CDbl(GbpJpyPosDMI_2) Then
+                posGbpJpyDMI = "UP"
+            Else
+                posGbpJpyDMI = "DOWN"
+            End If
+            If CDbl(GbpJpyNegDMI_1) > CDbl(GbpJpyNegDMI_2) Then
+                NegGbpJpyDMI = "UP"
+            Else
+                NegGbpJpyDMI = "DOWN"
+            End If
+
+
+            If CDbl(GBPJPYEMA8_1) > CDbl(GBPJPYEMA8_2) And CDbl(GBPJPYEMA8_2) > CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_1) > CDbl(GbpJpyEMA21_1) Then
+                GBPJPYTrendEMA = "UP"
+            End If
+            If CDbl(GBPJPYEMA8_1) > CDbl(GBPJPYEMA8_2) And CDbl(GBPJPYEMA8_2) > CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_1) > CDbl(GbpJpyEMA21_1) And CDbl(GbpJpyEMA21_1) > CDbl(GbpJpyEMA55_1) Then
+                GBPJPYTrendEMA = "GOUP"
+            End If
+            If CDbl(GBPJPYEMA8_1) < CDbl(GBPJPYEMA8_2) And CDbl(GBPJPYEMA8_2) < CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_1) < CDbl(GbpJpyEMA21_1) Then
+                GBPJPYTrendEMA = "DOWN"
+            End If
+            If CDbl(GBPJPYEMA8_1) < CDbl(GBPJPYEMA8_2) And CDbl(GBPJPYEMA8_2) < CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_1) < CDbl(GbpJpyEMA21_1) And CDbl(GbpJpyEMA21_1) < CDbl(GbpJpyEMA55_1) Then
+                GBPJPYTrendEMA = "GODOWN"
+            End If
+
+            If (CDbl(GbpJpyADX_1) > CDbl(GbpJpyADX_2) And CDbl(GbpJpyADX_2) > CDbl(GbpJpyADX_3)) Then 'And CDbl(GbpJpyADX_1) >= 15) Then  'And ADX_2 > ADX_3 And ADX_1 >= 20 Then
+                GbpJpyADXTrend = "STRONG"
+            Else
+                GbpJpyADXTrend = "NEUTRAL"
+            End If
+
+            NegGbpJpyCrossDMI = ""
+            PosGbpJpyCrossDMI = ""
+
+            'If CDbl(GBPJPYPosDMI_1) > CDbl(GBPJPYPosDMI_2) And CDbl(GBPJPYNegDMI_1) < CDbl(GBPJPYNegDMI_2) And CDbl(GBPJPYPosDMI_2) < CDbl(GBPJPYNegDMI_2) And CDbl(GBPJPYPosDMI_1) > CDbl(GBPJPYNegDMI_1) Then
+            If posGbpJpyDMI = "UP" And NegGbpJpyDMI = "DOWN" And CDbl(GbpJpyPosDMI_1) > CDbl(GbpJpyNegDMI_1) Then
+                PosGbpJpyCrossDMI = "PosDMICROSSUP"
+                NegGbpJpyCrossDMI = ""
+            End If
+            'If CDbl(GBPJPYNegDMI_1) > CDbl(GBPJPYNegDMI_2) And CDbl(GBPJPYPosDMI_1) < CDbl(GBPJPYPosDMI_2) And CDbl(GBPJPYNegDMI_2) < CDbl(GBPJPYPosDMI_2) And CDbl(GBPJPYNegDMI_1) > CDbl(GBPJPYPosDMI_1) Then
+            If posGbpJpyDMI = "DOWN" And NegGbpJpyDMI = "UP" And CDbl(GbpJpyNegDMI_1) > CDbl(GbpJpyPosDMI_1) Then
+                NegGbpJpyCrossDMI = "NegDMICROSSUP"
+                PosGbpJpyCrossDMI = ""
+            End If
+
+
+            If GbpJpyRSI_1 > GbpJpyRSI_2 And GbpJpyRSI_1 <= 72 Then
+                GbpJpyRSITrend = "UP"
+            ElseIf GbpJpyRSI_1 > 72 Then
+                GbpJpyRSITrend = "OB"
+            ElseIf GbpJpyRSI_1 < GbpJpyRSI_2 And GbpJpyRSI_1 >= 30 Then
+                GbpJpyRSITrend = "DOWN"
+            ElseIf GbpJpyRSI_1 < 28 Then
+                GbpJpyRSITrend = "OS"
+            Else
+                GbpJpyRSITrend = "NEUTRAL"
+            End If
+
+            If CDbl(GbpJpyMacdVal_1) > CDbl(GbpJpyMacdSignal_1) And CDbl(GbpJpyMacdVal_2) > CDbl(GbpJpyMacdSignal_2) And (CDbl(GbpJpyMacdVal_1) > CDbl(GbpJpyMacdVal_2) And CDbl(GbpJpyMacdSignal_1) > CDbl(GbpJpyMacdSignal_2)) And Math.Abs(CDbl(GbpJpyMacdVal_1) - CDbl(GbpJpyMacdVal_2)) > 1 Then 'And macdVal_3 > macdSignal_3 Then
+                GbpJpyMACDTrend = "UP"
+            ElseIf CDbl(GbpJpyMacdVal_1) < CDbl(GbpJpyMacdSignal_1) And CDbl(GbpJpyMacdVal_2) < CDbl(GbpJpyMacdSignal_2) And (CDbl(GbpJpyMacdVal_1) < CDbl(GbpJpyMacdVal_2) And CDbl(GbpJpyMacdSignal_1) < CDbl(GbpJpyMacdSignal_2)) And Math.Abs(CDbl(GbpJpyMacdVal_1) - CDbl(GbpJpyMacdVal_2)) > 1 Then 'And macdVal_3 < macdSignal_3 Then
+                GbpJpyMACDTrend = "DOWN"
+            ElseIf CDbl(GbpJpyMacdVal_1) > CDbl(GbpJpyMacdSignal_1) And CDbl(GbpJpyMacdVal_2) > CDbl(GbpJpyMacdSignal_2) And (CDbl(GbpJpyMacdVal_1) > CDbl(GbpJpyMacdVal_2) And CDbl(GbpJpyMacdSignal_1) > CDbl(GbpJpyMacdSignal_2)) And Math.Abs(CDbl(GbpJpyMacdVal_1) - CDbl(GbpJpyMacdVal_2)) = 1 Then
+                GbpJpyMACDTrend = "SOFTNEUTRAL"
+            ElseIf CDbl(GbpJpyMacdVal_1) < CDbl(GbpJpyMacdSignal_1) And CDbl(GbpJpyMacdVal_2) < CDbl(GbpJpyMacdSignal_2) And (CDbl(GbpJpyMacdVal_1) < CDbl(GbpJpyMacdVal_2) And CDbl(GbpJpyMacdSignal_1) < CDbl(GbpJpyMacdSignal_2)) And Math.Abs(CDbl(GbpJpyMacdVal_1) - CDbl(GbpJpyMacdVal_2)) = 1 Then 'And macdVal_3 < macdSignal_3 Then
+                GbpJpyMACDTrend = "SOFTNEUTRAL"
+            Else
+                GbpJpyMACDTrend = "NEUTRAL"
+            End If
+
+            'If CDbl(GBPJPYEMA8_1) > CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_3) < CDbl(reader("EMA21")) And CDbl(GBPJPYEMA8_1) > CDbl(reader("EMA21")) Then 'And MACDTrend = "UP" Then
+            '    GBPJPYTrendEMA = "UPEMA"
+            'End If
+            'If CDbl(GBPJPYEMA8_1) < CDbl(GBPJPYEMA8_3) And CDbl(GBPJPYEMA8_1) < CDbl(reader("EMA21")) And CDbl(GBPJPYEMA8_3) > CDbl(reader("EMA21")) Then 'And MACDTrend = "DOWN" Then
+            '    GBPJPYTrendEMA = "DOWNEMA"
+            'End If
+            'If CDbl(GbpJpyEMA21_1) > CDbl(GbpJpyEMA21_3) And CDbl(GbpJpyEMA21_1) > CDbl(reader("EMA55")) And CDbl(GbpJpyEMA21_3) < CDbl(reader("EMA55")) Then
+            '    GBPJPYTrendEMA = "LONGUPEMA"
+            'End If
+            'If CDbl(GbpJpyEMA21_1) < CDbl(GbpJpyEMA21_3) And CDbl(GbpJpyEMA21_1) < CDbl(reader("EMA55")) And CDbl(GbpJpyEMA21_3) > CDbl(reader("EMA55")) Then
+            '    GBPJPYTrendEMA = "LONGDOWNEMA"
+            'End If
+
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            reader.Close()
+            opExec.closeConnection()
+        End Try
+
+    End Sub
+
+    Public Sub SetCandle()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from rates1 order by dtDate DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                reader.Read()
+                CloseEurJpy = reader("ClosedEurJpy")
+                CloseEurChf = reader("ClosedEurChf")
+                CloseGbpJpy = reader("ClosedGbpJpy")
+                CloseGbpUsd = reader("ClosedGbpUsd")
+                CloseAudUSd = reader("ClosedAudUsd")
+
+                reader.Read()
+                OpenEurJpy = reader("PriceEurJpy")
+                OpenEurChf = reader("PriceEurChf")
+                OpenGbpJpy = reader("PriceGbpJpy")
+                OpenGbpUsd = reader("PriceGbpUsd")
+                OpenAudUSd = reader("PriceAudUsd")
+
+
+                If (CDbl(CloseEurJpy) < CDbl(OpenEurJpy)) Then
+                    CandleEurJpy = "DOWN"
+                ElseIf (CDbl(CloseEurJpy) > CDbl(OpenEurJpy)) Then
+                    CandleEurJpy = "UP"
+                Else
+                    CandleEurJpy = "NEUTRAL"
+                End If
+
+                If (CDbl(CloseEurChf) < CDbl(OpenEurChf)) Then
+                    CandleEurChf = "DOWN"
+                ElseIf (CDbl(CloseEurChf) > CDbl(OpenEurChf)) Then
+                    CandleEurChf = "UP"
+                Else
+                    CandleEurChf = "NEUTRAL"
+                End If
+
+                If (CDbl(CloseGbpJpy) < CDbl(OpenGbpJpy)) Then
+                    CandleGbpJpy = "DOWN"
+                ElseIf (CDbl(CloseGbpJpy) > CDbl(OpenGbpJpy)) Then
+                    CandleGbpJpy = "UP"
+                Else
+                    CandleGbpJpy = "NEUTRAL"
+                End If
+
+                If (CDbl(CloseGbpUsd) < CDbl(OpenGbpUsd)) Then
+                    CandleGbpUsd = "DOWN"
+                ElseIf (CDbl(CloseGbpUsd) > CDbl(OpenGbpUsd)) Then
+                    CandleGbpUsd = "UP"
+                Else
+                    CandleGbpUsd = "NEUTRAL"
+                End If
+
+                If (CDbl(CloseAudUSd) < CDbl(OpenAudUSd)) Then
+                    CandleAudUSd = "DOWN"
+                ElseIf (CDbl(CloseAudUSd) > CDbl(OpenAudUSd)) Then
+                    CandleAudUsd = "UP"
+                Else
+                    CandleAudUsd = "NEUTRAL"
+                End If
+
+            End If
+
+        Catch ex As Exception
+
+
+        End Try
+
+    End Sub
+
+
+    Public Sub TrendAUDUSD()
+
+        Dim conn As cs_Connection
+        Dim opExec As cs_Operation
+        Dim strLink As String
+
+        NegAudUsdDMI = ""
+        posAudUsdDMI = ""
+
+        opExec = New cs_Operation
+        Dim reader As OleDbDataReader = opExec.rdGetReader("select top 3 * from study where curr = 'AUDUSD' order by TimeNow DESC ")
+
+        Try
+
+            If reader.HasRows = True Then
+                reader.Read()
+
+                'IDENTIFICATION EMA8_1
+                AUDUSDEMA8_1 = reader("EMA8")
+                AudUsdEMA21_1 = reader("EMA21")
+                AudUsdEMA55_1 = reader("EMA55")
+                AudUsdPosDMI_1 = reader("PosDMI")
+                AudUsdNegDMI_1 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_1
+                AudUsdADX_1 = reader("ADX")
+
+                'IDENTIFICATION RSI_1
+                AudUsdRSI_1 = reader("RSI")
+
+                'IDENTIFICATION macd_1
+                AudUsdMacdVal_1 = reader("MACDValue")
+                AudUsdMacdSignal_1 = reader("MACDSignal")
+
+                reader.Read()
+
+                AUDUSDEMA8_2 = reader("EMA8")
+                AudUsdEMA21_2 = reader("EMA21")
+                AudUsdPosDMI_2 = reader("PosDMI")
+                AudUsdNegDMI_2 = reader("NegDMI")
+
+                'IDENTIFICATION ADX_2
+                AudUsdADX_2 = reader("ADX")
+                'IDENTIFICATION RSI_2
+                AudUsdRSI_2 = reader("RSI")
+
+                'IDENTIFICATION macd_2
+                AudUsdMacdVal_2 = reader("MACDValue")
+                AudUsdMacdSignal_2 = reader("MACDSignal")
+
+                reader.Read()
+
+                AUDUSDEMA8_3 = reader("EMA8")
+                AudUsdEMA21_3 = reader("EMA21")
+
+                'IDENTIFICATION ADX_3
+                AudUsdADX_3 = reader("ADX")
+
+                'IDENTIFICATION RSI_3
+                AudUsdRSI_3 = reader("RSI")
+
+                'IDENTIFICATION macd_3
+                'macdVal_3 = reader("MACDValue")
+                'macdSignal_3 = reader("MACDSignal")
+
+            End If
+
+            'Identyfying variables
+
+            If AUDUSDEMA8_1 = "" Or IsNothing(AUDUSDEMA8_1) Or AUDUSDEMA8_2 = "" Or IsNothing(AUDUSDEMA8_2) Or AUDUSDEMA8_3 = "" Or IsNothing(AUDUSDEMA8_3) Then
+                AUDUSDTrendEMA = ""
+                Exit Sub
+            End If
+
+            If CDbl(AUDUSDEMA8_1) > CDbl(AUDUSDEMA8_2) And Math.Abs(CDbl(Replace(AUDUSDEMA8_1, ".", "")) - CDbl(Replace(AUDUSDEMA8_2, ".", ""))) >= 3 Then
+                AudUsdEMA8 = "UP"
+            ElseIf CDbl(AUDUSDEMA8_1) < CDbl(AUDUSDEMA8_2) And Math.Abs(CDbl(Replace(AUDUSDEMA8_2, ".", "")) - CDbl(Replace(AUDUSDEMA8_1, ".", ""))) >= 3 Then
+                AudUsdEMA8 = "DOWN"
+            End If
+
+            If CDbl(AudUsdPosDMI_1) > CDbl(AudUsdPosDMI_2) Then
+                posAudUsdDMI = "UP"
+            Else
+                posAudUsdDMI = "DOWN"
+            End If
+            If CDbl(AudUsdNegDMI_1) > CDbl(AudUsdNegDMI_2) Then
+                NegAudUsdDMI = "UP"
+            Else
+                NegAudUsdDMI = "DOWN"
+            End If
+
+
+            If CDbl(AUDUSDEMA8_1) > CDbl(AUDUSDEMA8_2) And CDbl(AUDUSDEMA8_2) > CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_1) > CDbl(AudUsdEMA21_1) Then
+                AUDUSDTrendEMA = "UP"
+            End If
+            If CDbl(AUDUSDEMA8_1) > CDbl(AUDUSDEMA8_2) And CDbl(AUDUSDEMA8_2) > CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_1) > CDbl(AudUsdEMA21_1) And CDbl(AudUsdEMA21_1) > CDbl(AudUsdEMA55_1) Then
+                AUDUSDTrendEMA = "GOUP"
+            End If
+            If CDbl(AUDUSDEMA8_1) < CDbl(AUDUSDEMA8_2) And CDbl(AUDUSDEMA8_2) < CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_1) < CDbl(AudUsdEMA21_1) Then
+                AUDUSDTrendEMA = "DOWN"
+            End If
+            If CDbl(AUDUSDEMA8_1) < CDbl(AUDUSDEMA8_2) And CDbl(AUDUSDEMA8_2) < CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_1) < CDbl(AudUsdEMA21_1) And CDbl(AudUsdEMA21_1) < CDbl(AudUsdEMA55_1) Then
+                AUDUSDTrendEMA = "GODOWN"
+            End If
+
+            If (CDbl(AudUsdADX_1) > CDbl(AudUsdADX_2) And CDbl(AudUsdADX_2) >= CDbl(AudUsdADX_3)) Then 'And CDbl(AudUsdADX_1) >= 15) Then 'And ADX_2 > ADX_3 And ADX_1 >= 20 Then
+                AudUsdADXTrend = "STRONG"
+            Else
+                AudUsdADXTrend = "NEUTRAL"
+            End If
+
+            NegAudUsdCrossDMI = ""
+            PosAudUsdCrossDMI = ""
+
+            'If CDbl(AUDUSDPosDMI_1) > CDbl(AUDUSDPosDMI_2) And CDbl(AUDUSDNegDMI_1) < CDbl(AUDUSDNegDMI_2) And CDbl(AUDUSDPosDMI_2) < CDbl(AUDUSDNegDMI_2) And CDbl(AUDUSDPosDMI_1) > CDbl(AUDUSDNegDMI_1) Then
+            If posAudUsdDMI = "UP" And NegAudUsdDMI = "DOWN" And CDbl(AudUsdPosDMI_1) > CDbl(AudUsdNegDMI_1) Then
+                PosAudUsdCrossDMI = "PosDMICROSSUP"
+                NegAudUsdCrossDMI = ""
+            End If
+            'If CDbl(AUDUSDNegDMI_1) > CDbl(AUDUSDNegDMI_2) And CDbl(AUDUSDPosDMI_1) < CDbl(AUDUSDPosDMI_2) And CDbl(AUDUSDNegDMI_2) < CDbl(AUDUSDPosDMI_2) And CDbl(AUDUSDNegDMI_1) > CDbl(AUDUSDPosDMI_1) Then
+            If posAudUsdDMI = "DOWN" And NegAudUsdDMI = "UP" And CDbl(AudUsdNegDMI_1) > CDbl(AudUsdPosDMI_1) Then
+                NegAudUsdCrossDMI = "NegDMICROSSUP"
+                PosAudUsdCrossDMI = ""
+            End If
+
+
+            If AudUsdRSI_1 > AudUsdRSI_2 And AudUsdRSI_1 <= 72 Then
+                AudUsdRSITrend = "UP"
+            ElseIf AudUsdRSI_1 > 72 Then
+                AudUsdRSITrend = "OB"
+            ElseIf AudUsdRSI_1 < AudUsdRSI_2 And AudUsdRSI_1 >= 30 Then
+                AudUsdRSITrend = "DOWN"
+            ElseIf AudUsdRSI_1 < 28 Then
+                AudUsdRSITrend = "OS"
+            Else
+                AudUsdRSITrend = "NEUTRAL"
+            End If
+
+            If CDbl(AudUsdMacdVal_1) > CDbl(AudUsdMacdSignal_1) And CDbl(AudUsdMacdVal_2) > CDbl(AudUsdMacdSignal_2) And (CDbl(AudUsdMacdVal_1) > CDbl(AudUsdMacdVal_2) And CDbl(AudUsdMacdSignal_1) > CDbl(AudUsdMacdSignal_2)) And Math.Abs(CDbl(AudUsdMacdVal_1) - CDbl(AudUsdMacdVal_2)) > 1 Then 'And macdVal_3 > macdSignal_3 Then
+                AudUsdMACDTrend = "UP"
+            ElseIf CDbl(AudUsdMacdVal_1) < CDbl(AudUsdMacdSignal_1) And CDbl(AudUsdMacdVal_2) < CDbl(AudUsdMacdSignal_2) And (CDbl(AudUsdMacdVal_1) < CDbl(AudUsdMacdVal_2) And CDbl(AudUsdMacdSignal_1) < CDbl(AudUsdMacdSignal_2)) And Math.Abs(CDbl(AudUsdMacdVal_1) - CDbl(AudUsdMacdVal_2)) > 1 Then 'And macdVal_3 < macdSignal_3 Then
+                AudUsdMACDTrend = "DOWN"
+            ElseIf CDbl(AudUsdMacdVal_1) > CDbl(AudUsdMacdSignal_1) And CDbl(AudUsdMacdVal_2) > CDbl(AudUsdMacdSignal_2) And (CDbl(AudUsdMacdVal_1) > CDbl(AudUsdMacdVal_2) And CDbl(AudUsdMacdSignal_1) > CDbl(AudUsdMacdSignal_2)) And Math.Abs(CDbl(AudUsdMacdVal_1) - CDbl(AudUsdMacdVal_2)) = 1 Then
+                AudUsdMACDTrend = "SOFTNEUTRAL"
+            ElseIf CDbl(AudUsdMacdVal_1) < CDbl(AudUsdMacdSignal_1) And CDbl(AudUsdMacdVal_2) < CDbl(AudUsdMacdSignal_2) And (CDbl(AudUsdMacdVal_1) < CDbl(AudUsdMacdVal_2) And CDbl(AudUsdMacdSignal_1) < CDbl(AudUsdMacdSignal_2)) And Math.Abs(CDbl(AudUsdMacdVal_1) - CDbl(AudUsdMacdVal_2)) = 1 Then 'And macdVal_3 < macdSignal_3 Then
+                AudUsdMACDTrend = "SOFTNEUTRAL"
+            Else
+                AudUsdMACDTrend = "NEUTRAL"
+            End If
+
+            'If CDbl(AUDUSDEMA8_1) > CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_3) < CDbl(reader("EMA21")) And CDbl(AUDUSDEMA8_1) > CDbl(reader("EMA21")) Then 'And MACDTrend = "UP" Then
+            '    AUDUSDTrendEMA = "UPEMA"
+            'End If
+            'If CDbl(AUDUSDEMA8_1) < CDbl(AUDUSDEMA8_3) And CDbl(AUDUSDEMA8_1) < CDbl(reader("EMA21")) And CDbl(AUDUSDEMA8_3) > CDbl(reader("EMA21")) Then 'And MACDTrend = "DOWN" Then
+            '    AUDUSDTrendEMA = "DOWNEMA"
+            'End If
+            'If CDbl(AudUsdEMA21_1) > CDbl(AudUsdEMA21_3) And CDbl(AudUsdEMA21_1) > CDbl(reader("EMA55")) And CDbl(AudUsdEMA21_3) < CDbl(reader("EMA55")) Then
+            '    AUDUSDTrendEMA = "LONGUPEMA"
+            'End If
+            'If CDbl(AudUsdEMA21_1) < CDbl(AudUsdEMA21_3) And CDbl(AudUsdEMA21_1) < CDbl(reader("EMA55")) And CDbl(AudUsdEMA21_3) > CDbl(reader("EMA55")) Then
+            '    AUDUSDTrendEMA = "LONGDOWNEMA"
+            'End If
+
+        Catch ex As Exception
+            HttpContext.Current.Response.Write(ex.Message)
+        Finally
+            reader.Close()
+            opExec.closeConnection()
+        End Try
+
+    End Sub
+
+End Class
+
+End Namespace

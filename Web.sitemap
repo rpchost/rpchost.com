@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  
+  <siteMapNode title="Home" description="Home" url="default.aspx" >
+    <siteMapNode title="Forex Trading" description="Forex Trading" url="ForexTrading.aspx"/>
+      <siteMapNode title="Foreign exchange performance" description="Foreign exchange performance" url="performance.aspx" />
+      <siteMapNode title="Trading History" description="Trading History" url="TradingHistory.aspx" />
+      <siteMapNode title="Free Forex Signal" description="Free Forex Signal" url="FreeForexSignal.aspx" />
+      <siteMapNode title="Trading Guide" description="Trading Guide" url="guide.aspx" />
+    </siteMapNode>
+    
+    
+    <siteMapNode title="Trading Signals" description="Trading Signals" url="default.aspx">
+      <siteMapNode title="Forex Trading" description="Forex Trading" url="ForexTrading.aspx" />
+      <siteMapNode title="Trading History" description="Trading History" url="TradingHistory.aspx" />
+      <siteMapNode title="Register" description="Register" url="RegisterContent.aspx" />
+      <siteMapNode title="Login" description="Login" url="Login.aspx" />
+    </siteMapNode>
+
+    
+    <siteMapNode title="Free Forex Signal" description="Free Forex Signal" url="FreeForexSignal.aspx">
+      <siteMapNode title="Forex" description="Forex" url="Forex.aspx" />
+      <siteMapNode title="Forex Trading" description="Forex Trading" url="ForexTrading.aspx" />
+      <siteMapNode title="performance" description="performance" url="performance.aspx" />
+      <siteMapNode title="Forex Automated Signals" description="Forex Automated Signals" url="automated.aspx" />
+    </siteMapNode>
+
+
+  <siteMapNode title="Trading Guide" description="Trading Guide" url="guide.aspx">
+    <siteMapNode title="Free Forex Signal" description="Free Forex Trading Alerts" url="FreeForexSignal.aspx" />
+    <siteMapNode title="Technical Signals" description="Technical Signals" url="forex.aspx" />
+    <siteMapNode title="News Signals" description="News Signals" url="forex.aspx" />
+  </siteMapNode>
+
+  <siteMapNode title="Trades History" description="Trades History" url="TradingHistory.aspx">
+    <siteMapNode title="Analysis" description="Fundamental and Technical analysis" url="technicalanalysis.aspx" />
+  </siteMapNode>
+
+
+  <siteMapNode title="Performance" description="Performance" url="Performance.aspx">
+    <siteMapNode title="Trading History" description="Trading History" url="TradingHistory.aspx" />
+    <siteMapNode title="Traiding Guide" description="Traiding Guide" url="Guide.aspx" />
+  </siteMapNode>
+
+  <siteMapNode title="Forex Trading" description="Forex Trading" url="ForexTrading.aspx">
+    <siteMapNode title="Forex Trading Signals" description="Forex Trading Signals" url="forex.aspx" />
+  </siteMapNode>
+
+  <siteMapNode title="Technical Analysis" description="Forex Analysis" url="TechnicalAnalysis.aspx">
+    <siteMapNode title="Forex Trading" description="Forex Trading" url="ForexTrading.aspx" />
+    <siteMapNode title="Technical Analysis" description="Technical Analysis" url="TechnicalAnalysis.aspx" />
+  </siteMapNode>
+
+  <siteMapNode title="About us" description="About us" url="aboutus.aspx">
+    <siteMapNode title="Automated Forex System" description="Automated Forex System" url="automated.aspx" />
+    <siteMapNode title="profile" description="Who is" url="profile.aspx" />
+    <siteMapNode title="Support" description="Support" url="contact.aspx" />
+  </siteMapNode>
+
+  <siteMapNode title="Forex Articles" description="Forex Articles" url="ForexArticles.aspx">
+    <siteMapNode title="How to take control in Forex Trading" description="How to take control in Forex Trading" url="how_to_take_control_in_forextrading.aspx" />
+    <siteMapNode title="How I became a successful part time trader" description="How I became a successful part time trader" url="how_I_became_a_successful_part_time_trader.aspx" />
+  </siteMapNode>  
+  
+
+</siteMap>
+

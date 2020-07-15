@@ -1,0 +1,122 @@
+Namespace rpchost
+
+Partial Class ForexData
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents lblPlusDI As System.Web.UI.WebControls.Label
+
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+    Protected WithEvents        EURJPYStudyTime      As Label
+    Protected WithEvents        EURCHFStudyTime      As Label
+    Protected WithEvents        GBPJPYStudyTime      As Label
+    Protected WithEvents        AUDUSDStudyTime      As Label
+    Protected WithEvents        GBPUSDStudyTime      As Label
+
+
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+
+        Try
+
+            Dim forex As New com.forexalertspro.GrabData
+
+            Dim arr() As String
+
+            arr = Split(forex.EURJPYData, "|")
+            ' Response.Write("arr = " & arr(0))
+            'Response.End()
+            EURJPYADX.Text = arr(0)
+            EURJPYEMA8.Text = arr(1)
+            EURJPYEMA21.Text = arr(2)
+            EURJPYEMA55.Text = arr(3)
+            EURJPYRSI.Text = arr(4)
+            EURJPYValue.Text = arr(5)
+            EURJPYSignal.Text = arr(6)
+            EurJpyPosDMI.Text = arr(8)
+            EurJpyNegDMI.Text = arr(9)
+            EurJpyBollUp.Text = arr(10)
+            EurJpyBollDown.Text = arr(11)
+            EurJpyBollWidth.Text = arr(12)
+
+            arr = Split(forex.EURCHFData, "|")
+            EURCHFADX.Text = arr(0)
+            EURCHFEMA8.Text = arr(1)
+            EURCHFEMA21.Text = arr(2)
+            EURCHFEMA55.Text = arr(3)
+            EURCHFRSI.Text = arr(4)
+            EURCHFValue.Text = arr(5)
+            EURCHFSignal.Text = arr(6)
+            EURCHFPosDMI.Text = arr(8)
+            EURCHFNegDMI.Text = arr(9)
+            EURCHFBollUp.Text = arr(10)
+            EURCHFBollDown.Text = arr(11)
+            EURCHFBollWidth.Text = arr(12)
+
+            arr = Split(forex.GBPJPYData, "|")
+            GBPJPYADX.Text = arr(0)
+            GBPJPYEMA8.Text = arr(1)
+            GBPJPYEMA21.Text = arr(2)
+            GBPJPYEMA55.Text = arr(3)
+            GBPJPYRSI.Text = arr(4)
+            GBPJPYValue.Text = arr(5)
+            GBPJPYSignal.Text = arr(6)
+            GBPJPYPosDMI.Text = arr(8)
+            GBPJPYNegDMI.Text = arr(9)
+            GBPJPYBollUp.Text = arr(10)
+            GBPJPYBollDown.Text = arr(11)
+            GBPJPYBollWidth.Text = arr(12)
+
+            arr = Split(forex.GBPUSDData, "|")
+            GBPUSDADX.Text = arr(0)
+            GBPUSDEMA8.Text = arr(1)
+            GBPUSDEMA21.Text = arr(2)
+            GBPUSDEMA55.Text = arr(3)
+            GBPUSDRSI.Text = arr(4)
+            GBPUSDValue.Text = arr(5)
+            GBPUSDSignal.Text = arr(6)
+            GBPUSDPosDMI.Text = arr(8)
+            GBPUSDNegDMI.Text = arr(9)
+            GBPUSDBollUp.Text = arr(10)
+            GBPUSDBollDown.Text = arr(11)
+            GBPUSDBollWidth.Text = arr(12)
+
+            arr = Split(forex.AUDUSDData, "|")
+            AUDUSDADX.Text = arr(0)
+            AUDUSDEMA8.Text = arr(1)
+            AUDUSDEMA21.Text = arr(2)
+            AUDUSDEMA55.Text = arr(3)
+            AUDUSDRSI.Text = arr(4)
+            AUDUSDValue.Text = arr(5)
+            AUDUSDSignal.Text = arr(6)
+            AUDUSDPosDMI.Text = arr(8)
+            AUDUSDNegDMI.Text = arr(9)
+            AUDUSDBollUp.Text = arr(10)
+            AUDUSDBollDown.Text = arr(11)
+            AUDUSDBollWidth.Text = arr(12)
+
+            lblMess.Text = ""
+
+        Catch ex As Exception
+
+            lblMess.Text = "DATA NOT AVAILABLE AT THE TIME BEING" & ex.Message
+        End Try
+
+    End Sub
+
+End Class
+
+End Namespace

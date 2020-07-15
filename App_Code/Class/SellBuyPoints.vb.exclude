@@ -1,0 +1,158 @@
+Namespace rpchost
+
+Public Class SellBuyPoints
+
+    Private intTarget As Integer
+
+    Public getBuyOpenPoint As String
+    Public getBuyClosePoint As String
+
+    Public getSellOpenPoint As String
+    Public getSellClosePoint As String
+
+    Private Shared chNum As Char
+
+
+    Public Sub New(ByVal intTarget As Integer)
+        Me.intTarget = intTarget
+    End Sub
+
+
+    Public Sub getBuyPoints(ByVal strPivot As String, ByVal strResistance As String)
+
+        Dim intPips As Integer
+        Dim intRest As Integer
+        Dim intQuot As Integer
+
+        Dim intX, intY As Integer
+        Dim intStartPoint, intEndPoint As Integer
+
+        Dim arrNum() As String
+        arrNum = strResistance.Split(".")
+        strResistance = arrNum(1)
+        If Len(Trim(strResistance)) < 4 Then strResistance = strResistance + "0"
+        If Len(Trim(strResistance)) > 4 Then strResistance = Left(strResistance, 4)
+
+        arrNum = strPivot.Split(".")
+        strPivot = arrNum(1)
+        If Len(Trim(strPivot)) < 4 Then strPivot = strPivot + "0"
+        If Len(Trim(strPivot)) > 4 Then strPivot = Left(strPivot, 4)
+
+        intPips = CDbl(strResistance) - CDbl(strPivot)
+        intQuot = intPips \ intTarget
+        intRest = intPips Mod intTarget
+
+        If intQuot = 1 And intRest <= 5 Then
+            intX = -1
+            intY = -1
+        End If
+        If intQuot = 0 Then
+            intX = -1
+            intY = -1
+        End If
+        If intQuot = 1 And intRest > 5 Then
+            intStartPoint = intRest / 2
+            intX = CDbl(strPivot) + intStartPoint
+            intY = CDbl(strResistance) - intStartPoint
+        End If
+
+        If intQuot > 1 And intTarget = 20 Then
+            intStartPoint = 10
+            intX = CDbl(strPivot) + intStartPoint
+            intY = CDbl(strResistance) - intStartPoint
+            If intX + 20 < intY Then
+                intY = intX + 20
+            Else
+                intY = CDbl(strResistance) - intStartPoint
+            End If
+
+        End If
+        If intQuot > 1 And intTarget = 15 Then
+            intStartPoint = 5
+            intX = CDbl(strPivot) + intStartPoint
+            intY = CDbl(strResistance) - intStartPoint
+            If intX + 15 < intY Then
+                intY = intX + 15
+            Else
+                intY = CDbl(strResistance) - intStartPoint
+            End If
+        End If
+
+        getBuyOpenPoint = intX
+        getBuyClosePoint = intY
+
+    End Sub
+
+
+    Public Sub getSellPoints(ByVal strPivot As String, ByVal strSupport As String)
+
+        Dim intPips As Integer
+        Dim intRest As Integer
+        Dim intQuot As Integer
+
+        Dim intX, intY As Integer
+        Dim intStartPoint, intEndPoint As Integer
+
+        Dim arrNum() As String
+        arrNum = strSupport.Split(".")
+        strSupport = arrNum(1)
+        If Len(Trim(strSupport)) < 4 Then strSupport = strSupport + "0"
+        If Len(Trim(strSupport)) > 4 Then strSupport = Left(strSupport, 4)
+
+        arrNum = strPivot.Split(".")
+        strPivot = arrNum(1)
+        If Len(Trim(strPivot)) < 4 Then strPivot = strPivot + "0"
+        If Len(Trim(strPivot)) > 4 Then strPivot = Left(strPivot, 4)
+
+        intPips = Math.Abs(CDbl(strSupport) - CDbl(strPivot))
+        intQuot = intPips / intTarget
+        intRest = intPips Mod intTarget
+
+        If intQuot = 1 And intRest <= 5 Then
+            intX = -1
+            intY = -1
+        End If
+        If intQuot = 0 Then
+            intX = -1
+            intY = -1
+        End If
+        If intQuot = 1 And intRest > 5 Then
+            intStartPoint = intRest / 2
+            intX = CDbl(strPivot) - intStartPoint
+
+            intY = CDbl(strSupport) + intStartPoint
+
+        End If
+
+        If intQuot > 1 And intTarget = 20 Then
+            intStartPoint = 10
+            intX = CDbl(strPivot) - intStartPoint
+            intY = CDbl(strSupport) + intStartPoint
+            If intX + 20 > intY Then
+                intY = intX - 20
+            Else
+                intY = CDbl(strSupport) + intStartPoint
+            End If
+
+        End If
+        If intQuot > 1 And intTarget = 15 Then
+            intStartPoint = 5
+            intX = CDbl(strPivot) + intStartPoint
+            intY = CDbl(strSupport) - intStartPoint
+            If intX + 15 > intY Then
+                intY = intX - 15
+            Else
+                intY = CDbl(strSupport) + intStartPoint
+            End If
+
+        End If
+
+        getSellOpenPoint = intX
+        getSellClosePoint = intY
+
+    End Sub
+
+End Class
+
+End Namespace
+

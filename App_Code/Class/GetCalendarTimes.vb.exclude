@@ -1,0 +1,30 @@
+Imports System.Data
+Imports System.Data.OleDb
+
+
+Namespace rpchost
+
+
+Public Class GetCalendarTimes
+
+    Public Shared dset As DataSet
+    Dim strLink As String
+
+    Public Shared Sub popDset()
+        Try
+
+            Dim connect As New cs_Connection
+            Dim cnn As New OleDbConnection(connect.conn)
+            Dim da As New OleDbDataAdapter("select * from ReportAnalysis where TradingPair <> ''", cnn)
+            Dim ds As New DataSet
+            da.Fill(ds, "TimeRelease")
+            dset = ds
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+End Class
+
+End Namespace

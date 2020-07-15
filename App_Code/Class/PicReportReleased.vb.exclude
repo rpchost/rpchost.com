@@ -1,0 +1,19 @@
+Namespace rpchost
+
+Public Class PicReportReleased
+
+    Public Function strReleasedLink(ByVal strLine As String) As String
+
+        Dim arr() As String
+        If InStr(strLine, "ajax_actual.php", CompareMethod.Text) = 0 Then
+            arr = strLine.Split("ajax_actual.php?eventid=")
+            Return "ajax_actual.php?eventid=" & Left(arr(1), 4)
+        Else
+            Return ""
+        End If
+
+    End Function
+
+End Class
+
+End Namespace

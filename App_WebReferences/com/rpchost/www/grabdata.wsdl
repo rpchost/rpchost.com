@@ -1,0 +1,3518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HELLO">
+        <s:complexType />
+      </s:element>
+      <s:element name="HELLOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HELLOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HELLOWORLD">
+        <s:complexType />
+      </s:element>
+      <s:element name="HELLOWORLDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HELLOWORLDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSignal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSignal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTarget" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSignalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProfit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtDateSignal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtDateClose" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertSignalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisposeConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisposeConnectionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteSignals">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteSignalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSignalsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSignalExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSignal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSignalExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isSignalExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAndroidExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAndroidID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAndroidExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isAndroidExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAndroidMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAndroidID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAndroidMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isAndroidMemberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOpenTrades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TT">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOpenTradesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetZulutradeOpenTrades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TT">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetZulutradeOpenTradesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetZulutradeOpenTradesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMarqueeSignal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Curr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrSig" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMarqueeSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setMarqueeSignalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMarquee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Marquee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMarqueeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setMarqueeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClosedTrades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TradeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtClose" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Instrument" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClosedTradesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSignal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetSignalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalSum">
+        <s:complexType />
+      </s:element>
+      <s:element name="TotalSumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TotalSumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalSumMonth">
+        <s:complexType />
+      </s:element>
+      <s:element name="TotalSumMonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TotalSumMonthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setProfitSignal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSignal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSignalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProfit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDtClose" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setProfitSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setProfitSignalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSignal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setSignalCommentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulatePlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPlateSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPlate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulatePlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulatePlateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndicatorUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuySell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndicatorUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIndicatorUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateInspectionAlerts">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateInspectionAlertsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateInspectionAlertsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateInspectionAlerts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts6" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateInspectionAlertsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateInspectionAlertsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditInspectionAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Alerts1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AlertValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditInspectionAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditInspectionAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field6" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberAndroid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDevID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberAndroidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsMemberAndroidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateSignalAndroid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDevID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateSignalAndroidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateSignalAndroidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateSignal">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateSignalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateNefaaMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateNefaaMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateNefaaMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateDelayedSignal">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateDelayedSignalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateDelayedSignalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAndroidFeedback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFeedback" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAndroidFeedbackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setAndroidFeedbackResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAndroidAdvertise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAdvertise" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAndroidAdvertiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setAndroidAdvertiseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMarquee">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMarqueeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMarqueeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="grabAnalysis">
+        <s:complexType />
+      </s:element>
+      <s:element name="grabAnalysisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grabAnalysisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateTEST">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateTESTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateTESTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetReportsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setActualResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalRep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSignal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalRepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setSignalRepResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setReportCame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRepCame" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setReportCameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setReportCameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRevision">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRev" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRevisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setRevisionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRevFrom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRevFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRevFromResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setRevFromResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEconomicCalendar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strReport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strForecast" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRelease" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTradingPair" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPair" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEconomicCalendarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetEconomicCalendarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetEconomicCalendar">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetEconomicCalendarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereClause" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HELLOSoapIn">
+    <wsdl:part name="parameters" element="tns:HELLO" />
+  </wsdl:message>
+  <wsdl:message name="HELLOSoapOut">
+    <wsdl:part name="parameters" element="tns:HELLOResponse" />
+  </wsdl:message>
+  <wsdl:message name="HELLOWORLDSoapIn">
+    <wsdl:part name="parameters" element="tns:HELLOWORLD" />
+  </wsdl:message>
+  <wsdl:message name="HELLOWORLDSoapOut">
+    <wsdl:part name="parameters" element="tns:HELLOWORLDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSignal" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisposeConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:DisposeConnection" />
+  </wsdl:message>
+  <wsdl:message name="DisposeConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:DisposeConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSignalsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSignals" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSignalsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSignalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistSoapIn">
+    <wsdl:part name="parameters" element="tns:isSignalExist" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistSoapOut">
+    <wsdl:part name="parameters" element="tns:isSignalExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistSoapIn">
+    <wsdl:part name="parameters" element="tns:isAndroidExist" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistSoapOut">
+    <wsdl:part name="parameters" element="tns:isAndroidExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:isAndroidMember" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:isAndroidMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOpenTradesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOpenTrades" />
+  </wsdl:message>
+  <wsdl:message name="SetOpenTradesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOpenTradesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetZulutradeOpenTradesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetZulutradeOpenTrades" />
+  </wsdl:message>
+  <wsdl:message name="SetZulutradeOpenTradesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetZulutradeOpenTradesResponse" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:setMarqueeSignal" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:setMarqueeSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSoapIn">
+    <wsdl:part name="parameters" element="tns:setMarquee" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSoapOut">
+    <wsdl:part name="parameters" element="tns:setMarqueeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetClosedTrades" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetClosedTradesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSignal" />
+  </wsdl:message>
+  <wsdl:message name="SetSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumSoapIn">
+    <wsdl:part name="parameters" element="tns:TotalSum" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumSoapOut">
+    <wsdl:part name="parameters" element="tns:TotalSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:TotalSumMonth" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:TotalSumMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:setProfitSignal" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:setProfitSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:setSignalComment" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:setSignalCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulatePlate" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulatePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIndicatorUsers" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIndicatorUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateInspectionAlertsSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateInspectionAlerts" />
+  </wsdl:message>
+  <wsdl:message name="PopulateInspectionAlertsSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateInspectionAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsSoapIn">
+    <wsdl:part name="parameters" element="tns:updateInspectionAlerts" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsSoapOut">
+    <wsdl:part name="parameters" element="tns:updateInspectionAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:EditInspectionAlert" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:EditInspectionAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsMemberAndroid" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsMemberAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateSignalAndroid" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateSignalAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateSignal" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateNefaaMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateNefaaMessage" />
+  </wsdl:message>
+  <wsdl:message name="PopulateNefaaMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateNefaaMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDelayedSignalSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateDelayedSignal" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDelayedSignalSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateDelayedSignalResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackSoapIn">
+    <wsdl:part name="parameters" element="tns:setAndroidFeedback" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackSoapOut">
+    <wsdl:part name="parameters" element="tns:setAndroidFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseSoapIn">
+    <wsdl:part name="parameters" element="tns:setAndroidAdvertise" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseSoapOut">
+    <wsdl:part name="parameters" element="tns:setAndroidAdvertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMarqueeSoapIn">
+    <wsdl:part name="parameters" element="tns:getMarquee" />
+  </wsdl:message>
+  <wsdl:message name="getMarqueeSoapOut">
+    <wsdl:part name="parameters" element="tns:getMarqueeResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabAnalysisSoapIn">
+    <wsdl:part name="parameters" element="tns:grabAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="grabAnalysisSoapOut">
+    <wsdl:part name="parameters" element="tns:grabAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateTESTSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateTEST" />
+  </wsdl:message>
+  <wsdl:message name="PopulateTESTSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateTESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetReports" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActualSoapIn">
+    <wsdl:part name="parameters" element="tns:setActual" />
+  </wsdl:message>
+  <wsdl:message name="setActualSoapOut">
+    <wsdl:part name="parameters" element="tns:setActualResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepSoapIn">
+    <wsdl:part name="parameters" element="tns:setSignalRep" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepSoapOut">
+    <wsdl:part name="parameters" element="tns:setSignalRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameSoapIn">
+    <wsdl:part name="parameters" element="tns:setReportCame" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameSoapOut">
+    <wsdl:part name="parameters" element="tns:setReportCameResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionSoapIn">
+    <wsdl:part name="parameters" element="tns:setRevision" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionSoapOut">
+    <wsdl:part name="parameters" element="tns:setRevisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromSoapIn">
+    <wsdl:part name="parameters" element="tns:setRevFrom" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromSoapOut">
+    <wsdl:part name="parameters" element="tns:setRevFromResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarSoapIn">
+    <wsdl:part name="parameters" element="tns:SetEconomicCalendar" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarSoapOut">
+    <wsdl:part name="parameters" element="tns:SetEconomicCalendarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetEconomicCalendarSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetEconomicCalendar" />
+  </wsdl:message>
+  <wsdl:message name="ResetEconomicCalendarSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetEconomicCalendarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectTable" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="HELLOHttpGetIn" />
+  <wsdl:message name="HELLOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HELLOWORLDHttpGetIn" />
+  <wsdl:message name="HELLOWORLDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalHttpGetIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strStatus" type="s:string" />
+    <wsdl:part name="strEntry" type="s:string" />
+    <wsdl:part name="strSL" type="s:string" />
+    <wsdl:part name="strTarget" type="s:string" />
+    <wsdl:part name="strCurr" type="s:string" />
+    <wsdl:part name="strSignalType" type="s:string" />
+    <wsdl:part name="strProfit" type="s:string" />
+    <wsdl:part name="dtDateSignal" type="s:string" />
+    <wsdl:part name="dtDateClose" type="s:string" />
+    <wsdl:part name="strComments" type="s:string" />
+    <wsdl:part name="strOrderID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisposeConnectionHttpGetIn" />
+  <wsdl:message name="DisposeConnectionHttpGetOut" />
+  <wsdl:message name="DeleteSignalsHttpGetIn" />
+  <wsdl:message name="DeleteSignalsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistHttpGetIn">
+    <wsdl:part name="strSignal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistHttpGetIn">
+    <wsdl:part name="strAndroidID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberHttpGetIn">
+    <wsdl:part name="strAndroidID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalHttpGetIn">
+    <wsdl:part name="Curr" type="s:string" />
+    <wsdl:part name="CurrSig" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeHttpGetIn">
+    <wsdl:part name="Marquee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesHttpGetIn">
+    <wsdl:part name="TradeID" type="s:string" />
+    <wsdl:part name="dtClose" type="s:string" />
+    <wsdl:part name="profit" type="s:string" />
+    <wsdl:part name="Instrument" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesHttpGetOut" />
+  <wsdl:message name="SetSignalHttpGetIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumHttpGetIn" />
+  <wsdl:message name="TotalSumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumMonthHttpGetIn" />
+  <wsdl:message name="TotalSumMonthHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalHttpGetIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strEntry" type="s:string" />
+    <wsdl:part name="strSL" type="s:string" />
+    <wsdl:part name="strCurr" type="s:string" />
+    <wsdl:part name="strSignalType" type="s:string" />
+    <wsdl:part name="strProfit" type="s:string" />
+    <wsdl:part name="strDtClose" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentHttpGetIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateHttpGetIn">
+    <wsdl:part name="strPlateSymbol" type="s:string" />
+    <wsdl:part name="strPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersHttpGetIn">
+    <wsdl:part name="BuySell" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateInspectionAlertsHttpGetIn" />
+  <wsdl:message name="PopulateInspectionAlertsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsHttpGetIn">
+    <wsdl:part name="Alerts1" type="s:string" />
+    <wsdl:part name="Alerts2" type="s:string" />
+    <wsdl:part name="Alerts3" type="s:string" />
+    <wsdl:part name="Alerts4" type="s:string" />
+    <wsdl:part name="Alerts5" type="s:string" />
+    <wsdl:part name="Alerts6" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertHttpGetIn">
+    <wsdl:part name="Alerts1" type="s:string" />
+    <wsdl:part name="AlertValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableHttpGetIn">
+    <wsdl:part name="DBName" type="s:string" />
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="Field1" type="s:string" />
+    <wsdl:part name="Field2" type="s:string" />
+    <wsdl:part name="Field3" type="s:string" />
+    <wsdl:part name="Field4" type="s:string" />
+    <wsdl:part name="Field5" type="s:string" />
+    <wsdl:part name="Field6" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidHttpGetIn">
+    <wsdl:part name="strDevID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidHttpGetIn">
+    <wsdl:part name="strDevID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalHttpGetIn" />
+  <wsdl:message name="PopulateSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateNefaaMessageHttpGetIn" />
+  <wsdl:message name="PopulateNefaaMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDelayedSignalHttpGetIn" />
+  <wsdl:message name="PopulateDelayedSignalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackHttpGetIn">
+    <wsdl:part name="strFeedback" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseHttpGetIn">
+    <wsdl:part name="strAdvertise" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getMarqueeHttpGetIn" />
+  <wsdl:message name="getMarqueeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="grabAnalysisHttpGetIn" />
+  <wsdl:message name="grabAnalysisHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateTESTHttpGetIn" />
+  <wsdl:message name="PopulateTESTHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsHttpGetIn">
+    <wsdl:part name="strText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setActualHttpGetIn">
+    <wsdl:part name="strAct" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setActualHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepHttpGetIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameHttpGetIn">
+    <wsdl:part name="strRepCame" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionHttpGetIn">
+    <wsdl:part name="strRev" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromHttpGetIn">
+    <wsdl:part name="strRevFrom" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarHttpGetIn">
+    <wsdl:part name="strReport" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+    <wsdl:part name="strForecast" type="s:string" />
+    <wsdl:part name="strRelease" type="s:string" />
+    <wsdl:part name="strTradingPair" type="s:string" />
+    <wsdl:part name="strPair" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ResetEconomicCalendarHttpGetIn" />
+  <wsdl:message name="ResetEconomicCalendarHttpGetOut" />
+  <wsdl:message name="UpdateTableHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldName" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldName" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HELLOHttpPostIn" />
+  <wsdl:message name="HELLOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HELLOWORLDHttpPostIn" />
+  <wsdl:message name="HELLOWORLDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalHttpPostIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strStatus" type="s:string" />
+    <wsdl:part name="strEntry" type="s:string" />
+    <wsdl:part name="strSL" type="s:string" />
+    <wsdl:part name="strTarget" type="s:string" />
+    <wsdl:part name="strCurr" type="s:string" />
+    <wsdl:part name="strSignalType" type="s:string" />
+    <wsdl:part name="strProfit" type="s:string" />
+    <wsdl:part name="dtDateSignal" type="s:string" />
+    <wsdl:part name="dtDateClose" type="s:string" />
+    <wsdl:part name="strComments" type="s:string" />
+    <wsdl:part name="strOrderID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisposeConnectionHttpPostIn" />
+  <wsdl:message name="DisposeConnectionHttpPostOut" />
+  <wsdl:message name="DeleteSignalsHttpPostIn" />
+  <wsdl:message name="DeleteSignalsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistHttpPostIn">
+    <wsdl:part name="strSignal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSignalExistHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistHttpPostIn">
+    <wsdl:part name="strAndroidID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidExistHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberHttpPostIn">
+    <wsdl:part name="strAndroidID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isAndroidMemberHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalHttpPostIn">
+    <wsdl:part name="Curr" type="s:string" />
+    <wsdl:part name="CurrSig" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeHttpPostIn">
+    <wsdl:part name="Marquee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setMarqueeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesHttpPostIn">
+    <wsdl:part name="TradeID" type="s:string" />
+    <wsdl:part name="dtClose" type="s:string" />
+    <wsdl:part name="profit" type="s:string" />
+    <wsdl:part name="Instrument" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetClosedTradesHttpPostOut" />
+  <wsdl:message name="SetSignalHttpPostIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumHttpPostIn" />
+  <wsdl:message name="TotalSumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TotalSumMonthHttpPostIn" />
+  <wsdl:message name="TotalSumMonthHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalHttpPostIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strEntry" type="s:string" />
+    <wsdl:part name="strSL" type="s:string" />
+    <wsdl:part name="strCurr" type="s:string" />
+    <wsdl:part name="strSignalType" type="s:string" />
+    <wsdl:part name="strProfit" type="s:string" />
+    <wsdl:part name="strDtClose" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setProfitSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentHttpPostIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strComment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setSignalCommentHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateHttpPostIn">
+    <wsdl:part name="strPlateSymbol" type="s:string" />
+    <wsdl:part name="strPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulatePlateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersHttpPostIn">
+    <wsdl:part name="BuySell" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndicatorUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateInspectionAlertsHttpPostIn" />
+  <wsdl:message name="PopulateInspectionAlertsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsHttpPostIn">
+    <wsdl:part name="Alerts1" type="s:string" />
+    <wsdl:part name="Alerts2" type="s:string" />
+    <wsdl:part name="Alerts3" type="s:string" />
+    <wsdl:part name="Alerts4" type="s:string" />
+    <wsdl:part name="Alerts5" type="s:string" />
+    <wsdl:part name="Alerts6" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateInspectionAlertsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertHttpPostIn">
+    <wsdl:part name="Alerts1" type="s:string" />
+    <wsdl:part name="AlertValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditInspectionAlertHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableHttpPostIn">
+    <wsdl:part name="DBName" type="s:string" />
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="Field1" type="s:string" />
+    <wsdl:part name="Field2" type="s:string" />
+    <wsdl:part name="Field3" type="s:string" />
+    <wsdl:part name="Field4" type="s:string" />
+    <wsdl:part name="Field5" type="s:string" />
+    <wsdl:part name="Field6" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidHttpPostIn">
+    <wsdl:part name="strDevID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberAndroidHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidHttpPostIn">
+    <wsdl:part name="strDevID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalAndroidHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateSignalHttpPostIn" />
+  <wsdl:message name="PopulateSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateNefaaMessageHttpPostIn" />
+  <wsdl:message name="PopulateNefaaMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDelayedSignalHttpPostIn" />
+  <wsdl:message name="PopulateDelayedSignalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackHttpPostIn">
+    <wsdl:part name="strFeedback" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidFeedbackHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseHttpPostIn">
+    <wsdl:part name="strAdvertise" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setAndroidAdvertiseHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getMarqueeHttpPostIn" />
+  <wsdl:message name="getMarqueeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="grabAnalysisHttpPostIn" />
+  <wsdl:message name="grabAnalysisHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PopulateTESTHttpPostIn" />
+  <wsdl:message name="PopulateTESTHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsHttpPostIn">
+    <wsdl:part name="strText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetReportsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setActualHttpPostIn">
+    <wsdl:part name="strAct" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setActualHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepHttpPostIn">
+    <wsdl:part name="strSignal" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setSignalRepHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameHttpPostIn">
+    <wsdl:part name="strRepCame" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setReportCameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionHttpPostIn">
+    <wsdl:part name="strRev" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setRevisionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromHttpPostIn">
+    <wsdl:part name="strRevFrom" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setRevFromHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarHttpPostIn">
+    <wsdl:part name="strReport" type="s:string" />
+    <wsdl:part name="strLink" type="s:string" />
+    <wsdl:part name="strForecast" type="s:string" />
+    <wsdl:part name="strRelease" type="s:string" />
+    <wsdl:part name="strTradingPair" type="s:string" />
+    <wsdl:part name="strPair" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetEconomicCalendarHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ResetEconomicCalendarHttpPostIn" />
+  <wsdl:message name="ResetEconomicCalendarHttpPostOut" />
+  <wsdl:message name="UpdateTableHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldName" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldName" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelectTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="grabdataSoap">
+    <wsdl:operation name="HELLO">
+      <wsdl:input message="tns:HELLOSoapIn" />
+      <wsdl:output message="tns:HELLOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <wsdl:input message="tns:HELLOWORLDSoapIn" />
+      <wsdl:output message="tns:HELLOWORLDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <wsdl:input message="tns:InsertSignalSoapIn" />
+      <wsdl:output message="tns:InsertSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <wsdl:input message="tns:DisposeConnectionSoapIn" />
+      <wsdl:output message="tns:DisposeConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <wsdl:input message="tns:DeleteSignalsSoapIn" />
+      <wsdl:output message="tns:DeleteSignalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <wsdl:input message="tns:isSignalExistSoapIn" />
+      <wsdl:output message="tns:isSignalExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <wsdl:input message="tns:isAndroidExistSoapIn" />
+      <wsdl:output message="tns:isAndroidExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <wsdl:input message="tns:isAndroidMemberSoapIn" />
+      <wsdl:output message="tns:isAndroidMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOpenTrades">
+      <wsdl:input message="tns:SetOpenTradesSoapIn" />
+      <wsdl:output message="tns:SetOpenTradesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetZulutradeOpenTrades">
+      <wsdl:input message="tns:SetZulutradeOpenTradesSoapIn" />
+      <wsdl:output message="tns:SetZulutradeOpenTradesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <wsdl:input message="tns:setMarqueeSignalSoapIn" />
+      <wsdl:output message="tns:setMarqueeSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <wsdl:input message="tns:setMarqueeSoapIn" />
+      <wsdl:output message="tns:setMarqueeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <wsdl:input message="tns:SetClosedTradesSoapIn" />
+      <wsdl:output message="tns:SetClosedTradesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <wsdl:input message="tns:SetSignalSoapIn" />
+      <wsdl:output message="tns:SetSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <wsdl:input message="tns:TotalSumSoapIn" />
+      <wsdl:output message="tns:TotalSumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <wsdl:input message="tns:TotalSumMonthSoapIn" />
+      <wsdl:output message="tns:TotalSumMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <wsdl:input message="tns:setProfitSignalSoapIn" />
+      <wsdl:output message="tns:setProfitSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <wsdl:input message="tns:setSignalCommentSoapIn" />
+      <wsdl:output message="tns:setSignalCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <wsdl:input message="tns:PopulatePlateSoapIn" />
+      <wsdl:output message="tns:PopulatePlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <wsdl:input message="tns:UpdateIndicatorUsersSoapIn" />
+      <wsdl:output message="tns:UpdateIndicatorUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <wsdl:input message="tns:PopulateInspectionAlertsSoapIn" />
+      <wsdl:output message="tns:PopulateInspectionAlertsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <wsdl:input message="tns:updateInspectionAlertsSoapIn" />
+      <wsdl:output message="tns:updateInspectionAlertsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <wsdl:input message="tns:EditInspectionAlertSoapIn" />
+      <wsdl:output message="tns:EditInspectionAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableSoapIn" />
+      <wsdl:output message="tns:CreateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <wsdl:input message="tns:IsMemberAndroidSoapIn" />
+      <wsdl:output message="tns:IsMemberAndroidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <wsdl:input message="tns:PopulateSignalAndroidSoapIn" />
+      <wsdl:output message="tns:PopulateSignalAndroidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <wsdl:input message="tns:PopulateSignalSoapIn" />
+      <wsdl:output message="tns:PopulateSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <wsdl:input message="tns:PopulateNefaaMessageSoapIn" />
+      <wsdl:output message="tns:PopulateNefaaMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <wsdl:input message="tns:PopulateDelayedSignalSoapIn" />
+      <wsdl:output message="tns:PopulateDelayedSignalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <wsdl:input message="tns:setAndroidFeedbackSoapIn" />
+      <wsdl:output message="tns:setAndroidFeedbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <wsdl:input message="tns:setAndroidAdvertiseSoapIn" />
+      <wsdl:output message="tns:setAndroidAdvertiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <wsdl:input message="tns:getMarqueeSoapIn" />
+      <wsdl:output message="tns:getMarqueeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <wsdl:input message="tns:grabAnalysisSoapIn" />
+      <wsdl:output message="tns:grabAnalysisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <wsdl:input message="tns:PopulateTESTSoapIn" />
+      <wsdl:output message="tns:PopulateTESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <wsdl:input message="tns:SetReportsSoapIn" />
+      <wsdl:output message="tns:SetReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <wsdl:input message="tns:setActualSoapIn" />
+      <wsdl:output message="tns:setActualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <wsdl:input message="tns:setSignalRepSoapIn" />
+      <wsdl:output message="tns:setSignalRepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <wsdl:input message="tns:setReportCameSoapIn" />
+      <wsdl:output message="tns:setReportCameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <wsdl:input message="tns:setRevisionSoapIn" />
+      <wsdl:output message="tns:setRevisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <wsdl:input message="tns:setRevFromSoapIn" />
+      <wsdl:output message="tns:setRevFromSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <wsdl:input message="tns:SetEconomicCalendarSoapIn" />
+      <wsdl:output message="tns:SetEconomicCalendarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <wsdl:input message="tns:ResetEconomicCalendarSoapIn" />
+      <wsdl:output message="tns:ResetEconomicCalendarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <wsdl:input message="tns:UpdateTableSoapIn" />
+      <wsdl:output message="tns:UpdateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <wsdl:input message="tns:SelectTableSoapIn" />
+      <wsdl:output message="tns:SelectTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="grabdataHttpGet">
+    <wsdl:operation name="HELLO">
+      <wsdl:input message="tns:HELLOHttpGetIn" />
+      <wsdl:output message="tns:HELLOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <wsdl:input message="tns:HELLOWORLDHttpGetIn" />
+      <wsdl:output message="tns:HELLOWORLDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <wsdl:input message="tns:InsertSignalHttpGetIn" />
+      <wsdl:output message="tns:InsertSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <wsdl:input message="tns:DisposeConnectionHttpGetIn" />
+      <wsdl:output message="tns:DisposeConnectionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <wsdl:input message="tns:DeleteSignalsHttpGetIn" />
+      <wsdl:output message="tns:DeleteSignalsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <wsdl:input message="tns:isSignalExistHttpGetIn" />
+      <wsdl:output message="tns:isSignalExistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <wsdl:input message="tns:isAndroidExistHttpGetIn" />
+      <wsdl:output message="tns:isAndroidExistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <wsdl:input message="tns:isAndroidMemberHttpGetIn" />
+      <wsdl:output message="tns:isAndroidMemberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <wsdl:input message="tns:setMarqueeSignalHttpGetIn" />
+      <wsdl:output message="tns:setMarqueeSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <wsdl:input message="tns:setMarqueeHttpGetIn" />
+      <wsdl:output message="tns:setMarqueeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <wsdl:input message="tns:SetClosedTradesHttpGetIn" />
+      <wsdl:output message="tns:SetClosedTradesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <wsdl:input message="tns:SetSignalHttpGetIn" />
+      <wsdl:output message="tns:SetSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <wsdl:input message="tns:TotalSumHttpGetIn" />
+      <wsdl:output message="tns:TotalSumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <wsdl:input message="tns:TotalSumMonthHttpGetIn" />
+      <wsdl:output message="tns:TotalSumMonthHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <wsdl:input message="tns:setProfitSignalHttpGetIn" />
+      <wsdl:output message="tns:setProfitSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <wsdl:input message="tns:setSignalCommentHttpGetIn" />
+      <wsdl:output message="tns:setSignalCommentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <wsdl:input message="tns:PopulatePlateHttpGetIn" />
+      <wsdl:output message="tns:PopulatePlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <wsdl:input message="tns:UpdateIndicatorUsersHttpGetIn" />
+      <wsdl:output message="tns:UpdateIndicatorUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <wsdl:input message="tns:PopulateInspectionAlertsHttpGetIn" />
+      <wsdl:output message="tns:PopulateInspectionAlertsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <wsdl:input message="tns:updateInspectionAlertsHttpGetIn" />
+      <wsdl:output message="tns:updateInspectionAlertsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <wsdl:input message="tns:EditInspectionAlertHttpGetIn" />
+      <wsdl:output message="tns:EditInspectionAlertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableHttpGetIn" />
+      <wsdl:output message="tns:CreateTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <wsdl:input message="tns:IsMemberAndroidHttpGetIn" />
+      <wsdl:output message="tns:IsMemberAndroidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <wsdl:input message="tns:PopulateSignalAndroidHttpGetIn" />
+      <wsdl:output message="tns:PopulateSignalAndroidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <wsdl:input message="tns:PopulateSignalHttpGetIn" />
+      <wsdl:output message="tns:PopulateSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <wsdl:input message="tns:PopulateNefaaMessageHttpGetIn" />
+      <wsdl:output message="tns:PopulateNefaaMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <wsdl:input message="tns:PopulateDelayedSignalHttpGetIn" />
+      <wsdl:output message="tns:PopulateDelayedSignalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <wsdl:input message="tns:setAndroidFeedbackHttpGetIn" />
+      <wsdl:output message="tns:setAndroidFeedbackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <wsdl:input message="tns:setAndroidAdvertiseHttpGetIn" />
+      <wsdl:output message="tns:setAndroidAdvertiseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <wsdl:input message="tns:getMarqueeHttpGetIn" />
+      <wsdl:output message="tns:getMarqueeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <wsdl:input message="tns:grabAnalysisHttpGetIn" />
+      <wsdl:output message="tns:grabAnalysisHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <wsdl:input message="tns:PopulateTESTHttpGetIn" />
+      <wsdl:output message="tns:PopulateTESTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <wsdl:input message="tns:SetReportsHttpGetIn" />
+      <wsdl:output message="tns:SetReportsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <wsdl:input message="tns:setActualHttpGetIn" />
+      <wsdl:output message="tns:setActualHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <wsdl:input message="tns:setSignalRepHttpGetIn" />
+      <wsdl:output message="tns:setSignalRepHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <wsdl:input message="tns:setReportCameHttpGetIn" />
+      <wsdl:output message="tns:setReportCameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <wsdl:input message="tns:setRevisionHttpGetIn" />
+      <wsdl:output message="tns:setRevisionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <wsdl:input message="tns:setRevFromHttpGetIn" />
+      <wsdl:output message="tns:setRevFromHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <wsdl:input message="tns:SetEconomicCalendarHttpGetIn" />
+      <wsdl:output message="tns:SetEconomicCalendarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <wsdl:input message="tns:ResetEconomicCalendarHttpGetIn" />
+      <wsdl:output message="tns:ResetEconomicCalendarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <wsdl:input message="tns:UpdateTableHttpGetIn" />
+      <wsdl:output message="tns:UpdateTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <wsdl:input message="tns:SelectTableHttpGetIn" />
+      <wsdl:output message="tns:SelectTableHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="grabdataHttpPost">
+    <wsdl:operation name="HELLO">
+      <wsdl:input message="tns:HELLOHttpPostIn" />
+      <wsdl:output message="tns:HELLOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <wsdl:input message="tns:HELLOWORLDHttpPostIn" />
+      <wsdl:output message="tns:HELLOWORLDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <wsdl:input message="tns:InsertSignalHttpPostIn" />
+      <wsdl:output message="tns:InsertSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <wsdl:input message="tns:DisposeConnectionHttpPostIn" />
+      <wsdl:output message="tns:DisposeConnectionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <wsdl:input message="tns:DeleteSignalsHttpPostIn" />
+      <wsdl:output message="tns:DeleteSignalsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <wsdl:input message="tns:isSignalExistHttpPostIn" />
+      <wsdl:output message="tns:isSignalExistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <wsdl:input message="tns:isAndroidExistHttpPostIn" />
+      <wsdl:output message="tns:isAndroidExistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <wsdl:input message="tns:isAndroidMemberHttpPostIn" />
+      <wsdl:output message="tns:isAndroidMemberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <wsdl:input message="tns:setMarqueeSignalHttpPostIn" />
+      <wsdl:output message="tns:setMarqueeSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <wsdl:input message="tns:setMarqueeHttpPostIn" />
+      <wsdl:output message="tns:setMarqueeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <wsdl:input message="tns:SetClosedTradesHttpPostIn" />
+      <wsdl:output message="tns:SetClosedTradesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <wsdl:input message="tns:SetSignalHttpPostIn" />
+      <wsdl:output message="tns:SetSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <wsdl:input message="tns:TotalSumHttpPostIn" />
+      <wsdl:output message="tns:TotalSumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <wsdl:input message="tns:TotalSumMonthHttpPostIn" />
+      <wsdl:output message="tns:TotalSumMonthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <wsdl:input message="tns:setProfitSignalHttpPostIn" />
+      <wsdl:output message="tns:setProfitSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <wsdl:input message="tns:setSignalCommentHttpPostIn" />
+      <wsdl:output message="tns:setSignalCommentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <wsdl:input message="tns:PopulatePlateHttpPostIn" />
+      <wsdl:output message="tns:PopulatePlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <wsdl:input message="tns:UpdateIndicatorUsersHttpPostIn" />
+      <wsdl:output message="tns:UpdateIndicatorUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <wsdl:input message="tns:PopulateInspectionAlertsHttpPostIn" />
+      <wsdl:output message="tns:PopulateInspectionAlertsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <wsdl:input message="tns:updateInspectionAlertsHttpPostIn" />
+      <wsdl:output message="tns:updateInspectionAlertsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <wsdl:input message="tns:EditInspectionAlertHttpPostIn" />
+      <wsdl:output message="tns:EditInspectionAlertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableHttpPostIn" />
+      <wsdl:output message="tns:CreateTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <wsdl:input message="tns:IsMemberAndroidHttpPostIn" />
+      <wsdl:output message="tns:IsMemberAndroidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <wsdl:input message="tns:PopulateSignalAndroidHttpPostIn" />
+      <wsdl:output message="tns:PopulateSignalAndroidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <wsdl:input message="tns:PopulateSignalHttpPostIn" />
+      <wsdl:output message="tns:PopulateSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <wsdl:input message="tns:PopulateNefaaMessageHttpPostIn" />
+      <wsdl:output message="tns:PopulateNefaaMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <wsdl:input message="tns:PopulateDelayedSignalHttpPostIn" />
+      <wsdl:output message="tns:PopulateDelayedSignalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <wsdl:input message="tns:setAndroidFeedbackHttpPostIn" />
+      <wsdl:output message="tns:setAndroidFeedbackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <wsdl:input message="tns:setAndroidAdvertiseHttpPostIn" />
+      <wsdl:output message="tns:setAndroidAdvertiseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <wsdl:input message="tns:getMarqueeHttpPostIn" />
+      <wsdl:output message="tns:getMarqueeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <wsdl:input message="tns:grabAnalysisHttpPostIn" />
+      <wsdl:output message="tns:grabAnalysisHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <wsdl:input message="tns:PopulateTESTHttpPostIn" />
+      <wsdl:output message="tns:PopulateTESTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <wsdl:input message="tns:SetReportsHttpPostIn" />
+      <wsdl:output message="tns:SetReportsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <wsdl:input message="tns:setActualHttpPostIn" />
+      <wsdl:output message="tns:setActualHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <wsdl:input message="tns:setSignalRepHttpPostIn" />
+      <wsdl:output message="tns:setSignalRepHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <wsdl:input message="tns:setReportCameHttpPostIn" />
+      <wsdl:output message="tns:setReportCameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <wsdl:input message="tns:setRevisionHttpPostIn" />
+      <wsdl:output message="tns:setRevisionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <wsdl:input message="tns:setRevFromHttpPostIn" />
+      <wsdl:output message="tns:setRevFromHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <wsdl:input message="tns:SetEconomicCalendarHttpPostIn" />
+      <wsdl:output message="tns:SetEconomicCalendarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <wsdl:input message="tns:ResetEconomicCalendarHttpPostIn" />
+      <wsdl:output message="tns:ResetEconomicCalendarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <wsdl:input message="tns:UpdateTableHttpPostIn" />
+      <wsdl:output message="tns:UpdateTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <wsdl:input message="tns:SelectTableHttpPostIn" />
+      <wsdl:output message="tns:SelectTableHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="grabdataSoap" type="tns:grabdataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HELLO">
+      <soap:operation soapAction="http://tempuri.org/HELLO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <soap:operation soapAction="http://tempuri.org/HELLOWORLD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <soap:operation soapAction="http://tempuri.org/InsertSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <soap:operation soapAction="http://tempuri.org/DisposeConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <soap:operation soapAction="http://tempuri.org/DeleteSignals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <soap:operation soapAction="http://tempuri.org/isSignalExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <soap:operation soapAction="http://tempuri.org/isAndroidExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <soap:operation soapAction="http://tempuri.org/isAndroidMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOpenTrades">
+      <soap:operation soapAction="http://tempuri.org/SetOpenTrades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetZulutradeOpenTrades">
+      <soap:operation soapAction="http://tempuri.org/SetZulutradeOpenTrades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <soap:operation soapAction="http://tempuri.org/setMarqueeSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <soap:operation soapAction="http://tempuri.org/setMarquee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <soap:operation soapAction="http://tempuri.org/SetClosedTrades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <soap:operation soapAction="http://tempuri.org/SetSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <soap:operation soapAction="http://tempuri.org/TotalSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <soap:operation soapAction="http://tempuri.org/TotalSumMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <soap:operation soapAction="http://tempuri.org/setProfitSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <soap:operation soapAction="http://tempuri.org/setSignalComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <soap:operation soapAction="http://tempuri.org/PopulatePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <soap:operation soapAction="http://tempuri.org/UpdateIndicatorUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <soap:operation soapAction="http://tempuri.org/PopulateInspectionAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <soap:operation soapAction="http://tempuri.org/updateInspectionAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <soap:operation soapAction="http://tempuri.org/EditInspectionAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <soap:operation soapAction="http://tempuri.org/IsMemberAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <soap:operation soapAction="http://tempuri.org/PopulateSignalAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <soap:operation soapAction="http://tempuri.org/PopulateSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <soap:operation soapAction="http://tempuri.org/PopulateNefaaMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <soap:operation soapAction="http://tempuri.org/PopulateDelayedSignal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <soap:operation soapAction="http://tempuri.org/setAndroidFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <soap:operation soapAction="http://tempuri.org/setAndroidAdvertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <soap:operation soapAction="http://tempuri.org/getMarquee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <soap:operation soapAction="http://tempuri.org/grabAnalysis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <soap:operation soapAction="http://tempuri.org/PopulateTEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <soap:operation soapAction="http://tempuri.org/SetReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <soap:operation soapAction="http://tempuri.org/setActual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <soap:operation soapAction="http://tempuri.org/setSignalRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <soap:operation soapAction="http://tempuri.org/setReportCame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <soap:operation soapAction="http://tempuri.org/setRevision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <soap:operation soapAction="http://tempuri.org/setRevFrom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <soap:operation soapAction="http://tempuri.org/SetEconomicCalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <soap:operation soapAction="http://tempuri.org/ResetEconomicCalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <soap:operation soapAction="http://tempuri.org/SelectTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="grabdataSoap12" type="tns:grabdataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HELLO">
+      <soap12:operation soapAction="http://tempuri.org/HELLO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <soap12:operation soapAction="http://tempuri.org/HELLOWORLD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <soap12:operation soapAction="http://tempuri.org/InsertSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <soap12:operation soapAction="http://tempuri.org/DisposeConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSignals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <soap12:operation soapAction="http://tempuri.org/isSignalExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <soap12:operation soapAction="http://tempuri.org/isAndroidExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <soap12:operation soapAction="http://tempuri.org/isAndroidMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOpenTrades">
+      <soap12:operation soapAction="http://tempuri.org/SetOpenTrades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetZulutradeOpenTrades">
+      <soap12:operation soapAction="http://tempuri.org/SetZulutradeOpenTrades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <soap12:operation soapAction="http://tempuri.org/setMarqueeSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <soap12:operation soapAction="http://tempuri.org/setMarquee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <soap12:operation soapAction="http://tempuri.org/SetClosedTrades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <soap12:operation soapAction="http://tempuri.org/SetSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <soap12:operation soapAction="http://tempuri.org/TotalSum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <soap12:operation soapAction="http://tempuri.org/TotalSumMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <soap12:operation soapAction="http://tempuri.org/setProfitSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <soap12:operation soapAction="http://tempuri.org/setSignalComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <soap12:operation soapAction="http://tempuri.org/PopulatePlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <soap12:operation soapAction="http://tempuri.org/UpdateIndicatorUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <soap12:operation soapAction="http://tempuri.org/PopulateInspectionAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <soap12:operation soapAction="http://tempuri.org/updateInspectionAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <soap12:operation soapAction="http://tempuri.org/EditInspectionAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap12:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <soap12:operation soapAction="http://tempuri.org/IsMemberAndroid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <soap12:operation soapAction="http://tempuri.org/PopulateSignalAndroid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <soap12:operation soapAction="http://tempuri.org/PopulateSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <soap12:operation soapAction="http://tempuri.org/PopulateNefaaMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <soap12:operation soapAction="http://tempuri.org/PopulateDelayedSignal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <soap12:operation soapAction="http://tempuri.org/setAndroidFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <soap12:operation soapAction="http://tempuri.org/setAndroidAdvertise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <soap12:operation soapAction="http://tempuri.org/getMarquee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <soap12:operation soapAction="http://tempuri.org/grabAnalysis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <soap12:operation soapAction="http://tempuri.org/PopulateTEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <soap12:operation soapAction="http://tempuri.org/SetReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <soap12:operation soapAction="http://tempuri.org/setActual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <soap12:operation soapAction="http://tempuri.org/setSignalRep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <soap12:operation soapAction="http://tempuri.org/setReportCame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <soap12:operation soapAction="http://tempuri.org/setRevision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <soap12:operation soapAction="http://tempuri.org/setRevFrom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <soap12:operation soapAction="http://tempuri.org/SetEconomicCalendar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <soap12:operation soapAction="http://tempuri.org/ResetEconomicCalendar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <soap12:operation soapAction="http://tempuri.org/SelectTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="grabdataHttpGet" type="tns:grabdataHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HELLO">
+      <http:operation location="/HELLO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <http:operation location="/HELLOWORLD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <http:operation location="/InsertSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <http:operation location="/DisposeConnection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <http:operation location="/DeleteSignals" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <http:operation location="/isSignalExist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <http:operation location="/isAndroidExist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <http:operation location="/isAndroidMember" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <http:operation location="/setMarqueeSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <http:operation location="/setMarquee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <http:operation location="/SetClosedTrades" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <http:operation location="/SetSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <http:operation location="/TotalSum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <http:operation location="/TotalSumMonth" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <http:operation location="/setProfitSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <http:operation location="/setSignalComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <http:operation location="/PopulatePlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <http:operation location="/UpdateIndicatorUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <http:operation location="/PopulateInspectionAlerts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <http:operation location="/updateInspectionAlerts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <http:operation location="/EditInspectionAlert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <http:operation location="/CreateTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <http:operation location="/IsMemberAndroid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <http:operation location="/PopulateSignalAndroid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <http:operation location="/PopulateSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <http:operation location="/PopulateNefaaMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <http:operation location="/PopulateDelayedSignal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <http:operation location="/setAndroidFeedback" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <http:operation location="/setAndroidAdvertise" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <http:operation location="/getMarquee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <http:operation location="/grabAnalysis" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <http:operation location="/PopulateTEST" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <http:operation location="/SetReports" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <http:operation location="/setActual" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <http:operation location="/setSignalRep" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <http:operation location="/setReportCame" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <http:operation location="/setRevision" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <http:operation location="/setRevFrom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <http:operation location="/SetEconomicCalendar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <http:operation location="/ResetEconomicCalendar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <http:operation location="/UpdateTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <http:operation location="/SelectTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="grabdataHttpPost" type="tns:grabdataHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HELLO">
+      <http:operation location="/HELLO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HELLOWORLD">
+      <http:operation location="/HELLOWORLD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSignal">
+      <http:operation location="/InsertSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeConnection">
+      <http:operation location="/DisposeConnection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSignals">
+      <http:operation location="/DeleteSignals" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSignalExist">
+      <http:operation location="/isSignalExist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidExist">
+      <http:operation location="/isAndroidExist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAndroidMember">
+      <http:operation location="/isAndroidMember" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarqueeSignal">
+      <http:operation location="/setMarqueeSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMarquee">
+      <http:operation location="/setMarquee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClosedTrades">
+      <http:operation location="/SetClosedTrades" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignal">
+      <http:operation location="/SetSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSum">
+      <http:operation location="/TotalSum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalSumMonth">
+      <http:operation location="/TotalSumMonth" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setProfitSignal">
+      <http:operation location="/setProfitSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalComment">
+      <http:operation location="/setSignalComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePlate">
+      <http:operation location="/PopulatePlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndicatorUsers">
+      <http:operation location="/UpdateIndicatorUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateInspectionAlerts">
+      <http:operation location="/PopulateInspectionAlerts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInspectionAlerts">
+      <http:operation location="/updateInspectionAlerts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditInspectionAlert">
+      <http:operation location="/EditInspectionAlert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <http:operation location="/CreateTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberAndroid">
+      <http:operation location="/IsMemberAndroid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignalAndroid">
+      <http:operation location="/PopulateSignalAndroid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateSignal">
+      <http:operation location="/PopulateSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateNefaaMessage">
+      <http:operation location="/PopulateNefaaMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDelayedSignal">
+      <http:operation location="/PopulateDelayedSignal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidFeedback">
+      <http:operation location="/setAndroidFeedback" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAndroidAdvertise">
+      <http:operation location="/setAndroidAdvertise" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMarquee">
+      <http:operation location="/getMarquee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabAnalysis">
+      <http:operation location="/grabAnalysis" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateTEST">
+      <http:operation location="/PopulateTEST" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <http:operation location="/SetReports" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActual">
+      <http:operation location="/setActual" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalRep">
+      <http:operation location="/setSignalRep" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReportCame">
+      <http:operation location="/setReportCame" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevision">
+      <http:operation location="/setRevision" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRevFrom">
+      <http:operation location="/setRevFrom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEconomicCalendar">
+      <http:operation location="/SetEconomicCalendar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetEconomicCalendar">
+      <http:operation location="/ResetEconomicCalendar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTable">
+      <http:operation location="/UpdateTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTable">
+      <http:operation location="/SelectTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="grabdata">
+    <wsdl:port name="grabdataSoap" binding="tns:grabdataSoap">
+      <soap:address location="http://www.rpchost.com/grabdata.asmx" />
+    </wsdl:port>
+    <wsdl:port name="grabdataSoap12" binding="tns:grabdataSoap12">
+      <soap12:address location="http://www.rpchost.com/grabdata.asmx" />
+    </wsdl:port>
+    <wsdl:port name="grabdataHttpGet" binding="tns:grabdataHttpGet">
+      <http:address location="http://www.rpchost.com/grabdata.asmx" />
+    </wsdl:port>
+    <wsdl:port name="grabdataHttpPost" binding="tns:grabdataHttpPost">
+      <http:address location="http://www.rpchost.com/grabdata.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

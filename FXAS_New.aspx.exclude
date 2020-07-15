@@ -1,0 +1,493 @@
+﻿<%@ Page Theme="theme" Language="VB" AutoEventWireup="false" CodeFile="FXAS_New.aspx.vb" Inherits="FXAS_New" %>
+
+<%@ Register Assembly="Anthem" Namespace="Anthem" TagPrefix="anthem" %>
+
+
+<link href="App_Themes/theme/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+        function ClientSideFunction() {
+            document.documentElement["lblMess"].value="TEST";
+            
+        }
+    </script>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>FXAS</title>
+    
+    <style type="text/css">
+        .style1
+        {
+            width: 84px;
+        }
+    </style>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+   
+   
+   
+    
+   <table bgcolor=eeecde>
+   
+   
+   
+   <tr>
+   <td>
+ 
+
+ 
+   <table border=1 bordercolor=black>
+       
+   
+   
+   <tr>
+   <td valign=top>
+
+   
+   <table>
+    
+    <tr>
+        <td class="style1" >
+            <asp:Label ID="Label1" runat="server" Text="Account" CssClass="BlackTextBold"></asp:Label>
+        </td>
+        <td>
+            <asp:DropDownList ID="cmbAccount" CssClass="inputtext" runat="server"/>
+        </td>
+         <td>
+            <asp:Label ID="Label2" runat="server" CssClass="BlackTextBold" Text="Bal"></asp:Label>
+        </td>
+        <td>
+            
+            <asp:TextBox ID="oBalance" AutoPostBack=true Width=70 CssClass="inputtext" runat="server" />
+            
+        </td>
+        
+        
+         <td>
+            <asp:Label ID="Label3" runat="server" CssClass="BlackTextBold" Text="Equ"></asp:Label>
+        </td>
+        <td>
+            
+            
+            <asp:TextBox ID="oEquity" Width=70 CssClass="inputtext" runat="server" />
+            
+            
+        </td>
+        
+        
+       
+        
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td class="style1">
+            <asp:Label ID="Label5" runat="server"  CssClass="BlackTextBold" Text="Opened Pips"></asp:Label>
+        </td>
+        <td>
+            
+            
+            <asp:TextBox ID="txtOpenedPips" Width=60 CssClass="INPUTTEXTRED" runat="server" />
+        
+        
+        </td>
+         <td>
+            <asp:Label ID="Label4" runat="server" CssClass="BlackTextBold" Text="UsblMarg"></asp:Label>
+         
+         
+        </td>
+        <td>
+        
+         <asp:TextBox ID="oUsableMr" Width=70 CssClass="inputtext" runat="server" />
+            
+         
+        
+        </td>
+        
+        
+         <td>
+           
+             
+        </td>
+        <td>
+            <asp:DropDownList ID="DDrOrderType" runat="server" CssClass="inputtext">
+             <asp:ListItem>Market</asp:ListItem>
+             </asp:DropDownList>
+        </td>
+        
+        
+        
+        
+    </tr>
+    
+    
+    <tr>
+        <td class="style1">
+          <asp:Label ID="Label9" CssClass="BlackTextBold" runat="server" Text="Closed Pips"></asp:Label>
+        </td>
+        <td>
+          
+            <asp:TextBox ID="txtClosedPips" Width=60 CssClass="inputtext" runat="server" />
+            
+                
+        
+        </td>
+         <td>
+            <asp:Label ID="Label7" runat="server" CssClass="BlackTextBold" Text="AmountK"></asp:Label>
+        </td>
+        <td>
+             <asp:DropDownList ID="cmbAmountK" AutoPostBack=true CssClass="inputtext" runat="server"/>
+            
+        
+        </td>
+        
+        
+         <td>
+            
+        </td>
+        <td>
+        </td>
+        
+        
+      
+        
+    </tr>
+    
+    
+    
+    
+     <tr>
+        <td colspan=4>
+        
+           <asp:Label ID="lblGBP" ForeColor=Blue runat="server"  CssClass="BlackTextBold" Text="GBPUSD"/>
+            <asp:Image  ID=GBPImg ImageUrl="picture\flat.gif" runat=server />
+            
+             <asp:Label ID="lblEUR" ForeColor=Blue runat="server" CssClass="BlackTextBold" Text="EURUSD"/>
+            <asp:Image  ID=EURImg ImageUrl="picture\flat.gif" runat=server />
+            
+            
+        </td>
+        <td>
+         
+                
+        
+        </td>
+         <td>
+         
+        </td>
+        
+       
+      
+        
+    </tr>
+    
+    
+   </table>
+   </td>
+    
+    
+    <td>
+    </td>
+    
+    
+    
+    <td valign=top>
+    <table>
+        
+        
+        
+        
+           <tr>
+            <td colspan=4 Class="BlueText" >
+                RPCHOST.COM USERID AND PWD&nbsp;&nbsp; <a href=RegisterContent.aspx class="BlueSmallText8" target=new>Not a member? .. Register</a>
+            </td>
+            
+         
+            
+            
+        </tr>
+        
+        
+        
+        
+            <tr>
+            <td Class="BlackTextBold" >
+                UserID
+            </td>
+            
+            <td>
+                            <asp:TextBox ID="txtRpcUserID" CssClass="inputtext" Width=50 runat="server">46</asp:TextBox>
+        
+                            <asp:RequiredFieldValidator ID="ReqUserID" runat="server" 
+                                ControlToValidate="txtRpcUserID">*</asp:RequiredFieldValidator>
+        
+            </td>
+            
+              <td Class="BlackTextBold" >
+                Pwd
+            </td>
+            
+            <td>
+                                
+                    <asp:TextBox ID="txtRpcPwd" CssClass="inputtext" Width=60  runat="server" 
+                        >jijo1136</asp:TextBox>
+            </td>
+            
+            
+             <td>
+                 
+                
+                 <asp:RequiredFieldValidator ID="ReqPwd" runat="server" 
+                     ControlToValidate="txtRpcPwd">*</asp:RequiredFieldValidator>
+                 
+                
+            </td>
+            
+            
+        </tr>
+        
+        
+          <tr>
+            <td colspan=4 Class="BlueText" height=40>
+                FXCM USERID AND PWD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <a href="http://www.fxcmmena.com/en/open-a-demo-account" target= new class="BlueSmallText8">Create 
+                Demo account</a>
+            </td>
+            
+         
+            
+            
+        </tr>
+        
+        <tr>
+            <td class="BlackTextBold">
+                AccountID
+            </td>
+            
+            <td>
+                            <asp:TextBox ID="txtUserName" CssClass="inputtext" Width=100 runat="server">C1FD312396001</asp:TextBox>
+                            <asp:RequiredFieldValidator ID="ReqAccID" runat="server" 
+                                ControlToValidate="txtUserName">*</asp:RequiredFieldValidator>
+        
+            </td>
+            
+              <td Class="BlackTextBold" >
+                Connection
+            </td>
+            
+            <td>
+                                <asp:DropDownList CssClass="inputtext" ID="cmbConnection" runat="server">
+                                <asp:ListItem Value="demo">Demo</asp:ListItem>
+                                <asp:ListItem Value="real">Real</asp:ListItem>
+                                </asp:DropDownList>
+        
+            </td>
+            
+            
+             <td>
+                 
+                
+
+        
+            </td>
+            
+            
+        </tr>
+        
+        
+        
+         <tr>
+            <td Class="BlackTextBold" >
+                Password
+            </td>
+            
+            <td>
+                            <asp:TextBox ID="txtPassword" CssClass="inputtext" Width=100 
+                                runat="server" >2931</asp:TextBox>
+        
+                            <asp:RequiredFieldValidator ID="ReqPassword" runat="server" 
+                                ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
+        
+            </td>
+            
+              <td>
+                
+            </td>
+            
+            <td>
+                                
+        
+            </td>
+            
+            
+             <td>
+                 
+                 
+        
+            </td>
+            
+            
+        </tr>
+        
+        
+        
+        
+          <tr>
+            <td colspan=2>
+            
+                 <asp:Button ID="cmdLogin" AutoUpdateAfterCallBack=true CssClass="INPUTBUTTONNew" runat="server" 
+                     Text="Login" TextDuringCallBack="INITIALIZING plz wait ..." />
+                 
+                
+            </td>
+            
+            <td>
+                &nbsp;</td>
+            
+              <td>
+              <asp:Button ID="cmdLogOut" CssClass="INPUTBUTTONNew" runat="server" Text="LogOut" />
+
+            </td>
+            
+            <td>
+                                
+            </td>
+            
+            
+             <td>
+                 
+                
+            </td>
+            
+            
+        </tr>
+        
+        
+        
+        
+      
+        
+        
+        
+    </table>
+    
+    
+    </td>
+    </tr>
+    
+    <tr>
+        <td height=50 colspan=3>
+        
+        
+        
+        
+        <asp:Label ID=lblMess CssClass="MaroonText" runat=server ></asp:Label>
+        
+        
+        &nbsp;</td> 
+    </tr>
+    
+    
+    
+     <tr>
+
+        <td colspan=3>
+            
+       <asp:Label ID="lblOpenPos" CssClass="BlackTextBold" Visible=true runat="server" Text="Open Positions"></asp:Label>
+        
+        
+                               
+
+               
+
+
+
+        </td>
+       
+    </tr>
+    
+    <tr>
+
+        <td colspan=3>
+        
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            
+         <asp:Timer ID="Timer1" Enabled="false" Interval=5000 runat="server"/>
+       
+            <anthem:Timer ID="Timer2" Interval=5000 Enabled=true runat="server">
+            </anthem:Timer>
+          
+        <asp:GridView ID="GridView1" CssClass="aspGridView" Width=100%  runat="server">
+            <Columns>
+            
+                        
+                        
+                
+            
+                        
+<asp:TemplateField HeaderText="">
+        <ItemTemplate>
+                <asp:Button ID="deleteButton" runat="server" CssClass="inputbuttonnew" Width=50 Height=20 CommandName="Select" Text="Close"
+                        OnClientClick="return confirm('Are you sure you want to CLOSE this order?');" />
+        </ItemTemplate>
+</asp:TemplateField>
+
+        
+             
+                
+                
+      
+            
+                
+                
+                
+            </Columns>
+        </asp:GridView>
+        
+
+        </td>
+       
+    </tr>
+       
+    
+      <tr>
+
+        <td colspan=3>
+            <asp:Label ID="lblClosedPos" Visible=true CssClass="BlackTextBold" runat="server" Text="Closed Positions"></asp:Label>
+      
+        
+
+        </td>
+        
+    </tr>
+    
+     <tr>
+
+        <td colspan=3>
+            
+            
+        <asp:GridView ID="GridView2" AutoUpdateAfterCallBack=true colspan=3 CssClass="aspGridView" Width=100% runat="server">
+        </asp:GridView>
+        
+
+        </td>
+        
+    </tr>
+    
+    </table>
+    
+    
+    </form>
+</body>
+</html>

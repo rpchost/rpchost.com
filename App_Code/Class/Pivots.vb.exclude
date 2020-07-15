@@ -1,0 +1,306 @@
+Imports System.Net
+Imports System
+Imports System.Reflection
+Imports System.Security.Permissions
+Imports System.Security
+Imports System.IO
+Imports System.Collections
+Imports System.Text
+Imports System.Web
+Imports System.Threading
+
+
+Namespace rpchost
+
+
+Public Class Pivots
+
+
+    Private Shared strFilePath1 As String = HttpContext.Current.Server.MapPath("links.html")
+    Private Shared strFilePath2 As String = HttpContext.Current.Server.MapPath("pivot.html")
+
+    Private Shared strFilePath11 As String = HttpContext.Current.Server.MapPath("linksBackup.html")
+    Private Shared strFilePath22 As String = HttpContext.Current.Server.MapPath("pivotBackup.html")
+
+    Public strLink As String
+    Public strPivot As String
+    Public strR As String
+    Public strS As String
+
+    Public Sub getLink()
+        Try
+
+            'writeToHtml1("http://localhost/forex/INDEX_TA_RECENT.html")
+            writeToHtml1("https://plus.dailyfx.com/tnews/fxcentral/INDEX_TA_RECENT.HTM")
+            strLink = Link()
+
+        Catch ex As System.IO.IOException
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        Catch ex As Exception
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        End Try
+    End Sub
+
+    Public Function getPivotsData() As String
+        Try
+
+            'writeToHtml2("http://localhost/forex/" & strLink)
+            writeToHtml2("https://plus.dailyfx.com/tnews/fxcentral/" & strLink)
+            Pivot()
+
+        Catch ex As System.IO.IOException
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        Catch ex As Exception
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        End Try
+    End Function
+
+
+    Private Function getHtml(ByVal str As String) As String
+
+        Dim objResponse As System.Net.WebResponse
+        Dim objRequest As System.Net.WebRequest
+        objRequest = HttpWebRequest.Create(str)
+        objResponse = objRequest.GetResponse()
+        Dim sr As New System.IO.StreamReader(objResponse.GetResponseStream())
+        Return sr.ReadToEnd()
+
+    End Function
+
+
+    Private Sub writeToHtml1(ByVal Str As String)
+
+        Dim LogFile As New FileInfo(strFilePath1)
+        Dim fs1 As FileStream
+        Dim w1 As StreamWriter
+
+        Try
+
+        If LogFile.Exists Then
+
+            LogFile.Delete()
+
+            fs1 = New FileStream(strFilePath1, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+            fs1.Lock(0, SeekOrigin.End)
+            w1 = New StreamWriter(fs1)
+
+            w1.BaseStream.Seek(0, SeekOrigin.End)
+
+            w1.Write(getHtml(Str))
+
+            fs1.Unlock(0, SeekOrigin.End)
+
+            w1.Flush()
+
+            w1.Close()
+            fs1.Close()
+
+        End If
+
+        Catch ex As IOException
+
+            LogFile = New FileInfo(strFilePath11)
+            If LogFile.Exists Then
+                LogFile.Delete()
+                fs1 = New FileStream(strFilePath11, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+                fs1.Lock(0, SeekOrigin.End)
+                w1 = New StreamWriter(fs1)
+                w1.BaseStream.Seek(0, SeekOrigin.End)
+                w1.Write(getHtml(Str))
+                fs1.Unlock(0, SeekOrigin.End)
+                w1.Flush()
+                w1.Close()
+                fs1.Close()
+            End If
+        Catch ex As Exception
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        End Try
+
+    End Sub
+
+    Private Sub writeToHtml2(ByVal Str As String)
+
+        Dim LogFile As New FileInfo(strFilePath2)
+        Dim fs1 As FileStream
+        Dim w1 As StreamWriter
+
+        Try
+
+            If LogFile.Exists Then
+
+                LogFile.Delete()
+
+                fs1 = New FileStream(strFilePath2, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+
+                fs1.Lock(0, SeekOrigin.End)
+                w1 = New StreamWriter(fs1)
+
+                w1.BaseStream.Seek(0, SeekOrigin.End)
+
+                w1.Write(getHtml(Str))
+
+                fs1.Unlock(0, SeekOrigin.End)
+
+                w1.Flush()
+
+                w1.Close()
+                fs1.Close()
+
+            End If
+
+        Catch ex As IOException
+            LogFile = New FileInfo(strFilePath22)
+            If LogFile.Exists Then
+                LogFile.Delete()
+                fs1 = New FileStream(strFilePath22, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+                fs1.Lock(0, SeekOrigin.End)
+                w1 = New StreamWriter(fs1)
+                w1.BaseStream.Seek(0, SeekOrigin.End)
+                w1.Write(getHtml(Str))
+                fs1.Unlock(0, SeekOrigin.End)
+                w1.Flush()
+                w1.Close()
+                fs1.Close()
+            End If
+        Catch ex As Exception
+            cs_LogFile.WriteFile("Error Description \\n" + ex.Message + "\\n" + ex.StackTrace)
+        End Try
+
+    End Sub
+
+
+    Private Function Pivot() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        Try
+            fs = New FileStream(strFilePath2, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+        Catch ex As Exception
+            fs = New FileStream(strFilePath22, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+        End Try
+
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "Pivot:") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = Trim(w.ReadLine)
+
+        Dim arr() As String
+        arr = strLine.Split(">")
+        strLine = arr(1)
+
+        arr = strLine.Split("<")
+        strPivot = arr(0)
+
+        While InStr(1, strLine, "1<sup>st</sup> sup.") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = Trim(w.ReadLine)
+
+        arr = strLine.Split(">")
+        strLine = arr(1)
+
+        arr = strLine.Split("<")
+        strS = arr(0)
+
+        If (Trim(strS) = Trim(strPivot)) Then
+
+            While InStr(1, strLine, "2<sup>nd</sup> sup.") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split(">")
+            strLine = arr(1)
+
+            arr = strLine.Split("<")
+            strS = arr(0)
+
+        End If
+
+        While InStr(1, strLine, "1<sup>st</sup> res.") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        strLine = Trim(w.ReadLine)
+
+        arr = strLine.Split(">")
+        strLine = arr(1)
+
+        arr = strLine.Split("<")
+        strR = arr(0)
+
+        If (Trim(strR) = Trim(strPivot)) Then
+
+            While InStr(1, strLine, "2<sup>nd</sup> res.") = 0 And w.Peek >= 0
+                strLine = Trim(w.ReadLine)
+            End While
+            strLine = Trim(w.ReadLine)
+
+            arr = strLine.Split(">")
+            strLine = arr(1)
+
+            arr = strLine.Split("<")
+            strR = arr(0)
+
+        End If
+
+        Return strLine
+
+        fs.Close()
+        w.Close()
+
+        Return strLine
+
+    End Function
+
+    Private Function Link() As String
+
+        Dim strEcon As String
+        Dim strRes As String
+        Dim strLine As String
+        Dim fs As FileStream
+        Dim w As StreamReader
+
+        Try
+            fs = New FileStream(strFilePath1, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+        Catch ex As Exception
+            fs = New FileStream(strFilePath11, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)
+        End Try
+
+        w = New StreamReader(fs)
+
+        strLine = Trim(w.ReadLine)
+
+        While InStr(1, strLine, "GBP/USD") = 0 And w.Peek >= 0
+            strLine = Trim(w.ReadLine)
+        End While
+        'strLine = ""
+
+
+        Dim arr() As String
+        arr = strLine.Split("htm")
+        strLine = arr(1)
+        arr = strLine.Split("""")
+        strLine = arr(1)
+
+        Return strLine + "htm"
+
+        fs.Close()
+        w.Close()
+
+        Return strLine
+
+    End Function
+
+End Class
+
+End Namespace

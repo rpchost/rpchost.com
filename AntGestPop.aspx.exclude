@@ -1,0 +1,44 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AntGestPop.aspx.vb" Inherits="AntGestPop" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <asp:Label ID="First Name" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="txtFName" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Last Name" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="txtLName" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Email" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Country" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <br />
+    
+    </div>
+    </form>
+</body>
+</html>

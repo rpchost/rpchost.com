@@ -1,0 +1,549 @@
+.hbody
+{
+	
+		scrollbar-face-color:8C8C8C;
+		scrollbar-highlight-color:000000;
+		
+		
+		scrollbar-shadow-color: 000000;
+		scrollbar-arrow-color:CFD0D0;
+		scrollbar-track-color: cccccc;
+		scrollbar-base-color:ffffff;
+		margin-left:0;
+		margin-top:0;
+	
+	
+	BACKGROUND-COLOR: White;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: .8em;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    WORD-SPACING: normal;
+    }
+    
+html {
+scrollbar-base-color: #727070;
+scrollbar-arrow-color: ffffff;
+scrollbar-track-color: #EDEBEB;
+
+scrollbar-shadow-color: black;
+scrollbar-lightshadow-color: black; 
+scrollbar-darkshadow-color: EDEBEB;
+
+scrollbar-highlight-color: D2D0D0;
+scrollbar-3dlight-color: black;
+}
+
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+    
+.Norm
+{
+	color: Green;
+	font-family:Arial;
+	font-size: 13;
+}
+
+.bord
+{
+	 background-color:E1DDCD;
+}
+.Build
+{
+	font-size:11pt; 
+	color:a18a08;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+	
+}
+.Buildblue
+{
+	font-size:11pt; 
+	color:#5273bd;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+	
+}
+.News
+{
+	font-size:10pt; 
+	color:a18a08;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:none;
+}
+
+.News:hover
+{
+	font-size:10pt; 
+	color:#5273bd;
+	 font-weight:bold;
+	 font-family :Arial;	 
+	 text-decoration:underline;
+}
+
+.FontRegister
+{
+	color: Green;
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size: 13;
+    font-weight:bold;
+    font-style : italic;
+}
+
+.FontDev
+{
+	font-style:normal;
+	font-family:Arial;
+	font-weight:bold;
+	color:#033dd0;
+	font-size:13px;
+}
+.FontDev1
+{
+	font-style:normal;
+	font-family:Arial;
+	color: Black;
+	font-size:13px;
+}
+.FooterContact
+{
+	font-style:normal;
+	font-family:Arial;
+	color: Black;
+	font-size:11px;
+	text-align:center;
+}
+.alertsbg
+{
+	background-color:#990000;
+	color:White;
+	font-family:Verdana;
+ font-size:10px;
+ font-weight:bold;
+ padding-left:3px;
+ 
+ text-decoration:none
+}
+.alertsbgWeek
+{
+	background-color:#990000;
+	color:White;
+	font-family:Verdana;
+ font-size:10px;
+ font-weight:bold;
+ text-align:center;
+  padding-top:3px; 
+ text-decoration:none
+}
+.alertsTitle
+{
+	
+	color:#000000;
+	font-family:Verdana;
+ font-size:11px;
+ font-weight:bold;
+ padding-left:3px;
+
+ text-decoration:none
+}
+.alertsAnalysis
+{
+	
+	color:#000000;
+	font-family:Verdana;
+ font-size:11px;
+ font-weight:normal;
+ padding-left:3px;
+
+ text-decoration:none
+}
+
+.HeightTD
+{
+	height:466px;
+}
+
+    
+    
+.head000 {font-size:10pt; color:a18a08; font-weight:bold; font-family :Arial;text-align:left; text-decoration:none;}
+.head0000 {
+    font-size: 11pt;
+    color: 635402;
+    font-weight: bold;
+    font-family: Arial;
+    text-decoration: none;
+}
+.head00 {font-size:13pt; color:635402; font-weight:bold; font-family :Arial; text-decoration:none;}
+.head00_7 {font-size:7pt; color:635402; font-weight:bold; font-family :Arial; text-decoration:none;}
+.head00_8 {font-size:7pt; color:264385; font-weight:bold; font-family :Arial; text-decoration:none;}
+.head00_8_5 {font-size:8pt; color:264385; font-weight:bold; font-family :Arial; text-decoration:none;}
+.head01{font-size:11pt; color:264385; font-weight:bold; font-family :Arial;}
+.head01_9{font-size:9pt; color:264385; font-weight:bold; font-family :Verdana;
+	direction: ltr;
+}
+.head01_11 {
+    font-size: 11pt;
+    color: 264385;
+    font-weight: bold;
+    font-family: Verdana;
+    direction: ltr;
+}
+.head01_9_normal{font-size:9pt; color:264385; font-weight:normal; font-family :Arial;}
+.head02{font-size:8pt; color:a18a08 ; font-family :Arial;text-align:left;font-weight:bold;}
+.head03{font-size:12pt; font-family :Arial;text-align:center;font-weight:bold;}
+.head05{font-size:20pt; font-family :Arial;text-align:center;font-weight:bold;color:1B2199;}
+
+
+
+.head06{font-size:17pt; font-family :Arial;text-align:center;font-weight:bold;color:635402;}
+
+.head06_small{font-size:11pt; font-family :Arial;text-align:center;font-weight:bold;color:635402;}
+.head07{font-size:18pt; font-family :Arial;text-align:center;font-weight:bold;color:1B2199;}
+.head09{font-size:10pt; font-family :verdana;text-align:center;font-weight:bold;color:1B2199;}
+
+.head09_13{font-size:13pt; font-family :Arial;text-align:center;font-weight:bold;color:1B2199;}
+
+
+.head10{font-size:11pt; font-family :Arial;text-align:center;font-weight:bold;color:1B2199;}
+.head10_Left{font-size:10pt; font-family :Arial;text-align:Left;font-weight:bold;color:1B2199;}
+.head08{font-size:16pt; font-family :Arial;text-align:center;font-weight:bold;color:F7BC0A;text-decoration:underline;}
+.head12{font-size:8pt; font-family :Arial;text-align:center;font-weight:bold;color:1B2199;text-decoration:underline;}
+.head13{font-size:10pt; font-family :Arial;text-align:center;font-weight:normal;color:1B2199}
+	
+	.TDRightHeader1
+	{
+		background-color: #ffce00;
+	}
+	.TDRightHeader2
+	{ 
+		background-color: #00C6C6;
+	}
+	
+	.TDRightHeader3
+	{ 
+		background-color: #ceefde;
+		
+	}
+	
+	.TDRightHeader33
+	{ 
+		background-color: 740000;
+	}
+	
+	.TDRightHeader4
+	{ 
+		 background-color: #ceefde;
+		 font-size:11;
+		 font-family:Arial;
+	}
+	.headerLeft2 { FONT-SIZE: 8pt; COLOR:#0000FF; FONT-FAMILY: Arial }
+	.headerLeft0 { FONT-SIZE: 11pt; COLOR:#327317; FONT-FAMILY: Arial; FONT-WEIGHT : bolder;  font-style:italic; text-decoration:underline }
+	.headerLeft1 { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #327317; FONT-FAMILY: Arial }
+
+    .index1 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #2d33bb; FONT-FAMILY: Arial }
+	.index2 { FONT-SIZE: 10pt; COLOR: #145acd; FONT-FAMILY: Arial }
+	.index3 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial }
+	.index4 { FONT-SIZE: 8pt; COLOR: #2d33bb; FONT-FAMILY: Arial }
+	.index5 { FONT-SIZE: 10pt; COLOR: #327317; FONT-FAMILY: Arial }
+	.index6 { FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #327317; FONT-FAMILY: Arial }
+	.GreenText { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #4EA823; FONT-FAMILY: Arial; text-decoration:underline }
+	.WhiteText{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	.WhiteTextUnderLine{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:underline}
+	.WhiteText12{FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	.WhiteText15{FONT-WEIGHT: bold; FONT-SIZE: 17pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}
+	
+	
+	.INPUTBUTTON {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:  Blue;
+	border: 1px solid #336699;
+	background-color:  FFCC66 ;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;	
+    color:  Blue;
+    font-style:normal;
+    font-weight:bold;
+    }
+    
+    .INPUTBUTTON_Buy {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:  White;
+	border: 1px solid #336699;
+	background-color:  1EA718 ;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;	
+    color:  White;
+    font-style:normal;
+    font-weight:bold;
+    }
+    
+    .INPUTBUTTON_Sell {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:  White;
+	border: 1px solid #336699;
+	background-color:  F4372E ;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;	
+    color:  White;
+    font-style:normal;
+    font-weight:bold;
+    }
+    
+      .INPUTTEXT {FONT: 16px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+   
+     }
+     
+      .INPUTTEXT_CENTER {FONT: 18px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    text-align:center
+     }
+     
+       .INPUTTEXT_CENTER_1 {FONT: 13px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    text-align:center
+     }
+     
+      .INPUTLABEL {FONT: 16px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 0px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    	
+     }
+     
+      .INPUTTEXT_12 {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR: #336699;
+	border: 1px solid #336699;
+	background-color: #FFFFFF;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    	
+     }
+     
+     .BlueTextNews{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none}
+     .BlueTextNews:Hover{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+     
+    .INPUTTEXTbtn {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:blue;
+	font-weight:bold;
+	border: 1px solid #336699;
+	background-color: #ffce00;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    
+    cursor:hand;
+    
+    	
+     }
+     
+      .INPUTTEXTbtnDisabled {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:blue;
+	font-weight:bold;
+	border: 1px solid #336699;
+	background-color: #CBB78F;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    border-left-width:thin;
+    
+    cursor:hand;
+    
+    	
+     }
+     
+     .INPUTTITLETEXT {FONT: 12px Tahoma, Verdana, sans-serif;
+	COLOR:blue;
+	font-weight:bold;
+	
+	background-color: #FFCC66;
+	border-bottom-color:Gray;
+	border-left-color:Gray;
+	border-left-width:thin;
+	border-right-color:Gray;
+	border-right-width:thin;
+    border-left-color:Gray;
+    
+    
+    
+    
+    	
+     }
+     
+     .InfoMail{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:none}
+     .InfoMail:hover{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR:#009899; FONT-FAMILY: Arial; text-decoration:none}
+     
+    
+	.BlueText{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; text-align: center; FONT-FAMILY: Arial; text-decoration:none}
+	.Maroon9{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: Maroon; FONT-FAMILY: Arial; text-decoration:none}
+	.Maroon12{FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR:Maroon; FONT-FAMILY: Arial; text-decoration:none}
+	.BlueSmallText{FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlueSmallText8{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlueSmallText8Und{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial;}
+	.BlueSmallTextLine{FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlackSmallText8{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText9{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText10{FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText12{FONT-WEIGHT: normal; FONT-SIZE: 14pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackSmallText{FONT-WEIGHT: normal; FONT-SIZE: 7.5pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlueTextHand{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000FF; FONT-FAMILY: Arial; text-decoration:underline}
+	.BlackTextBold { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial }
+	.BlacknormalText{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.RednormalText{FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #C61818; FONT-FAMILY: Arial; text-decoration:none}
+	.RedsmallText{FONT-WEIGHT: normal; FONT-SIZE: 7pt; COLOR: #C61818; FONT-FAMILY: Arial; text-decoration:none;
+	direction: ltr;
+}
+	.RednormalTextBold{FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #C61818; FONT-FAMILY: Arial; text-decoration:none;
+	direction: ltr;
+}
+	.BlackTextBold10{FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.BlackTextBold12{FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial; text-decoration:none}
+	.RedTextBold { FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #CF2030; FONT-FAMILY: Arial }
+	.RedTextBold8 { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #CF2030; FONT-FAMILY: Arial }
+	.mimistyle{ FONT-FAMILY: Arial;color:"#3100ce";FONT-SIZE: 12pt;FONT-WEIGHT: bold; }
+    .Greentext1{ background:"#84ce9c";FONT-WEIGHT: bold;FONT-SIZE: 9pt;}
+    .Bluesmalltext7{FONT-WEIGHT: normal;FONT-SIZE: 6pt;FONT-FAMILY: Arial;color:Blue}
+    .bluetext1{FONT-WEIGHT: normal;FONT-SIZE: 7pt;COLOR:Blue} 
+    .text{color:"#9c0000";FONT-WEIGHT: bold;FONT-SIZE: 10pt;FONT-FAMILY: Arial }
+    .backButt{ background :"#ffce00"; color:Blue; font-family:Arial; font-style: normal;}
+    .BlackTextBoldItalic { FONT-WEIGHT: bold; FONT-SIZE: 9pt;  COLOR: #000000; FONT-FAMILY: Arial }
+	.SmallWhiteText{FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial; text-decoration:none}

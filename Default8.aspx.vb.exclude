@@ -1,0 +1,39 @@
+﻿Imports rpchost
+
+Partial Class Default8
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Dim opExec As New cs_Operation
+        'Dim sqlParam As String
+
+
+        'If Not IsPostBack Then
+        '    Dim previousPageUrl As String = HttpContext.Current.Request.UrlReferrer.AbsoluteUri.ToString()
+
+        '    sqlParam = "insert into FundAlert (AlertText) values ('" & previousPageUrl & "',)"
+        '    opExec.ExecuteSql(sqlParam)
+
+        '    Response.Write(" Last = " & previousPageUrl)
+        'End If
+
+        Dim tokens As New OAuthTokens()
+        tokens.AccessToken = "XXX"
+        tokens.AccessTokenSecret = "XXX"
+        tokens.ConsumerKey = "XXX"
+        tokens.ConsumerSecret = "XXX"
+
+        Dim tweetResponse As TwitterResponse(Of TwitterStatus) = TwitterStatus.Update(tokens, "Hello, #Twitterizer")
+
+        If tweetResponse.Result = RequestResult.Success Then
+            ' Tweet posted successfully!
+        Else
+            ' Something bad happened
+        End If
+
+
+
+    End Sub
+
+End Class
